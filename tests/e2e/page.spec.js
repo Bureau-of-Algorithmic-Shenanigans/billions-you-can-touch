@@ -19,6 +19,21 @@ test("main page renders the default topic", async ({ page }) => {
   await expect(page.locator("#tiles-every .tile")).toHaveCount(10);
 });
 
+test("every icon resolves to a shape", async ({ page }) => {
+  await page.goto("./");
+  // visit every slide so all tile sets are rendered
+  for (const chip of await page.locator("#chips .chip").all()) await chip.click();
+  const broken = await page.evaluate(() => [
+    ...[...document.querySelectorAll(".ico")]
+      .filter((el) => !getComputedStyle(el).getPropertyValue("--ic").includes("data:image/svg+xml"))
+      .map((el) => el.className),
+    ...[...document.querySelectorAll("use")]
+      .map((u) => u.getAttribute("href"))
+      .filter((href) => !document.querySelector(`symbol${href}`)),
+  ]);
+  expect(broken).toEqual([]);
+});
+
 test("switching topic updates amount and sticky header", async ({ page }) => {
   await page.goto("./");
   await page.locator('.pick[data-id="gorchfock"]').click();
@@ -42,6 +57,19 @@ test("settings survive a reload", async ({ page }) => {
   await expect(page.locator("#sb-select")).toHaveValue("cumex");
   await page.reload();
   await expect(page.locator("#sb-select")).toHaveValue("cumex");
+});
+
+test("settings saved by the prototype are moved to the new key", async ({ page }) => {
+  await page.goto("./");
+  await page.evaluate(() => {
+    localStorage.clear();
+    localStorage.setItem("steuerbeleg-state", JSON.stringify({ item: "cumex" }));
+  });
+  await page.reload();
+  await expect(page.locator("#sb-select")).toHaveValue("cumex");
+  const keys = await page.evaluate(() => Object.keys(localStorage).sort());
+  expect(keys).toContain("milliarden-state");
+  expect(keys).not.toContain("steuerbeleg-state");
 });
 
 test("page never scrolls sideways", async ({ page }) => {

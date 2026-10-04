@@ -31,13 +31,13 @@ src/
   pages/            index (main page), impressum, datenschutz, en/imprint, en/privacy
   layouts/          Base (document shell, self-hosted fonts), Legal
   components/       main.html (page markup, German texts filled in at build time), IconSprite
-  scripts/app.js    page behaviour (topics, units, questionnaire, charts) — carried over from the prototype
-  lib/              i18n.js (all texts DE/EN), pure.js (tested helpers)
-  styles/           app.css, base.css, icons.css (generated: python3 scripts/build-icons.py)
+  scripts/app.js    page behaviour (units, questionnaire, tiles, charts)
+  data/topics.js    topics with sources and estimates
+  lib/              i18n.js (all texts DE/EN), pure.js (tested helpers), icons.js (icon shapes → CSS mask icons and SVG symbols)
+  styles/           app.css, base.css
 tests/
   unit/             Vitest
   e2e/              Playwright
-scripts/            build-icons.py turns the IconSprite into CSS mask icons (`.ico.l-NAME`), much cheaper than `<use>`
 ```
 
 ## CI
