@@ -1,0 +1,167 @@
+<div class="stickybar" id="stickybar" aria-hidden="true" inert>
+  <div class="sb-in">
+    <svg><use id="sb-use" href="#l-mask"/></svg>
+    <div class="sb-txt"><label class="sb-sel"><span class="vh" data-i="sbChange"></span><select id="sb-select"></select></label><span class="sb-m" id="sb-m"></span></div>
+    <span class="sb-amt" id="sb-amt"></span>
+  </div>
+  <div class="sb-ctl">
+    <div class="sb-seg" id="sb-scen" role="group"></div>
+    <label class="sb-years" id="sb-years-ctl"><span id="sb-years-out"></span><input type="range" id="sb-years" min="1" max="10" step="1" value="1"></label>
+    <label class="sb-custom" id="sb-custom-ctl"><span data-i="customLbl"></span><input type="number" id="sb-custom" min="0" step="0.1" value="1"></label>
+  </div>
+</div>
+<div class="wrap">
+  <header>
+    <div class="topbar">
+      <span class="eyebrow" data-i="eyebrow"></span>
+      <div class="lang" role="group" aria-label="Sprache / Language">
+        <button type="button" id="lang-de" aria-pressed="true">DE</button>
+        <button type="button" id="lang-en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+    <h1 data-i="title"></h1>
+    <p class="lede" data-i="lede"></p>
+  </header>
+
+  <section class="section-head" aria-labelledby="pick-h">
+    <h2 id="pick-h" data-i="pickH" style="font-size:1.2rem;color:var(--muted)"></h2>
+    <div class="pfilter"><label class="vh" for="pick-q" data-i="searchL"></label><input type="search" id="pick-q" autocomplete="off">
+      <label class="psel"><span class="vh" data-i="areaL"></span><select id="pick-area"></select></label><span class="legend" id="pick-count"></span></div>
+    <div class="picker" id="picker"></div>
+  </section>
+
+  <section class="controls" id="controls">
+    <div class="ctl" id="scen-ctl">
+      <span class="lbl" data-i="scenario"></span>
+      <div class="seg" id="scen" role="group"></div>
+    </div>
+    <div class="ctl" id="years-ctl">
+      <label for="years"><span data-i="years"></span>: <span id="years-out"></span></label>
+      <input type="range" id="years" min="1" max="10" step="1" value="1">
+    </div>
+    <div class="ctl" id="custom-ctl" hidden>
+      <label for="custom" data-i="customLbl"></label>
+      <input type="number" id="custom" min="0" step="0.1" value="1">
+    </div>
+    <p class="scen-note" id="scen-note" style="flex-basis:100%"></p>
+  </section>
+
+  <section class="hero" id="hero">
+    <div class="amount-block">
+      <svg class="hero-icon"><use id="hero-use" href="#l-mask"/></svg>
+      <span class="eyebrow" id="amount-eyebrow"></span>
+      <div class="big" id="big"></div>
+      <p class="who" id="who"></p>
+      <p class="context" id="context"></p>
+      <p class="caveat" id="caveat"></p>
+      <p class="srclinks" id="srclinks" hidden></p>
+      <p class="share" id="share" hidden></p>
+    </div>
+  </section>
+
+  <section class="profile" id="profile" aria-labelledby="prof-h">
+    <div class="prof-top"><h2 id="prof-h" data-i="profH"></h2><button type="button" class="btn" id="prof-reset" data-i="profReset"></button></div>
+    <p class="prof-lede" id="prof-lede"></p>
+    <div class="prof-sum" id="prof-sum" hidden><span id="prof-sum-txt"></span><button type="button" class="btn" id="prof-edit" data-i="profEdit"></button></div>
+    <div class="qs" id="qs"></div>
+    <div class="prof-preview" id="prof-preview" aria-live="polite"></div>
+    <button type="button" class="btn" id="prof-done" data-i="profDone" hidden></button>
+  </section>
+
+  <section class="carousel" aria-roledescription="carousel">
+  <div class="cnav">
+    <div role="tablist" id="chips" style="display:flex;gap:8px;flex-wrap:wrap"></div>
+    <div class="arrows"><button type="button" class="arrow" id="prev" aria-label="‹"><svg aria-hidden="true"><use href="#l-chevron-left"/></svg></button><button type="button" class="arrow" id="next" aria-label="›"><svg aria-hidden="true"><use href="#l-chevron-right"/></svg></button></div>
+  </div>
+  <div class="panels" id="panels">
+    <article class="panel">
+      <span class="eyebrow" data-i="everyE"></span>
+      <h3 data-i="everyH"></h3>
+      <div class="illus" id="illus-every"></div>
+      <div class="tiles" id="tiles-every"></div>
+    </article>
+    <article class="panel">
+      <span class="eyebrow" data-i="monthE"></span>
+      <h3 data-i="monthH"></h3>
+      <div hidden><div id="gro-n"></div><p id="gro-sub"></p><div id="gro-picto"></div><span id="gro-legend"></span></div>
+      <div class="illus" id="illus-month"></div>
+      <div class="tiles" id="tiles-month"></div>
+    </article>
+    <article class="panel">
+      <span class="eyebrow" data-i="buyE"></span>
+      <h3 data-i="buyH"></h3>
+      <div class="illus" id="illus-buy"></div>
+      <div class="tiles" id="tiles-buy"></div>
+    </article>
+    <article class="panel wide">
+      <span class="eyebrow" data-i="carEyebrow"></span>
+      <h3 data-i="carH"></h3>
+      <div class="illus" id="illus-car"></div>
+      <div hidden><div id="car-n"></div><p id="car-sub"></p></div>
+      <div class="trips">
+        <div class="trip"><svg class="ti"><use href="#l-globe"/></svg><b id="t-earth"></b><span data-i="tEarth"></span></div>
+        <div class="trip"><svg class="ti"><use href="#l-moon"/></svg><b id="t-moon"></b><span data-i="tMoon"></span></div>
+        <div class="trip"><svg class="ti"><use href="#l-sun"/></svg><b id="t-sun"></b><span data-i="tSun"></span></div>
+      </div>
+      <div class="scroll-x"><svg id="dist" viewBox="0 0 960 170" style="min-width:640px;width:100%" role="img"></svg></div>
+      <span class="legend" data-i="distLegend"></span>
+      <div class="tiles" id="tiles-car"></div>
+    </article>
+    <article class="panel">
+      <span class="eyebrow" data-i="pubE"></span>
+      <h3 data-i="pubH"></h3>
+      <div hidden><div id="school-n"></div><p id="school-sub"></p><div id="school-picto"></div><span id="school-legend"></span></div>
+      <div class="illus" id="illus-pub"></div>
+      <div class="tiles" id="tiles-pub"></div>
+    </article>
+    <article class="panel">
+      <span class="eyebrow" data-i="bigE"></span>
+      <h3 data-i="bigH"></h3>
+      <div class="illus" id="illus-big"></div>
+      <div class="tiles" id="tiles-big"></div>
+    </article>
+    <article class="panel">
+      <span class="eyebrow" data-i="headEyebrow"></span>
+      <h3 data-i="headH"></h3>
+      <div hidden><div id="head-n"></div><p id="head-sub"></p><div id="head-picto"></div></div>
+      <div class="illus" id="illus-life"></div>
+      <div class="tiles" id="tiles-life"></div>
+    </article>
+  </div>
+  </section>
+
+  <section class="section-head kc" id="cmp-topics" style="gap:14px">
+    <h2 data-i="topH"></h2>
+    <p class="lede" id="top-lede"></p>
+    <div class="tiles" id="tiles-topics" hidden></div>
+    <div class="topgrp opp"><h3 id="top-a-h">Mit Mehreinnahmen oder Einsparungen</h3><p class="sub" id="top-a-sub"></p><div class="tiles" id="tiles-topics-a"></div><button type="button" class="btn" id="top-more" hidden>Alle anzeigen</button></div>
+    <div class="topgrp same"><h3 id="top-b-h">Zum Vergleich: andere Kosten</h3><p class="sub" id="top-b-sub"></p><div class="tiles" id="tiles-topics-b"></div></div>
+  </section>
+
+  <section class="section-head kc" id="cmp-sel" style="gap:14px">
+    <h2 data-i="selH"></h2>
+    <p class="lede" data-i="selLede"></p>
+    <p class="sel-empty" id="sel-empty" data-i="selEmpty"></p>
+    <div class="scroll-x" id="dots-wrap"><svg id="dots" style="min-width:640px;width:100%" role="img"></svg></div>
+    <div class="sel-sep" id="sel-sep"><h3 data-i="selChipsH"></h3><span class="legend" data-i="selChipsSub"></span></div>
+    <div class="selchips" id="sel-chips"></div>
+    <div class="selbar"><span class="legend" id="sel-count"></span><button type="button" class="btn" id="sel-all">Alle auswählen</button><button type="button" class="btn" id="sel-clear" data-i="selClear"></button></div>
+  </section>
+
+
+  <section>
+    <div class="own-vals">
+      <h3 data-i="assumeH"></h3>
+      <p class="sub" data-i="assumeNote"></p>
+      <div class="assume-reset"><button type="button" class="btn" id="a-reset" data-i="aReset"></button><button type="button" class="btn" id="p-reset" hidden>Kachelpreise zurücksetzen</button></div>
+    </div>
+  </section>
+
+  <section>
+    <details id="src-box">
+      <summary data-i="srcH"></summary>
+      <div class="sources" id="sources"></div>
+    </details>
+  </section>
+  <footer class="site-foot"><a id="f-imp" href="impressum/">Impressum</a> · <a id="f-priv" href="datenschutz/">Datenschutz</a></footer>
+</div>

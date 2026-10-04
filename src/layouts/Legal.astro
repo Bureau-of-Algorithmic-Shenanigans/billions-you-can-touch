@@ -1,0 +1,25 @@
+---
+import Base from "./Base.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  lang: "de" | "en";
+  otherLang: string; // URL of the same page in the other language
+}
+const { title, description, lang, otherLang } = Astro.props;
+const de = lang === "de";
+const base = import.meta.env.BASE_URL.replace(/\/?$/, "/");
+---
+
+<Base title={title} description={description} lang={lang}>
+  <main class="legal">
+    <nav>
+      <a href={base}>{de ? "← Zur Startseite" : "← Back to the page"}</a>
+      <a href={base + otherLang.replace(/^\//, "")} hreflang={de ? "en" : "de"}>{de ? "English" : "Deutsch"}</a>
+      <a href={base + (de ? "impressum/" : "en/imprint/")}>{de ? "Impressum" : "Imprint"}</a>
+      <a href={base + (de ? "datenschutz/" : "en/privacy/")}>{de ? "Datenschutz" : "Privacy"}</a>
+    </nav>
+    <slot />
+  </main>
+</Base>

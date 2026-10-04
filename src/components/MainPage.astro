@@ -1,0 +1,14 @@
+---
+// Markup of the main page. Elements with data-i get their German text at build time, so the page reads well before the
+// script runs (screen readers, search engines); src/scripts/app.js then keeps them in sync with the chosen language.
+import raw from "./main.html?raw";
+import { I18N } from "../lib/i18n.js";
+
+const de = I18N.de;
+const escapeHtml = (t) => t.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+const filled = raw.replace(/(<([a-z0-9]+)\b[^>]*\bdata-i="([A-Za-z0-9_]+)"[^>]*>)(<\/\2>)/g, (all, open, _tag, key, close) =>
+  typeof de[key] === "string" ? open + escapeHtml(de[key]) + close : all,
+);
+---
+
+<Fragment set:html={filled} />

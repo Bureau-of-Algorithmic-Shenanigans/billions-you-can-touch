@@ -1,0 +1,44 @@
+{
+  "name": "billions-you-can-touch",
+  "private": true,
+  "type": "module",
+  "description": "Milliarden zum Anfassen – German political costs and revenues as everyday comparisons",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "lint": "eslint . && prettier --check \"src/**/*.{astro,css,md}\" \"tests/**/*.js\"",
+    "format": "prettier --write \"src/**/*.{astro,css,md}\" \"tests/**/*.js\"",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "validate:html": "html-validate \"dist/**/*.html\""
+  },
+  "dependencies": {
+    "@fontsource/barlow": "^5.1.0",
+    "@fontsource/barlow-condensed": "^5.1.0",
+    "@fontsource/jetbrains-mono": "^5.1.0",
+    "astro": "^5.0.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.0",
+    "@eslint/js": "^9.0.0",
+    "@playwright/test": "^1.48.0",
+    "eslint": "^9.0.0",
+    "globals": "^15.0.0",
+    "html-validate": "^9.0.0",
+    "prettier": "^3.3.0",
+    "prettier-plugin-astro": "^0.14.0",
+    "typescript": "^5.6.0",
+    "vitest": "^2.1.0"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "allowScripts": {
+    "esbuild@0.27.7": true,
+    "esbuild@0.21.5": true,
+    "esbuild@0.25.12": true,
+    "sharp": false
+  }
+}
