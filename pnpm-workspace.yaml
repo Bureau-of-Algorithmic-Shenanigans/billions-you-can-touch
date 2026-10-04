@@ -1,0 +1,5 @@
+# Only esbuild may run its install script (it fetches the platform binary).
+# sharp ships prebuilt binaries, so its script stays off.
+allowBuilds:
+  esbuild: true
+  sharp: false

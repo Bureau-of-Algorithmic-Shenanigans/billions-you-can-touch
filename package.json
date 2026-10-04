@@ -15,30 +15,25 @@
     "validate:html": "html-validate \"dist/**/*.html\""
   },
   "dependencies": {
-    "@fontsource/barlow": "^5.1.0",
-    "@fontsource/barlow-condensed": "^5.1.0",
-    "@fontsource/jetbrains-mono": "^5.1.0",
-    "astro": "^5.0.0"
+    "@fontsource/barlow": "^5.3.0",
+    "@fontsource/barlow-condensed": "^5.3.0",
+    "@fontsource/jetbrains-mono": "^5.3.0",
+    "astro": "^7.3.5"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.0",
-    "@eslint/js": "^9.0.0",
-    "@playwright/test": "^1.48.0",
-    "eslint": "^9.0.0",
-    "globals": "^15.0.0",
-    "html-validate": "^9.0.0",
-    "prettier": "^3.3.0",
-    "prettier-plugin-astro": "^0.14.0",
-    "typescript": "^5.6.0",
-    "vitest": "^2.1.0"
+    "@astrojs/check": "^0.9.10",
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.63.0",
+    "eslint": "^10.12.0",
+    "globals": "^17.13.0",
+    "html-validate": "^11.16.1",
+    "prettier": "^3.9.9",
+    "prettier-plugin-astro": "^1.1.0",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.3"
   },
   "engines": {
     "node": ">=24"
   },
-  "packageManager": "pnpm@10.34.6+sha512.7e1ae66a83a9143c118cc1944f37cc4f2b8acddeda4b001cfa78908f6e46e45e15292739ca6c9d026426cc757e9318cc98c5551d6a16c165097b0028ba87b4e6",
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "esbuild"
-    ]
-  }
+  "packageManager": "pnpm@12.9.1+sha512.06b055fff5cd20dc12781de173ced3310ce0951bf2ec620211a16045d5444d5c93a663210764ef29a653a610459ba0368f0e74f84d80c54723cf95aae7bc0d6d"
 }
