@@ -7,4 +7,6 @@ export default defineConfig({
   base: "/billions-you-can-touch",
   trailingSlash: "always",
   build: { format: "directory" },
+  // PROFILE=1 keeps the script readable for performance profiling
+  vite: { build: { minify: process.env.PROFILE ? false : "esbuild" } },
 });

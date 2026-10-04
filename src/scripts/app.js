@@ -417,15 +417,15 @@ function renderProfile(){
       else if(v==="none") PROFILE[q.id] = (PROFILE[q.id]||[]).includes("none") ? [] : ["none"];
       else { const a=(PROFILE[q.id]||[]).filter(x=>x!=="none"); PROFILE[q.id]=a.includes(v)?a.filter(x=>x!==v):[...a,v]; }
       if(before<QS.length && answered()===QS.length) PROFILE._closed=true;  // collapse once, when the last question gets answered
-      profileChanged(true);
-      const again=$("qs").querySelector(`.qopt[data-q="${q.id}"][data-v="${v}"]`); if(again) again.focus({preventScroll:true});
+      busy(()=>profileChanged(true));
+
     });
     const qs=$("q-state"); if(qs) qs.onchange=e=>{ PROFILE.state=e.target.value||null; profileChanged(false); };
     for(const [id,key] of [["q-cons","cons"],["q-tank","tank"]]){ const el=$(id); if(el) el.oninput=e=>{ const v=parseFloat(e.target.value); if(v>0){ PROFILE[key]=v; profileChanged(false); } }; }
   }
   // live preview: the best-matching everyday units for the current amount
   const amt=amount(), best=Object.entries(UNITS).filter(([k])=>k!=="topics").flatMap(([k,l])=>l).filter(u=>!u.time&&score(u)>0).sort((a,b)=>score(b)-score(a)).slice(0,4);
-  $("prof-preview").innerHTML = best.length ? `<span class="pv-l">${t("profPreview")}</span>` + best.map(u=>`<span class="pv"><svg><use href="#l-${u.e}"/></svg><b>${big(unitCount(u,amt))}</b> ${u.n[L]}</span>`).join("") : "";
+  $("prof-preview").innerHTML = best.length ? `<span class="pv-l">${t("profPreview")}</span>` + best.map(u=>`<span class="pv"><span class="ico l-${u.e}" aria-hidden="true"></span><b>${big(unitCount(u,amt))}</b> ${u.n[L]}</span>`).join("") : "";
   const n=Object.values(UNITS).flat().filter(u=>score(u)>0).length;
   $("prof-lede").textContent = profileTags().size ? t("profLede1")(n) : t("profLede0");
   $("prof-reset").hidden = !answered();
@@ -464,20 +464,20 @@ function basePrice(u){ return u.g ? uCost(u)/u.g.n : uCost(u); }
 function unitCount(u, amt){ const uc=uCost(u); return amt/(u.m?uc*12:uc); }
 // The remainder icon is cut to its share of the width (0.4 → left 40 % visible) instead of being faded.
 function partIcon(ic, part){
-  return `<span class="pcell"><span class="pclip" style="width:${part*100}%;--p:${part}"><svg style="width:${100/part}%"><use href="#l-${ic}"/></svg></span></span>`;
+  return `<span class="pcell"><span class="pclip" style="width:${part*100}%;--p:${part}"><span class="ico l-${ic}" style="width:${100/part}%" aria-hidden="true"></span></span></span>`;
 }
 function pictoParts(c, ic){
   let unit=1; while(c/unit>100) unit*=10;
   const n=c/unit, full=Math.floor(n), part=n-full, total=full+(part>=.15?1:0);
   let cols=1; while(Math.ceil(total/cols)/cols>0.5) cols++;  // rows × cell height must fit the 2:1 box
-  const one=`<svg><use href="#l-${ic}"/></svg>`;
+  const one=`<span class="ico l-${ic}" aria-hidden="true"></span>`;
   return [`<span class="pbox" style="--cols:${cols}" aria-hidden="true">${one.repeat(full)}${part>=.05?partIcon(ic,part):""}</span>`,
           unit>1?t("perSym")(big(unit)):"&nbsp;"];
 }
 // Free-flowing icon row across the full slide width (same factor rule as the tile boxes).
 function pictoFlow(c, ic){
   let unit=1; while(c/unit>100) unit*=10;
-  const n=c/unit, full=Math.floor(n), part=n-full, one=`<svg><use href="#l-${ic}"/></svg>`;
+  const n=c/unit, full=Math.floor(n), part=n-full, one=`<span class="ico l-${ic}" aria-hidden="true"></span>`;
   return `<div class="pflow" aria-hidden="true">${one.repeat(full)}${part>=.05?partIcon(ic,part):""}</div>`
     + (unit>1?`<span class="pleg">${t("perSym")(big(unit))}</span>`:"");
 }
@@ -523,7 +523,7 @@ function inlP(name, val){ return inlField(`data-p="${name}"`, val, `${t("editPri
 function renderIllus(amt){
   const L=state.lang;
   // Shared lead block: subject icon + headline + one-line recipe, the result as "= N unit", a personal line, then extras.
-  const lead=(ic,t1,t2,n,u,mine,sub,extra="",icHtml="")=>`<div class="dn">${icHtml||`<svg class="dn-ic"><use href="#l-${ic}"/></svg>`}<span class="dn-t1">${t1}</span><span class="dn-t2">${t2}</span></div>
+  const lead=(ic,t1,t2,n,u,mine,sub,extra="",icHtml="")=>`<div class="dn">${icHtml||`<span class="ico dn-ic l-${ic}" aria-hidden="true"></span>`}<span class="dn-t1">${t1}</span><span class="dn-t2">${t2}</span></div>
     <div class="dn-res"><span class="dn-eq">=</span><span class="dn-n">${n}</span><span class="dn-u">${u}</span></div>${mine?`<p class="dn-daily">${mine}</p>`:""}${sub?`<p class="sub">${sub}</p>`:""}${extra}`;
   // Everyday: a Döner a day, in lifetimes
   const DP=priceOf("Döner",8), yrs=amt/DP/365, lives=yrs/81;
@@ -616,8 +616,17 @@ const METER_SCALE=()=>`<span class="mscale" aria-hidden="true">${[[1,"1"],[4,sta
 const SAME={"Kugeln Eis":"Kugel Eis","Kinotickets":"Kinoticket","Monats-Deutschlandtickets":"Deutschlandticket","Monatsmieten":"Miete","Mieten":"Miete","Miete, 70 m²":"Miete","iPhones":"iPhone",
   "Reihenhäuser":"Reihenhaus","Festivaltickets":"Festivalticket","E-Busse":"Elektrobus","Jahresgehälter":"Lehrkraft","Bier":"Bier im Stadion","Solaranlagen":"Solaranlage aufs Dach","Tankfüllungen":"Tankfüllung"};
 function itemKey(u){ const k=u.g?u.g.item.de:u.n.de; return SAME[k]||k; }
+let TOP_OPP_TOTAL=0;
+function topicIdx(list, amt){
+  const it=ITEMS.find(i=>i.id===state.item), cost=it.kind!=="gain";
+  const c=list.map(u=>Math.abs(Math.log10(unitCount(u,amt))));
+  const idx=list.map((u,i)=>i).filter(i=>list[i].topic!==state.item), near=(a,b)=>c[a]-c[b];
+  const opp=idx.filter(i=>(list[i].kind==="gain")===cost).sort(near), same=idx.filter(i=>(list[i].kind==="gain")!==cost && !list[i].hl).sort(near);
+  TOP_OPP_TOTAL=opp.length;
+  return [...(topMore?opp:opp.slice(0,12)), ...same];
+}
 function shownIdx(k, amt){
-  const list=UNITS[k]; if(k==="topics") return list.map((u,i)=>i);
+  const list=UNITS[k]; if(k==="topics") return topicIdx(list, amt);
   const items=list.map((u,i)=>({i,u,c:unitCount(u,amt)})).map(x=>({...x,b:bucketOf(x.c)}));
   const pick=[], used=new Set(), keys=new Set();
   for(let b=0;b<BUCKETS;b++){
@@ -645,15 +654,26 @@ function splitTopics(amt){
   const LIMIT=12, shown=topMore?opp:opp.slice(0,LIMIT);
   $("tiles-topics-a").replaceChildren(...shown.map(tl=>{ mark(tl,info(tl)); return tl; }));
   $("tiles-topics-b").replaceChildren(...same.map(tl=>{ mark(tl,info(tl)); return tl; }));
-  $("top-more").hidden=opp.length<=LIMIT; $("top-more").textContent=topMore?t("topLess"):t("topAll")(opp.length);
+  $("top-more").hidden=TOP_OPP_TOTAL<=LIMIT; $("top-more").textContent=topMore?t("topLess"):t("topAll")(TOP_OPP_TOTAL);
   $("top-a-h").textContent=cost?t("topAH_cost"):t("topAH_gain"); $("top-a-sub").textContent=(cost?t("topAS_cost"):t("topAS_gain"))+(it.annual?" "+t("topSpan")(state.years):"");
   $("top-b-h").textContent=cost?t("topBH_cost"):t("topBH_gain"); $("top-b-sub").textContent=t("topBS");
   $("cmp-topics").querySelector("h2").textContent=cost?t("topH_cost"):t("topH_gain");
 }
+// Slides in page order. Only the visible slide and its neighbours are rebuilt on a change; the others are marked stale
+// and rebuilt when the visitor moves to them (markSlide). This keeps DOM work and layout small.
+const SLIDE_KEYS=["every","month","buy","car","pub","big","life"];
+let STALE=new Set(), LAST_AMT=0;
 function renderTiles(amt){
-  UNITS.topics = topicUnits();
-  const L=state.lang;
-  Object.entries(UNITS).forEach(([k,list])=>{
+  UNITS.topics = topicUnits(); LAST_AMT=amt;
+  const near=new Set([slide-1,slide,slide+1].map(i=>SLIDE_KEYS[i]).filter(Boolean));
+  Object.keys(UNITS).forEach(k=>{ if(k==="topics"||near.has(k)) renderTileSet(k,amt); else STALE.add(k); });
+}
+function renderStaleNear(){
+  [slide-1,slide,slide+1].map(i=>SLIDE_KEYS[i]).filter(k=>k&&STALE.has(k)).forEach(k=>renderTileSet(k,LAST_AMT));
+}
+function renderTileSet(k, amt){
+  const L=state.lang, list=UNITS[k]; STALE.delete(k);
+  {
     const el=$("tiles-"+k); if(!el) return;
     el.innerHTML=shownIdx(k,amt).map(idx=>({u:list[idx],idx})).sort((a,b)=>score(b.u)-score(a.u)).map(({u,idx})=>{
       if(u.topic===state.item) return "";
@@ -669,22 +689,22 @@ function renderTiles(amt){
       const tier = dc<1 ? "frac" : dc<13 ? "few" : dc<1000 ? "fit" : dc<1e6 ? "thou" : "mega";
       // Every tile has the same 7 slots (visual, scale, number, unit, name, price, context) on a shared subgrid, so rows line up across tiles.
       // Visual: one icon to recognise the item + a size meter on the same 1 … 1 Mrd. scale for every tile, so tiles compare at a glance.
-      let vis=`<span class="tvis"><svg class="tic"><use href="#l-${u.e}"/></svg></span>`, leg="", cH=cTxt, wT=w||"", ctx="";
+      let vis=`<span class="tvis"><span class="ico tic l-${u.e}" aria-hidden="true"></span></span>`, leg="", cH=cTxt, wT=w||"", ctx="";
       if(tier==="frac"){ const pct=Math.max(dc*100,0.1); cH=`${nf(pct,pct<1?2:pct<10?1:0)} %`; wT=(u.topic&&u.y&&sameSpan())?t("fracOverYears")(state.years):u.ny?t("fracYear"):t("fracOf"); }
       if(u.g){ cH = dc<1 ? cH : `${big(dc)} ×`; wT=u.g.grp[L]; }
       else {
-        if(tier==="thou") ctx=`<svg class="ci"><use href="#l-${dc>=75000?"goal":"train-front"}"/></svg>` + (dc>=75000 ? t("ctxStadium")(nf(dc/75000,dc<750000?1:0)) : t("ctxIce")(nf(dc/900,dc<9000?1:0)));
-        if(tier==="mega"){ const pl=PLACES.filter(p=>p[0]<=dc).pop(), per=dc/pl[0]; ctx=`<svg class="ci"><use href="#l-map-pin"/></svg>${t("ctxPlace")(nf(per,per<10?1:0), pl[1][L])}`; }
+        if(tier==="thou") ctx=`<span class="ico ci l-${dc>=75000?"goal":"train-front"}" aria-hidden="true"></span>` + (dc>=75000 ? t("ctxStadium")(nf(dc/75000,dc<750000?1:0)) : t("ctxIce")(nf(dc/900,dc<9000?1:0)));
+        if(tier==="mega"){ const pl=PLACES.filter(p=>p[0]<=dc).pop(), per=dc/pl[0]; ctx=`<span class="ico ci l-map-pin" aria-hidden="true"></span>${t("ctxPlace")(nf(per,per<10?1:0), pl[1][L])}`; }
         if(c>=1){
-          if((k==="every"||k==="car") && unitCost<1000 && !u.per) ctx=`<svg class="ci"><use href="#l-calendar-days"/></svg>${t("daily")(daySpan(c))}`;
-          else if(k==="month" && u.m) ctx=`<svg class="ci"><use href="#l-calendar-days"/></svg>${t("mineOnly")(daySpan(c*365.25))}`;
-          else if((k==="buy"||k==="car") && unitCost<200000) ctx=`<svg class="ci"><use href="#l-calendar-days"/></svg>${t("yearly")(daySpan(c*365.25))}`;
+          if((k==="every"||k==="car") && unitCost<1000 && !u.per) ctx=`<span class="ico ci l-calendar-days" aria-hidden="true"></span>${t("daily")(daySpan(c))}`;
+          else if(k==="month" && u.m) ctx=`<span class="ico ci l-calendar-days" aria-hidden="true"></span>${t("mineOnly")(daySpan(c*365.25))}`;
+          else if((k==="buy"||k==="car") && unitCost<200000) ctx=`<span class="ico ci l-calendar-days" aria-hidden="true"></span>${t("yearly")(daySpan(c*365.25))}`;
         }
       }
-      const body=`<span class="vis">${vis}</span><span class="pleg">${leg}</span><span class="c">${cH}</span><span class="w">${wT}</span><span class="nm">${score(u)>0?`<span class="foryou">${t("forYou")} · ${reasons(u).slice(0,2).map(x=>TAGSHORT[x][L]).join(", ")}</span>`:""}${u.g?`= ${big(c*u.g.n)} ${u.g.item[L]}`:tileName(u,wT)}</span><span class="pr">${u.topic?pr:`${isEdited(u)?`<span class="pmod">${t("edited")}</span> `:""}${pr}<button type="button" class="pedit" data-edit="${key}" aria-label="${t("editPrice")}: ${u.n[L]}" title="${t("editPrice")}"><svg><use href="#l-pencil"/></svg></button>`}</span><span class="ctx${ctx?"":" empty"}">${ctx}</span>`;
-      return `<div class="tile ${tier}${on?" sel":""}" data-key="${key}" role="button" tabindex="0" aria-pressed="${on}" title="${t("selTip")}" data-fit="${t("fit")}">${body}<span class="selmark" aria-hidden="true"><svg><use href="#l-${on?"check":"plus"}"/></svg></span></div>`;
+      const body=`<span class="vis">${vis}</span><span class="pleg">${leg}</span><span class="c">${cH}</span><span class="w">${wT}</span><span class="nm">${score(u)>0?`<span class="foryou">${t("forYou")} · ${reasons(u).slice(0,2).map(x=>TAGSHORT[x][L]).join(", ")}</span>`:""}${u.g?`= ${big(c*u.g.n)} ${u.g.item[L]}`:tileName(u,wT)}</span><span class="pr">${u.topic?pr:`${isEdited(u)?`<span class="pmod">${t("edited")}</span> `:""}${pr}<button type="button" class="pedit" data-edit="${key}" aria-label="${t("editPrice")}: ${u.n[L]}" title="${t("editPrice")}"><span class="ico l-pencil" aria-hidden="true"></span></button>`}</span><span class="ctx${ctx?"":" empty"}">${ctx}</span>`;
+      return `<div class="tile ${tier}${on?" sel":""}" data-key="${key}" role="button" tabindex="0" aria-pressed="${on}" title="${t("selTip")}" data-fit="${t("fit")}">${body}<span class="selmark" aria-hidden="true"><span class="ico l-${on?"check":"plus"}" aria-hidden="true"></span></span></div>`;
     }).join("");
-  });
+  }
 }
 const A = { schoolBuild:30, staff:40, staffCost:78500, tank:50, cons:7.5, price:2.2, power:0.37, grocery:950 };
 const A_DEF = {...A};  // defaults for "Zurück zu den Standardwerten"
@@ -725,9 +745,24 @@ function amount(id=state.item, scen=state.scen){
 // Any change to the amount (topic, estimate, years, own amount) re-picks the griffig default comparison.
 function resetSel(){ state.sel=griffigSel(amount()); selBeforeAll=null; }
 function selectItem(id){ state.item=id; state.sel=griffigSel(amount()); history.replaceState(null,"","#"+state.item); renderStatic(); render(); }
+// Runs a change behind an input-blocking overlay. The overlay is shown first, painted, then the work runs;
+// it is removed after queued clicks have landed on it, so nothing is triggered twice.
+let BUSY=false;
+function busy(fn){
+  if(BUSY) return; BUSY=true;
+  const ov=$("busy"); ov.hidden=false; document.documentElement.setAttribute("aria-busy","true");
+  requestAnimationFrame(()=>setTimeout(()=>{
+    try{ fn(); } finally { setTimeout(()=>{ ov.hidden=true; document.documentElement.removeAttribute("aria-busy"); BUSY=false; }, 0); }
+  }, 0));
+}
+// Continuous inputs (sliders, typing) render at most once per frame
+let RAF_PENDING=false;
+function renderSoon(){ if(RAF_PENDING) return; RAF_PENDING=true; requestAnimationFrame(()=>{ RAF_PENDING=false; render(); }); }
+let STATIC_LANG=null, PICKER_KEY=null;
 function renderStatic(){
   document.documentElement.lang = state.lang;
-  document.querySelectorAll("[data-i]").forEach(el=>{ const v=t(el.dataset.i); if(typeof v==="string") el.textContent=v; });
+  const langChanged = STATIC_LANG!==state.lang; STATIC_LANG=state.lang;
+  if(langChanged) document.querySelectorAll("[data-i]").forEach(el=>{ const v=t(el.dataset.i); if(typeof v==="string") el.textContent=v; });
   $("lang-de").setAttribute("aria-pressed", state.lang==="de");
   $("lang-en").setAttribute("aria-pressed", state.lang==="en");
   document.title = t("title");
@@ -736,11 +771,14 @@ function renderStatic(){
     const tag = it.tag ? it.tag[state.lang] : it.kind==="custom"?t("customTag"):it.kind==="gain"?t("gainTag"):it.annual?t("costTag"):t("lossTag");
     const cls = it.kind==="loss"?"loss":"gain";
     return `<button type="button" class="pick" data-id="${it.id}" aria-pressed="${it.id===state.item}">
-      <svg class="pi"><use href="#${it.icon}"/></svg><span class="k ${cls}">${tag}</span><span class="t">${it.title[state.lang]}</span><span class="s">${it.short[state.lang]}</span></button>`;
+      <span class="ico pi ${it.icon}" aria-hidden="true"></span><span class="k ${cls}">${tag}</span><span class="t">${it.title[state.lang]}</span><span class="s">${it.short[state.lang]}</span></button>`;
   };
+  const pickerKey=[state.lang,state.pq||"",state.parea||""].join("|");
+  if(pickerKey===PICKER_KEY){ $("picker").querySelectorAll(".pick").forEach(b=>b.setAttribute("aria-pressed",b.dataset.id===state.item)); }
+  else { PICKER_KEY=pickerKey;
   const keep={}; $("picker").querySelectorAll(".prow").forEach(r=>keep[r.id]=r.scrollLeft);
   const row=(id,lab,color,list)=>`<div class="pgroup"><div class="phead"><span class="dot" style="background:${color}"></span><span class="eyebrow">${t(lab)}</span>
-      <div class="arrows"><button type="button" class="arrow" data-row="${id}" data-dir="-1" aria-label="${t("prevL")}"><svg aria-hidden="true"><use href="#l-chevron-left"/></svg></button><button type="button" class="arrow" data-row="${id}" data-dir="1" aria-label="${t("nextL")}"><svg aria-hidden="true"><use href="#l-chevron-right"/></svg></button></div></div>
+      <div class="arrows"><button type="button" class="arrow" data-row="${id}" data-dir="-1" aria-label="${t("prevL")}"><span class="ico l-chevron-left" aria-hidden="true"></span></button><button type="button" class="arrow" data-row="${id}" data-dir="1" aria-label="${t("nextL")}"><span class="ico l-chevron-right" aria-hidden="true"></span></button></div></div>
     <div class="prow" id="${id}">${list.map(card).join("")}</div></div>`;
   const q=(state.pq||"").trim().toLowerCase(), ar=state.parea||"";
   const match=i=>(!q||(i.title[state.lang]+" "+i.short[state.lang]).toLowerCase().includes(q)) && (!ar || (ar==="own"?!i.hl:i.area===ar));
@@ -754,12 +792,13 @@ function renderStatic(){
     + `<div class="pgroup"><div class="phead"><span class="eyebrow">${t("grpCustom")}</span></div>${card(ITEMS.find(i=>i.kind==="custom")).replace('class="pick"','class="pick pick-custom"')}</div>`;
   $("picker").querySelectorAll(".prow").forEach(r=>{ r.style.scrollBehavior="auto"; r.scrollLeft=keep[r.id]||0; r.style.scrollBehavior=""; });
   $("picker").querySelectorAll(".arrow[data-row]").forEach(b=>b.onclick=()=>{const r=$(b.dataset.row); r.scrollBy({left:+b.dataset.dir*Math.max(250,r.clientWidth*.8)});});
-  $("picker").querySelectorAll(".pick").forEach(b=>b.onclick=()=>selectItem(b.dataset.id));
+  $("picker").querySelectorAll(".pick").forEach(b=>b.onclick=()=>busy(()=>selectItem(b.dataset.id)));
+  }
   // scenario
   const curIt=ITEMS.find(i=>i.id===state.item), avail=curIt.kind==="custom"?[]:Object.keys(curIt.scen);
   $("scen").innerHTML = ["low","mid","high"].filter(s=>avail.includes(s)).map(s=>`<button type="button" data-s="${s}" aria-pressed="${s===scenOf(curIt)}">${t(s)}</button>`).join("");
   $("sb-scen").innerHTML = $("scen").innerHTML;
-  [$("scen"),$("sb-scen")].forEach(g=>g.querySelectorAll("button").forEach(b=>b.onclick=()=>{state.scen=b.dataset.s; resetSel(); renderStatic(); render();}));
+  [$("scen"),$("sb-scen")].forEach(g=>g.querySelectorAll("button").forEach(b=>b.onclick=()=>busy(()=>{state.scen=b.dataset.s; resetSel(); renderStatic(); render();})));
   // assumptions
   renderSources();
   const BASE=document.documentElement.dataset.base||"/", fi=$("f-imp"), fp=$("f-priv"); if(fi){ fi.href=BASE+(state.lang==="de"?"impressum/":"en/imprint/"); fi.textContent=state.lang==="de"?"Impressum":"Imprint"; fp.href=BASE+(state.lang==="de"?"datenschutz/":"en/privacy/"); fp.textContent=state.lang==="de"?"Datenschutz":"Privacy"; }
@@ -775,7 +814,7 @@ function renderStatic(){
     + `<optgroup label="${t("grpCustom")}">${ITEMS.filter(i=>i.kind==="custom").map(opt).join("")}</optgroup>`;
   $("sb-select").value = state.item;
   const icons=["sandwich","calendar","shopping-bag","fuel","school","construction","user"];
-  $("chips").innerHTML = t("slides").map((n,i)=>`<button type="button" class="chip" role="tab" data-s="${i}" aria-selected="${i===slide}"><svg><use href="#l-${icons[i]}"/></svg>${n}</button>`).join("");
+  $("chips").innerHTML = t("slides").map((n,i)=>`<button type="button" class="chip" role="tab" data-s="${i}" aria-selected="${i===slide}"><span class="ico l-${icons[i]}" aria-hidden="true"></span>${n}</button>`).join("");
   $("chips").querySelectorAll(".chip").forEach(b=>b.onclick=()=>goSlide(+b.dataset.s));
   $("prev").setAttribute("aria-label",t("prevL")); $("next").setAttribute("aria-label",t("nextL"));
 }
@@ -795,7 +834,8 @@ function saveState(){
 }
 function markSlide(){
   saveState();
-  fitHeight();
+  if(typeof renderStaleNear==="function" && LAST_AMT) renderStaleNear();
+  requestAnimationFrame(fitHeight);
   $("chips").querySelectorAll(".chip").forEach((b,i)=>b.setAttribute("aria-selected",i===slide));
   $("prev").disabled=slide===0; $("next").disabled=slide===slides().length-1;
 }
@@ -803,7 +843,7 @@ function markSlide(){
 function picto(el, legendEl, count, sym, words){
   let unit=1; while(count/unit>120) unit*=10;
   const exact=count/unit, full=Math.floor(exact), part=exact-full;
-  let html=""; for(let i=0;i<full;i++) html+=`<svg><use href="#${sym}"/></svg>`;
+  let html=""; for(let i=0;i<full;i++) html+=`<span class="ico ${sym}" aria-hidden="true"></span>`;
   if(part>=0.05) html+=partIcon(sym.replace(/^l-/,""),part);
   el.innerHTML=html;
   legendEl.textContent = t("perIcon")(nf(unit), words[unit===1?0:1]);
@@ -826,8 +866,8 @@ function render(){
   $("big").className = "big";
   $("hero").style.setProperty("--band", it.kind==="loss"?"var(--band-loss)":"var(--band-gain)");
   $("panels").className = "panels "+(it.kind==="loss"?"loss":"gain");
-  $("hero-use").setAttribute("href","#"+it.icon);
-  $("sb-use").setAttribute("href","#"+it.icon);
+  $("hero-use").className="ico hero-icon "+it.icon;
+  $("sb-use").className="ico "+it.icon;
   $("stickybar").style.setProperty("--sb", it.kind==="loss"?"var(--band-loss)":"var(--band-gain)");
   $("sb-select").value = state.item;
   $("sb-m").textContent = isCustom ? t("customTag") : [it.kind==="gain"?t("gainTag").replace(/ pro Jahr| per year/,""):it.annual?t("costTag").replace(/ pro Jahr| per year/,""):t("lossTag"),
@@ -899,7 +939,7 @@ function openPriceEdit(key){
   const pr=tl.querySelector(".pr"), L=state.lang, cur=Math.round(basePrice(u)*100)/100;
   const unitHint=u.g?t("perItem")(u.g.item[L]):u.m?t("perMonth"):u.y?t("perYear"):"";
   pr.innerHTML=`<span class="pform"><label class="vh" for="pf-in">${t("editPrice")}</label><input id="pf-in" type="text" inputmode="decimal" enterkeyhint="done" autocomplete="off" value="${fmtIn(cur)}"><span>€${unitHint}</span>
-    <button type="button" class="pf-ok">${t("save")}</button>${isEdited(u)?`<button type="button" class="pf-reset" title="${t("resetPrice")}"><svg><use href="#l-rotate-ccw"/></svg>${t("resetPrice")}</button>`:""}</span>`;
+    <button type="button" class="pf-ok">${t("save")}</button>${isEdited(u)?`<button type="button" class="pf-reset" title="${t("resetPrice")}"><span class="ico l-rotate-ccw" aria-hidden="true"></span>${t("resetPrice")}</button>`:""}</span>`;
   const inp=pr.querySelector("input"); inp.focus(); inp.select();
   const save=()=>{ const v=parseNum(inp.value); if(v>0){ if(Math.abs(v-defaultBase(u))>0.005) PRICE_OV[u.n.de]=v; else delete PRICE_OV[u.n.de]; saveState(); renderStatic(); render(); } };
   pr.querySelector(".pf-ok").onclick=save;
@@ -919,7 +959,7 @@ function renderCompare(amt){
   $("sel-all").textContent = isAll ? t("selAllOff") : t("selAll");
   $("sel-count").textContent=t("selCount")(rows.length);
   $("sel-chips").innerHTML=state.sel.map(key=>{const [k,i]=key.split(":"); const u=UNITS[k]&&UNITS[k][+i]; if(!u) return "";
-    return `<button type="button" class="selchip" data-unsel="${key}" aria-label="${t("selRemove")}: ${u.n[L]}"><svg><use href="#l-${u.e}"/></svg>${u.n[L]}<span class="x"><svg><use href="#l-x"/></svg></span></button>`;}).join("");
+    return `<button type="button" class="selchip" data-unsel="${key}" aria-label="${t("selRemove")}: ${u.n[L]}"><span class="ico l-${u.e}" aria-hidden="true"></span>${u.n[L]}<span class="x"><span class="ico l-x" aria-hidden="true"></span></span></button>`;}).join("");
   $("sel-chips").querySelectorAll("[data-unsel]").forEach(b=>b.onclick=()=>{state.sel=state.sel.filter(k=>k!==b.dataset.unsel); render();});
   $("sel-empty").hidden=rows.length>0; $("sel-sep").hidden=rows.length===0; $("dots-wrap").hidden=rows.length===0; $("sel-clear").hidden=rows.length===0;
   if(!rows.length) return;
@@ -1042,7 +1082,7 @@ function renderSources(){
 document.addEventListener("click",e=>{
   if(e.target.closest(".pform")) return;
   const ed=e.target.closest(".pedit"); if(ed){ e.stopPropagation(); openPriceEdit(ed.dataset.edit); return; }
-  const tl=e.target.closest(".tile[data-key]"); if(tl) toggleSel(tl.dataset.key);});
+  const tl=e.target.closest(".tile[data-key]"); if(tl) busy(()=>toggleSel(tl.dataset.key));});
 document.addEventListener("keydown",e=>{ if(e.target.closest(".pform,.pedit")) return; const tl=e.target.closest(".tile[data-key]"); if(tl&&(e.key==="Enter"||e.key===" ")){e.preventDefault();toggleSel(tl.dataset.key);}});
 (function(){
   // Show the bar as soon as the estimate/years controls have scrolled out above the viewport (also right on load when the page opens scrolled down).
@@ -1052,24 +1092,24 @@ document.addEventListener("keydown",e=>{ if(e.target.closest(".pform,.pedit")) r
   if("IntersectionObserver" in window) new IntersectionObserver(check).observe(anchor);
   addEventListener("scroll",()=>{ if(bar.classList.contains("show")!==past()) check(); },{passive:true});
   addEventListener("load",check);
-  $("sb-select").onchange=e=>selectItem(e.target.value);
+  $("sb-select").onchange=e=>busy(()=>selectItem(e.target.value));
 })();
 $("pick-q").oninput=e=>{ state.pq=e.target.value; renderStatic(); };
 $("pick-area").onchange=e=>{ state.parea=e.target.value; renderStatic(); };
-$("top-more").onclick=()=>{ topMore=!topMore; render(); };
+$("top-more").onclick=()=>busy(()=>{ topMore=!topMore; render(); });
 document.addEventListener("change",e=>{
   const el=e.target.closest(".inl"); if(!el) return; const v=parseNum(el.value); if(!(v>0)) { render(); return; }
   if(el.dataset.a){ A[el.dataset.a]=v; A_EDIT[el.dataset.a]=true; }
   else if(el.dataset.p){ const u=Object.values(UNITS).flat().find(x=>x.n&&x.n.de===el.dataset.p); if(u){ if(Math.abs(v-defaultBase(u))>0.005) PRICE_OV[u.n.de]=v; else delete PRICE_OV[u.n.de]; } }
-  resetSel(); saveState(); renderStatic(); render();
+  busy(()=>{ resetSel(); saveState(); renderStatic(); render(); });
 });
 document.addEventListener("keydown",e=>{ const el=e.target.closest&&e.target.closest(".inl"); if(el&&e.key==="Enter"){ e.preventDefault(); el.blur(); } });
-$("a-reset").onclick=()=>{ Object.assign(A,A_DEF); A_EDIT={}; applyProfile(); resetSel(); saveState(); renderStatic(); render(); };
-$("p-reset").onclick=()=>{ PRICE_OV={}; resetSel(); saveState(); renderStatic(); render(); };
+$("a-reset").onclick=()=>busy(()=>{ Object.assign(A,A_DEF); A_EDIT={}; applyProfile(); resetSel(); saveState(); renderStatic(); render(); });
+$("p-reset").onclick=()=>busy(()=>{ PRICE_OV={}; resetSel(); saveState(); renderStatic(); render(); });
 $("prof-done").onclick=()=>{ PROFILE._closed=true; saveProfile(); renderProfile(); };
 $("prof-edit").onclick=()=>{ PROFILE._closed=false; saveProfile(); renderProfile(); $("qs").querySelector("button")?.focus(); };
 $("prof-reset").onclick=()=>{ PROFILE={}; saveProfile(); applyProfile(); resetSel(); renderStatic(); render(); };
-$("sel-clear").onclick=()=>{state.sel=[];selBeforeAll=null;render();};
+$("sel-clear").onclick=()=>busy(()=>{state.sel=[];selBeforeAll=null;render();});
 $("dots").addEventListener("click",e=>{const g=e.target.closest(".rm")&&e.target.closest("[data-unsel]"); if(g){state.sel=state.sel.filter(k=>k!==g.dataset.unsel); render();}});
 $("dots").addEventListener("keydown",e=>{const g=e.target.closest("[data-unsel]"); if(g&&(e.key==="Enter"||e.key===" "||e.key==="Delete"||e.key==="Backspace")){e.preventDefault(); state.sel=state.sel.filter(k=>k!==g.dataset.unsel); render();}});
 $("sel-all").onclick=()=>{ const all=allUnitKeys();
@@ -1079,10 +1119,10 @@ $("sel-all").onclick=()=>{ const all=allUnitKeys();
 $("prev").onclick=()=>goSlide(slide-1);
 $("next").onclick=()=>goSlide(slide+1);
 let st; $("panels").addEventListener("scroll",()=>{clearTimeout(st);st=setTimeout(()=>{const P=$("panels");slide=Math.round(P.scrollLeft/(P.clientWidth+16));markSlide();},80);});
-$("lang-de").onclick=()=>{state.lang="de";renderStatic();render();};
-$("lang-en").onclick=()=>{state.lang="en";renderStatic();render();};
-for(const id of ["years","sb-years"]) $(id).oninput=e=>{state.years=+e.target.value; resetSel(); render();};
-for(const id of ["custom","sb-custom"]) $(id).oninput=e=>{const v=parseFloat(e.target.value); if(v>=0){state.custom=v; resetSel(); render();}};
+$("lang-de").onclick=()=>busy(()=>{state.lang="de";renderStatic();render();});
+$("lang-en").onclick=()=>busy(()=>{state.lang="en";renderStatic();render();});
+for(const id of ["years","sb-years"]) $(id).oninput=e=>{state.years=+e.target.value; resetSel(); renderSoon();};
+for(const id of ["custom","sb-custom"]) $(id).oninput=e=>{const v=parseFloat(e.target.value); if(v>=0){state.custom=v; resetSel(); renderSoon();}};
 // Restore the last session (topic, estimate, years, own amount, language, comparison, slide, assumptions); a #topic link still wins.
 const saved=loadState();
 if(saved){

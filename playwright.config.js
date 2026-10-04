@@ -1,6 +1,6 @@
 import { defineConfig, devices } from "@playwright/test";
 
-// Runs against the built site (npm run build first); desktop and phone, light and dark.
+// Runs against the built site (pnpm build first); desktop and phone, light and dark.
 export default defineConfig({
   testDir: "tests/e2e",
   fullyParallel: true,
@@ -8,7 +8,7 @@ export default defineConfig({
   retries: process.env.CI ? 1 : 0,
   reporter: process.env.CI ? [["html", { open: "never" }], ["github"]] : "list",
   use: { baseURL: "http://localhost:4321/billions-you-can-touch/", trace: "on-first-retry" },
-  webServer: { command: "npm run preview -- --port 4321", url: "http://localhost:4321/billions-you-can-touch/", reuseExistingServer: !process.env.CI },
+  webServer: { command: "pnpm preview --port 4321", url: "http://localhost:4321/billions-you-can-touch/", reuseExistingServer: !process.env.CI },
   projects: [
     { name: "desktop-light", use: { ...devices["Desktop Chrome"], colorScheme: "light" } },
     { name: "desktop-dark", use: { ...devices["Desktop Chrome"], colorScheme: "dark" } },

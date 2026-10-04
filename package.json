@@ -33,12 +33,12 @@
     "vitest": "^2.1.0"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=24"
   },
-  "allowScripts": {
-    "esbuild@0.27.7": true,
-    "esbuild@0.21.5": true,
-    "esbuild@0.25.12": true,
-    "sharp": false
+  "packageManager": "pnpm@10.34.6+sha512.7e1ae66a83a9143c118cc1944f37cc4f2b8acddeda4b001cfa78908f6e46e45e15292739ca6c9d026426cc757e9318cc98c5551d6a16c165097b0028ba87b4e6",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
   }
 }

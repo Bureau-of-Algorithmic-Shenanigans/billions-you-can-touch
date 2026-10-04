@@ -38,6 +38,8 @@ test("inline values accept German decimals", async ({ page }) => {
 test("settings survive a reload", async ({ page }) => {
   await page.goto("./");
   await page.locator('.pick[data-id="cumex"]').click();
+  // the change is applied behind the busy overlay, one frame later
+  await expect(page.locator("#sb-select")).toHaveValue("cumex");
   await page.reload();
   await expect(page.locator("#sb-select")).toHaveValue("cumex");
 });

@@ -61,3 +61,51 @@ img {
   flex-wrap: wrap;
   font-size: 0.92rem;
 }
+
+/* The sections further down are only laid out when they come into view.
+   This keeps recalculation after a change cheap on large pages. (Not on the slides: their height is measured.) */
+#cmp-topics,
+#cmp-sel,
+.own-vals,
+#src-box {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 1200px;
+}
+
+/* Busy overlay: blocks input at once, the spinner fades in only if the work takes longer than a moment */
+.busy {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  cursor: progress;
+  background: transparent;
+}
+.busy-spin {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 4px solid var(--line);
+  border-top-color: var(--ink);
+  opacity: 0;
+  animation:
+    busy-in 0.15s ease 0.12s forwards,
+    busy-turn 0.8s linear infinite;
+  will-change: transform, opacity;
+}
+@keyframes busy-in {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes busy-turn {
+  to {
+    transform: rotate(1turn);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .busy-spin {
+    animation: busy-in 0.15s ease 0.12s forwards;
+  }
+}

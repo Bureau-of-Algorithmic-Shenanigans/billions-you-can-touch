@@ -243,7 +243,7 @@ summary:focus-visible {
   width: 38px;
   height: 38px;
 }
-.phead .arrows .arrow svg {
+.phead .arrows .arrow :is(svg, .ico) {
   width: 19px;
   height: 19px;
 }
@@ -488,7 +488,7 @@ input[type="number"] {
   gap: 6px;
   align-items: center;
 }
-.chip svg {
+.chip :is(svg, .ico) {
   width: 20px;
   height: 20px;
 }
@@ -514,7 +514,7 @@ input[type="number"] {
   display: inline-grid;
   place-items: center;
 }
-.arrow svg {
+.arrow :is(svg, .ico) {
   width: 22px;
   height: 22px;
   display: block;
@@ -588,7 +588,7 @@ input[type="number"] {
 .picto {
   color: var(--kc);
 }
-.picto svg {
+.picto :is(svg, .ico) {
   width: 30px;
   height: 30px;
 }
@@ -771,7 +771,7 @@ svg text {
   display: grid;
   place-items: center;
 }
-.ring svg {
+.ring :is(svg, .ico) {
   width: 22px;
   height: 22px;
 }
@@ -784,7 +784,7 @@ svg text {
   color: var(--kc);
   margin-bottom: 2px;
 }
-.pbox svg {
+.pbox :is(svg, .ico) {
   width: 100%;
   height: auto;
   aspect-ratio: 1;
@@ -849,11 +849,11 @@ svg text {
   display: block;
   overflow: hidden;
 }
-.pclip svg {
+.pclip :is(svg, .ico) {
   display: block;
   max-width: none;
 }
-.pbox .pclip svg {
+.pbox .pclip :is(svg, .ico) {
   padding: calc(6% / var(--p));
 }
 .pbox-ring {
@@ -1067,7 +1067,7 @@ svg text {
   font-size: 0.9rem;
   background: var(--paper);
 }
-.prof-preview .pv svg {
+.prof-preview .pv :is(svg, .ico) {
   width: 18px;
   height: 18px;
 }
@@ -1158,7 +1158,7 @@ svg text {
   color: var(--muted);
   cursor: pointer;
 }
-.pedit svg {
+.pedit :is(svg, .ico) {
   width: 13px;
   height: 13px;
 }
@@ -1209,7 +1209,7 @@ svg text {
   background: var(--card);
   color: var(--ink);
 }
-.pform .pf-reset svg {
+.pform .pf-reset :is(svg, .ico) {
   width: 12px;
   height: 12px;
 }
@@ -1315,7 +1315,7 @@ svg text {
   gap: 4px;
   color: var(--kc);
 }
-.pflow svg {
+.pflow :is(svg, .ico) {
   width: 30px;
   height: 30px;
 }
@@ -1482,7 +1482,7 @@ svg text {
   color: var(--muted);
   background: var(--card);
 }
-.selmark svg {
+.selmark :is(svg, .ico) {
   width: 15px;
   height: 15px;
 }
@@ -1527,7 +1527,7 @@ svg text {
   padding: 5px 6px 5px 10px;
   cursor: pointer;
 }
-.selchip svg {
+.selchip :is(svg, .ico) {
   width: 18px;
   height: 18px;
 }
@@ -1540,7 +1540,7 @@ svg text {
   background: var(--ink);
   color: var(--paper);
 }
-.selchip .x svg {
+.selchip .x :is(svg, .ico) {
   width: 13px;
   height: 13px;
 }
@@ -1603,7 +1603,7 @@ svg text {
   align-items: center;
   gap: 12px;
 }
-.sb-in > svg {
+.sb-in > :is(svg, .ico) {
   width: 30px;
   height: 30px;
   flex: none;
