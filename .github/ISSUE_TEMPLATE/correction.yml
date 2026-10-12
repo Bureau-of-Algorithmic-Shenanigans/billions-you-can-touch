@@ -1,0 +1,17 @@
+name: Korrektur / Correction
+description: Eine Zahl, ein Text oder eine Quelle stimmt nicht (mehr). / A figure, text or source is wrong or outdated.
+title: "Korrektur: "
+labels: [data, correction]
+body:
+  - type: input
+    id: where
+    attributes: { label: Wo? / Where?, description: "Thema oder Kachel / Topic or tile", placeholder: "z. B. Kachel „Döner“ oder Thema „Cum-Ex“" }
+    validations: { required: true }
+  - type: textarea
+    id: what
+    attributes: { label: Was stimmt nicht? / What is wrong?, description: "Und was wäre richtig? / And what would be right?" }
+    validations: { required: true }
+  - type: textarea
+    id: sources
+    attributes: { label: Quelle / Source }
+    validations: { required: true }

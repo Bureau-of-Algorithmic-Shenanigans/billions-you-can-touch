@@ -1,0 +1,41 @@
+# yaml-language-server: $schema=../schemas/topic.schema.json
+icon: scroll-text
+kind: gain
+annual: true
+title: { de: Erbschaftsteuer durchsetzen, en: Enforce the inheritance tax }
+short: { de: Ausnahmen für große Betriebsvermögen streichen, en: End exemptions for large business assets }
+who:
+  de: Diskutiert in SPD, Grünen; Reformvorschläge u. a. vom DIW und Netzwerk Steuergerechtigkeit
+  en: Debated in the SPD and Greens; reform proposals from DIW and the Tax Justice Network
+context:
+  de: "2024 nahm der Staat 13,3 Mrd. € Erbschaft- und Schenkungsteuer ein. Wer Betriebsvermögen über 26 Mio. € erbt, kann über die „Verschonungsbedarfsprüfung“ Steuern erlassen bekommen: 2024 sparten so allein 45 Großerben 3,4 Mrd. €. Hinzu kommen die regulären Verschonungsabschläge von 85 bzw. 100 %."
+  en: "In 2024 the state collected €13.3 bn in inheritance and gift tax. Heirs of business assets over €26 m can have tax waived via a “needs-based exemption”: in 2024, just 45 large heirs saved €3.4 bn this way. On top come the standard business-asset reliefs of 85% or 100%."
+caveat:
+  de: Wirtschaftsverbände (u. a. DIHK) argumentieren, die Verschonung schütze Arbeitsplätze in Familienunternehmen. Das IW hält hohe Mehreinnahmen für überschätzt.
+  en: Business groups (e.g. DIHK) argue the exemptions protect jobs in family firms. IW considers high revenue expectations overblown.
+estimates:
+  low:
+    amount: 2,3 Mrd.
+    note:
+      de: "DIW-Reformmodell: Vergünstigungen abbauen, dafür höhere Freibeträge (rund 2,3 Mrd. € mehr)."
+      en: "DIW reform model: cut privileges, raise allowances (about €2.3 bn more)."
+  mid:
+    amount: 3,4 Mrd.
+    note:
+      de: "Nur die Verschonungsbedarfsprüfung abschaffen (erlassene Steuer 2024: 3,4 Mrd. €, Destatis)."
+      en: "Abolish only the needs-based exemption (tax waived in 2024: €3.4 bn, Destatis)."
+  high:
+    amount: 5,1 Mrd.
+    note:
+      de: "Alle Ausnahmen für Betriebsvermögen (§§ 13a–c ErbStG) streichen: rund 5,1 Mrd. € (Finanzwende)."
+      en: "Remove all business-asset exemptions (§§ 13a–c ErbStG): about €5.1 bn (Finanzwende)."
+for: [own, kids]
+sources:
+  - title: "DIW: Reformmodelle zur Erbschaftsteuer"
+    url: https://www.diw.de/documents/dokumentenarchiv/%2017/67142/diw_sp0052.pdf
+  - title: "IW: Überzogene Erwartungen an die Erbschaftsteuer"
+    url: https://www.iwd.de/pdf/ueberzogene-erwartungen-an-erbschaftsteuer-525319/
+  - title: Milliarden geerbt, kaum Steuern gezahlt (web.de, Destatis-Daten 2024)
+    url: https://web.de/magazine/politik/inland/milliarden-geerbt-steuern-gezahlt-41732730
+  - title: DIHK für Beibehaltung der Verschonungsregeln
+    url: https://www.dihk.de/de/newsroom/erbschaftsteuer-dihk-plaediert-fuer-beibehaltung-der-verschonungsregelungen-fuer-betriebsvermoegen-178732

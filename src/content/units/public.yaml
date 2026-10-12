@@ -1,0 +1,127 @@
+# yaml-language-server: $schema=../schemas/units.schema.json
+# Slide „Öffentlich: Stellen und Bauten der öffentlichen Hand.“
+# Each entry is one comparison tile; see CONTRIBUTING.md for the fields.
+
+- id: lehrkraft
+  icon: presentation
+  name: { de: Lehrkraft, en: Teacher }
+  price: staffCost
+  period: year
+  count: { de: Stellen ein Jahr lang, en: posts for a year }
+  for: [kids, school]
+
+- id: pflegekraft
+  icon: stethoscope
+  name: { de: Pflegekraft, en: Nurse }
+  price: 60000
+  period: year
+  count: { de: Stellen ein Jahr lang, en: posts for a year }
+  for: [retired]
+
+- id: polizist
+  icon: shield
+  name: { de: Polizist:in, en: Police officer }
+  price: 67400
+  period: year
+  count: { de: Stellen ein Jahr lang, en: posts for a year }
+  for: [big]
+
+- id: krippenplatz
+  icon: blocks
+  name: { de: Krippenplatz (unter 3), en: Nursery place (under 3) }
+  price: 15800
+  period: year
+  count: { de: Kinder ein Jahr lang, en: children for a year }
+  for: [kids]
+
+- id: sozialwohnung-neubau
+  icon: building-2
+  name: { de: Sozialwohnung (Neubau), en: New social housing flat }
+  price: 300000
+  for: [rent, wg, i1, big]
+  notFor: [i4, i5]
+
+- id: kilometer-radweg
+  icon: bike
+  name: { de: Kilometer Radweg, en: Km of cycle path }
+  price: 1 Mio.
+  for: [bike, big]
+
+- id: kita-neubau
+  icon: hammer
+  name: { de: Kita-Neubau, en: New daycare centre }
+  price: 5 Mio.
+  for: [kids, town]
+
+- id: hallenbad
+  icon: waves
+  name: { de: Hallenbad, en: Indoor pool }
+  price: 25 Mio.
+  for: [kids, town]
+
+- id: ice-zug
+  icon: train-front
+  name: { de: ICE-Zug, en: ICE train }
+  price: 35 Mio.
+  for: [transit]
+
+- id: loeschfahrzeug
+  icon: siren
+  name: { de: Löschfahrzeug der Feuerwehr, en: Fire engine }
+  price: 500000
+  for: [rural, town]
+
+- id: schulbuch
+  icon: book-open
+  name: { de: Schulbuch, en: School book }
+  price: 25
+  for: [kids, school]
+
+- id: schul-laptop
+  icon: laptop
+  name: { de: Laptop für Schüler:innen, en: Laptop for a pupil }
+  price: 500
+  for: [kids, school, student]
+
+- id: neubau-einer-schule
+  icon: school
+  name: { de: Neubau einer Schule, en: New school building }
+  price: schoolBuild * 1 Mio.
+  for: [kids]
+
+- id: kollegium-einer-schule
+  icon: users
+  name: { de: Kollegium einer Schule, en: A school's whole staff }
+  price: staff * staffCost
+  period: year
+  count: { de: Schulen ein Jahr lang, en: schools for a year }
+  for: [kids, school]
+
+- id: digitalpakt-schule
+  icon: wifi
+  name: { de: "Digitalpakt Schule (rund 6,5 Mrd. €)", en: School digital pact (about €6.5 bn) }
+  price: 6,5 Mrd.
+
+- id: sanierungsstau-schulen
+  icon: wrench
+  name: { de: Sanierungsstau an Schulen (rund 55 Mrd. €), en: School repair backlog (about €55 bn) }
+  price: 55 Mrd.
+  for: [kids, school]
+
+- id: lehrkraefte-deutschland
+  icon: presentation
+  name: { de: "Alle Lehrkräfte Deutschlands, 1 Jahr", en: "All teachers in Germany, 1 year" }
+  group:
+    size: 800000
+    of: lehrkraft
+    item: { de: Jahresgehälter, en: annual salaries }
+    label: { de: alle Lehrkräfte Deutschlands, en: all teachers in Germany }
+
+- id: lehrkraefte-grossstadt
+  icon: presentation
+  name: { de: "Alle Lehrkräfte einer Großstadt (10.000), 1 Jahr", en: "All teachers of a big city (10,000), 1 year" }
+  group:
+    size: 10000
+    of: lehrkraft
+    item: { de: Jahresgehälter, en: annual salaries }
+    label: { de: alle Lehrkräfte einer Großstadt, en: all teachers of a big city }

@@ -1,0 +1,432 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "icon": {
+      "type": "string",
+      "enum": [
+        "pencil",
+        "rotate-ccw",
+        "chevron-left",
+        "chevron-right",
+        "calendar-x",
+        "percent",
+        "trending-up",
+        "castle",
+        "chef-hat",
+        "flag",
+        "plane-landing",
+        "watch",
+        "wine",
+        "book-open",
+        "calendar-days",
+        "circle-parking",
+        "footprints",
+        "hourglass",
+        "laptop",
+        "map",
+        "radio",
+        "tv",
+        "wifi",
+        "wind",
+        "wrench",
+        "bus",
+        "coins",
+        "croissant",
+        "piggy-bank",
+        "receipt",
+        "shield-check",
+        "siren",
+        "timer",
+        "euro",
+        "flame",
+        "headphones",
+        "luggage",
+        "anchor",
+        "banknote",
+        "car-front",
+        "car-taxi-front",
+        "check",
+        "clock",
+        "factory",
+        "heart",
+        "plug-zap",
+        "plus",
+        "route",
+        "sailboat",
+        "search",
+        "utensils-crossed",
+        "x",
+        "zap",
+        "armchair",
+        "baby",
+        "bed-double",
+        "beer",
+        "bike",
+        "blocks",
+        "briefcase",
+        "building-2",
+        "building",
+        "calculator",
+        "calendar",
+        "car",
+        "clapperboard",
+        "coffee",
+        "construction",
+        "cup-soda",
+        "fuel",
+        "gem",
+        "globe",
+        "goal",
+        "graduation-cap",
+        "hammer",
+        "hard-hat",
+        "heart-handshake",
+        "heater",
+        "hospital",
+        "house",
+        "ice-cream-cone",
+        "landmark",
+        "map-pin",
+        "moon",
+        "music",
+        "plane-takeoff",
+        "plane",
+        "presentation",
+        "sandwich",
+        "school",
+        "scroll-text",
+        "shield-half",
+        "shield",
+        "ship",
+        "shopping-bag",
+        "shopping-cart",
+        "signpost",
+        "smartphone",
+        "stethoscope",
+        "sun",
+        "tent",
+        "ticket",
+        "train-front",
+        "train-track",
+        "tree-palm",
+        "trophy",
+        "user",
+        "users",
+        "utensils",
+        "waves",
+        "mask"
+      ],
+      "description": "Icon name (Lucide, see src/lib/icons.js)"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "loss",
+        "gain"
+      ],
+      "description": "loss: costs taxpayers money; gain: brings money in or saves it"
+    },
+    "annual": {
+      "default": false,
+      "description": "true: the amounts are per year (the page multiplies by the chosen years)",
+      "type": "boolean"
+    },
+    "title": {
+      "type": "object",
+      "properties": {
+        "de": {
+          "type": "string",
+          "minLength": 1
+        },
+        "en": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "de",
+        "en"
+      ],
+      "additionalProperties": false,
+      "description": "Name of the topic"
+    },
+    "short": {
+      "type": "object",
+      "properties": {
+        "de": {
+          "type": "string",
+          "minLength": 1
+        },
+        "en": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "de",
+        "en"
+      ],
+      "additionalProperties": false,
+      "description": "One line under the title, e.g. year or status"
+    },
+    "who": {
+      "description": "Who is responsible or proposes it",
+      "type": "object",
+      "properties": {
+        "de": {
+          "type": "string",
+          "minLength": 1
+        },
+        "en": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "de",
+        "en"
+      ],
+      "additionalProperties": false
+    },
+    "context": {
+      "type": "object",
+      "properties": {
+        "de": {
+          "type": "string",
+          "minLength": 1
+        },
+        "en": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "de",
+        "en"
+      ],
+      "additionalProperties": false,
+      "description": "What happened or what is proposed, in a few sentences"
+    },
+    "caveat": {
+      "description": "Objections and uncertainty",
+      "type": "object",
+      "properties": {
+        "de": {
+          "type": "string",
+          "minLength": 1
+        },
+        "en": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "de",
+        "en"
+      ],
+      "additionalProperties": false
+    },
+    "estimates": {
+      "type": "object",
+      "properties": {
+        "low": {
+          "type": "object",
+          "properties": {
+            "amount": {
+              "description": "Euros: 8, 2,5, 243 Mio., 3,5 Mrd. or a calculation like 866 Mio. / 125500",
+              "anyOf": [
+                {
+                  "type": "number",
+                  "exclusiveMinimum": 0
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "note": {
+              "type": "object",
+              "properties": {
+                "de": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "en": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "de",
+                "en"
+              ],
+              "additionalProperties": false,
+              "description": "What this estimate includes"
+            }
+          },
+          "required": [
+            "amount",
+            "note"
+          ],
+          "additionalProperties": false
+        },
+        "mid": {
+          "type": "object",
+          "properties": {
+            "amount": {
+              "description": "Euros: 8, 2,5, 243 Mio., 3,5 Mrd. or a calculation like 866 Mio. / 125500",
+              "anyOf": [
+                {
+                  "type": "number",
+                  "exclusiveMinimum": 0
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "note": {
+              "type": "object",
+              "properties": {
+                "de": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "en": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "de",
+                "en"
+              ],
+              "additionalProperties": false,
+              "description": "What this estimate includes"
+            }
+          },
+          "required": [
+            "amount",
+            "note"
+          ],
+          "additionalProperties": false
+        },
+        "high": {
+          "type": "object",
+          "properties": {
+            "amount": {
+              "description": "Euros: 8, 2,5, 243 Mio., 3,5 Mrd. or a calculation like 866 Mio. / 125500",
+              "anyOf": [
+                {
+                  "type": "number",
+                  "exclusiveMinimum": 0
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "note": {
+              "type": "object",
+              "properties": {
+                "de": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "en": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "de",
+                "en"
+              ],
+              "additionalProperties": false,
+              "description": "What this estimate includes"
+            }
+          },
+          "required": [
+            "amount",
+            "note"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "mid"
+      ],
+      "additionalProperties": false,
+      "description": "mid is required; low and high are optional"
+    },
+    "for": {
+      "default": [],
+      "description": "Questionnaire answers: school, student, work, retired, alone, wg, partner, kids, big, town, rural, car, transit, bike, rent, own, i1, i2, i3, i4, i5, football, festival, travel, eatout",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "school",
+          "student",
+          "work",
+          "retired",
+          "alone",
+          "wg",
+          "partner",
+          "kids",
+          "big",
+          "town",
+          "rural",
+          "car",
+          "transit",
+          "bike",
+          "rent",
+          "own",
+          "i1",
+          "i2",
+          "i3",
+          "i4",
+          "i5",
+          "football",
+          "festival",
+          "travel",
+          "eatout"
+        ]
+      }
+    },
+    "sources": {
+      "default": [],
+      "description": "Where the figures come from",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Publisher and title"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "title",
+          "url"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "icon",
+    "kind",
+    "title",
+    "short",
+    "context",
+    "estimates"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=../schemas/topic.schema.json
+icon: plane
+kind: gain
+annual: true
+title: { de: Kerosinsteuer einführen, en: Introduce a jet fuel tax }
+short: { de: "EU-weit, auch für internationale Flüge", en: "EU-wide, incl. international flights" }
+who:
+  de: Gefordert u. a. vom Verkehrsclub VCD und Umweltverbänden
+  en: Called for by the transport club VCD and environmental groups
+context:
+  de: Autofahrer zahlen Energiesteuer auf Benzin und Diesel, Fluggesellschaften auf Kerosin nicht. Eine EU-weite Kerosinsteuer inklusive internationaler Flüge brächte Deutschland rund 6 Mrd. € im Jahr.
+  en: Drivers pay energy tax on petrol and diesel, airlines pay none on jet fuel. An EU-wide jet fuel tax incl. international flights would bring Germany about €6 bn a year.
+caveat:
+  de: Airlines und Flughäfen warnen vor teureren Tickets und Verlagerung an Drehkreuze außerhalb der EU.
+  en: Airlines and airports warn of pricier tickets and traffic moving to hubs outside the EU.
+estimates:
+  mid:
+    amount: 6 Mrd.
+    note: { de: Schätzung des VCD., en: VCD estimate. }
+for: [travel]

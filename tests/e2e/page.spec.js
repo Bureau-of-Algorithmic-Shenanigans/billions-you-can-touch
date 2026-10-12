@@ -16,7 +16,7 @@ test("main page renders the default topic", async ({ page }) => {
   await page.goto("./");
   await expect(page).toHaveTitle("Milliarden zum Anfassen");
   await expect(page.locator("#big")).toHaveText(/Mrd\. €/);
-  await expect(page.locator("#tiles-every .tile")).toHaveCount(10);
+  await expect(page.locator("#tiles-everyday .tile")).toHaveCount(10);
 });
 
 test("every icon resolves to a shape", async ({ page }) => {
@@ -47,7 +47,7 @@ test("inline values accept German decimals", async ({ page }) => {
   await price.fill("2,50");
   await price.press("Enter");
   await expect(page.locator('.inl[data-a="price"]')).toHaveValue("2,5");
-  await expect(page.locator("#illus-car .dn-t2")).toContainText("125,00 €");
+  await expect(page.locator("#illus-mobility .dn-t2")).toContainText("125,00 €");
 });
 
 test("settings survive a reload", async ({ page }) => {
@@ -70,6 +70,48 @@ test("settings saved by the prototype are moved to the new key", async ({ page }
   const keys = await page.evaluate(() => Object.keys(localStorage).sort());
   expect(keys).toContain("milliarden-state");
   expect(keys).not.toContain("steuerbeleg-state");
+});
+
+test("settings saved by an older version are migrated", async ({ page }) => {
+  await page.goto("./");
+  await page.evaluate(() => {
+    localStorage.clear();
+    // v2: selection as "slide:index", prices by German unit name, edited assumptions in A/aedit
+    localStorage.setItem(
+      "milliarden-state",
+      JSON.stringify({
+        item: "cumex",
+        sel: ["every:0", "pub:0"],
+        prices: { Döner: 10 },
+        A: { price: 2.5 },
+        aedit: { price: true },
+        av: 2,
+      }),
+    );
+  });
+  await page.reload();
+  await expect(page.locator("#sb-select")).toHaveValue("cumex");
+  await expect(page.locator("#sel-chips .selchip")).toHaveText(["Döner", "Lehrkraft"]);
+  await expect(page.locator('.inl[data-p="doener"]')).toHaveValue("10");
+  await expect(page.locator('.inl[data-a="price"]')).toHaveValue("2,5");
+  const saved = await page.evaluate(() => JSON.parse(localStorage.getItem("milliarden-state")));
+  expect(saved).toMatchObject({
+    v: 3,
+    topic: "cumex",
+    sel: ["doener", "lehrkraft"],
+    prices: { doener: 10 },
+    assumptions: { price: 2.5 },
+  });
+});
+
+test("a price set with the pencil applies to group tiles of the same item", async ({ page }) => {
+  await page.goto("./#masken");
+  const group = page.locator('.tile[data-key="doener-eu"] .pr');
+  await expect(group).toContainText("3,6 Mrd. €");
+  await page.locator('.inl[data-p="doener"]').fill("10");
+  await page.locator('.inl[data-p="doener"]').press("Enter");
+  await expect(group).toContainText("4,5 Mrd. €");
+  await expect(page.locator("#p-reset")).toBeVisible();
 });
 
 test("page never scrolls sideways", async ({ page }) => {

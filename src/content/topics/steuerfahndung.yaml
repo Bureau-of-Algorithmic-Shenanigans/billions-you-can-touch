@@ -1,0 +1,31 @@
+# yaml-language-server: $schema=../schemas/topic.schema.json
+icon: search
+kind: gain
+annual: true
+title: { de: Steuerhinterziehung eintreiben, en: Collect evaded taxes }
+short: { de: Mehr Steuerfahndung und Betriebsprüfung, en: More tax investigators and audits }
+who:
+  de: Gefordert u. a. von der Deutschen Steuer-Gewerkschaft
+  en: Demanded by, among others, the German tax officials' union
+context:
+  de: Die Deutsche Steuer-Gewerkschaft schätzt die Ausfälle durch Steuerhinterziehung auf 50–60 Mrd. € pro Jahr. Schätzungen, die auch Mehrwertsteuerbetrug einrechnen, kommen auf 100 Mrd. € und mehr. In vielen Bundesländern fehlen Betriebsprüfer und Steuerfahnder.
+  en: The tax officials' union estimates losses from tax evasion at €50–60 bn a year. Estimates that include VAT fraud reach €100 bn or more. Many federal states are short of auditors and tax investigators.
+caveat:
+  de: "Niemand kann alles eintreiben. Die drei Werte sind Annahmen dieser Seite: welcher Anteil von 50 Mrd. € sich mit mehr Personal zurückholen ließe."
+  en: Nobody can collect all of it. The three values are this page's assumptions about what share of €50 bn more staff could recover.
+estimates:
+  low:
+    amount: 5 Mrd.
+    note:
+      de: "Annahme: 10 % von 50 Mrd. € werden zusätzlich eingetrieben."
+      en: "Assumption: 10% of €50 bn is recovered."
+  mid:
+    amount: 12,5 Mrd.
+    note: { de: "Annahme: 25 % von 50 Mrd. €.", en: "Assumption: 25% of €50 bn." }
+  high:
+    amount: 25 Mrd.
+    note: { de: "Annahme: 50 % von 50 Mrd. €.", en: "Assumption: 50% of €50 bn." }
+for: [work]
+sources:
+  - title: Wissenschaftlicher Dienst des Bundestags zur Steuerhinterziehung
+    url: https://www.bundestag.de/resource/blob/535300/c59a2798fc5dfec648c356f201206cef/WD-4-096-17-pdf.pdf

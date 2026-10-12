@@ -1,0 +1,39 @@
+# yaml-language-server: $schema=../schemas/topic.schema.json
+icon: gem
+kind: gain
+annual: true
+title: { de: Vermögensteuer einführen, en: Introduce a wealth tax }
+short: { de: Seit 1997 ausgesetzt, en: Suspended since 1997 }
+who:
+  de: Gefordert u. a. von SPD-Linken, Grünen und Die Linke
+  en: Proposed by, among others, the SPD left, the Greens and Die Linke
+context:
+  de: "Die Vermögensteuer wird seit 1997 nicht mehr erhoben, nachdem das Bundesverfassungsgericht die damalige Bewertung von Immobilien beanstandet hatte. Das Aufkommen hängt stark von Freibetrag und Steuersatz ab: Mit hohen Freibeträgen (z. B. 1 % ab 2 Mio. €) schätzte das DIW 10–20 Mrd. € pro Jahr."
+  en: "Germany stopped levying its wealth tax in 1997 after the Constitutional Court objected to how property was valued. Revenue depends heavily on the allowance and rate: with high allowances (e.g. 1% above €2 m), DIW estimated €10–20 bn a year."
+caveat:
+  de: Kritiker (u. a. ifo, IW) warnen vor Ausweichreaktionen, Kapitalabfluss, Belastung von Familienunternehmen und hohem Bewertungsaufwand. Das tatsächliche Aufkommen könnte deutlich niedriger liegen.
+  en: Critics (including ifo and IW) warn of avoidance, capital flight, pressure on family firms and costly valuation. Actual revenue could be much lower.
+estimates:
+  low:
+    amount: 10 Mrd.
+    note:
+      de: Untere DIW-Schätzung (2016) bei hohen Freibeträgen.
+      en: Lower DIW estimate (2016) with high allowances.
+  mid:
+    amount: 20 Mrd.
+    note:
+      de: Obere DIW-Schätzung (2016) bei hohen Freibeträgen.
+      en: Upper DIW estimate (2016) with high allowances.
+  high:
+    amount: 100 Mrd.
+    note:
+      de: "Konzept der Linken (DIW-Berechnung 2026: 100–147 Mrd. €), hier mit 100 Mrd. € angesetzt."
+      en: "Die Linke's model (DIW calculation 2026: €100–147 bn), set at €100 bn here."
+for: [own]
+sources:
+  - title: "DIW Wochenbericht 4/2016: Aufkommenspotential der Vermögensteuer"
+    url: https://www.diw.de/de/diw_01.c.525353.de/publikationen/wochenberichte/2016_04_1/hohes_aufkommenspotential_bei_wiedererhebung_der_vermoegensteuer.html
+  - title: "Rosa-Luxemburg-Stiftung / DIW: Vermögensteuer-Konzept der Linken"
+    url: https://www.rosalux.de/publikation/id/54422/vermoegensteuer-die-linke
+  - title: "Rödl & Partner: Weg zu einer neuen Vermögensteuer (2026)"
+    url: https://www.roedl.com/insights/deutschland-weg-neuen-vermoegensteuer/

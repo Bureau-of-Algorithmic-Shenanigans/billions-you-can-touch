@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=../schemas/topic.schema.json
+icon: car-front
+kind: loss
+annual: true
+title: { de: Dienstwagenprivileg, en: Company-car tax break }
+short: { de: Die Ein-Prozent-Regel, en: The one-percent rule }
+who: { de: "Gilt seit 1996, von allen Regierungen beibehalten", en: "In place since 1996, kept by every government" }
+context:
+  de: Wer einen Firmenwagen auch privat fährt, versteuert pauschal 1 % des Listenpreises pro Monat, egal wie viel privat gefahren wird. Eine Studie für das Umweltbundesamt beziffert die Steuerausfälle für 2024 auf mindestens 4,2 Mrd. €.
+  en: Anyone who also drives a company car privately pays tax on a flat 1% of the list price per month, however much they drive. A study for the Federal Environment Agency puts the revenue loss for 2024 at no less than €4.2 bn.
+caveat:
+  de: Die Wirtschaft verweist auf den geringen Verwaltungsaufwand der Pauschale. Für E-Dienstwagen gelten noch niedrigere Sätze.
+  en: Business groups point to how simple the flat rate is to administer. Electric company cars get even lower rates.
+estimates:
+  mid:
+    amount: 4,2 Mrd.
+    note:
+      de: Mindestens 4,2 Mrd. € pro Jahr (Umweltbundesamt, 2024).
+      en: At least €4.2 bn a year (Federal Environment Agency, 2024).
+for: [car, work]
+sources:
+  - title: "Umweltbundesamt: Pauschale Dienstwagenbesteuerung"
+    url: https://www.umweltbundesamt.de/themen/steuer-umweltwirkungen-der-pauschalen

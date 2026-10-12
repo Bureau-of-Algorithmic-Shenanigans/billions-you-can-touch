@@ -1,0 +1,34 @@
+name: Neues Thema / New topic
+description: Eine politische Entscheidung, die auf die Seite soll – mit Quelle. / A political decision for the page, with a source.
+title: "Thema: "
+labels: [data, topic]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Danke! Ein Thema braucht einen Betrag und mindestens eine öffentliche Quelle. Wer mag, kann es auch direkt als Datei anlegen: siehe [CONTRIBUTING.md](https://github.com/Bureau-of-Algorithmic-Shenanigans/billions-you-can-touch/blob/main/CONTRIBUTING.md).
+        Thanks! A topic needs an amount and at least one public source. You can also add it as a file yourself, see CONTRIBUTING.md.
+  - type: input
+    id: title
+    attributes: { label: Thema / Topic, placeholder: "z. B. Gescheiterte Pkw-Maut" }
+    validations: { required: true }
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Art / Kind
+      options:
+        - Kosten für Steuerzahler (einmalig) / One-off cost
+        - Kosten pro Jahr / Yearly cost
+        - Mehreinnahmen oder Einsparung pro Jahr / Yearly revenue or saving
+    validations: { required: true }
+  - type: input
+    id: amount
+    attributes: { label: Betrag / Amount, description: "Mit Spanne, falls umstritten / With a range if disputed", placeholder: "z. B. 243–330 Mio. €" }
+    validations: { required: true }
+  - type: textarea
+    id: sources
+    attributes: { label: Quellen / Sources, description: Links zu öffentlichen Quellen / Links to public sources }
+    validations: { required: true }
+  - type: textarea
+    id: context
+    attributes: { label: Worum geht es? / What is it about?, description: "Ein paar Sätze, gern mit Einwänden / A few sentences, objections welcome" }

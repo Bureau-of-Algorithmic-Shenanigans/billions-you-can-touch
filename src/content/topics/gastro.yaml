@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=../schemas/topic.schema.json
+icon: utensils-crossed
+kind: loss
+annual: true
+title: { de: 7 % Mehrwertsteuer fürs Restaurant, en: 7% VAT for restaurants }
+short: { de: Dauerhaft seit 1. Januar 2026, en: Permanent since 1 January 2026 }
+who: { de: Bundesregierung aus CDU/CSU und SPD, en: CDU/CSU–SPD federal government }
+context:
+  de: Für Speisen im Restaurant gilt seit 2026 dauerhaft der ermäßigte Satz von 7 % statt 19 %. Bund, Ländern und Gemeinden fehlen dadurch rund 3,6 Mrd. € pro Jahr.
+  en: Since 2026, restaurant meals are permanently taxed at the reduced 7% rate instead of 19%. Federal, state and local budgets lose about €3.6 bn a year.
+caveat:
+  de: Befürworter erwarten stabilere Preise und gesicherte Betriebe. Ob die Senkung bei den Gästen ankommt, ist umstritten.
+  en: Supporters expect steadier prices and safer businesses. Whether diners see lower prices is disputed.
+estimates:
+  mid:
+    amount: 3,6 Mrd.
+    note:
+      de: "Steuerausfall laut Gesetzentwurf: 3,6 Mrd. € pro Jahr."
+      en: "Revenue loss according to the bill: €3.6 bn a year."
+for: [eatout]
+sources:
+  - title: 7 % Mehrwertsteuer für die Gastronomie beschlossen (Hogapage)
+    url: https://www.hogapage.de/nachrichten/politik/branchenpolitik/7-mehrwertsteuer-f%C3%BCr-die-gastronomie-beschlossen/

@@ -1,0 +1,104 @@
+# yaml-language-server: $schema=../schemas/units.schema.json
+# Slide „Pro Kopf & Zeit: Arbeitszeit, Vermögen, Sekunden Steuereinnahmen.“
+# Each entry is one comparison tile; see CONTRIBUTING.md for the fields.
+
+- id: stunden-mindestlohn
+  icon: clock
+  name: { de: Stunden Arbeit zum Mindestlohn, en: Hours of work at minimum wage }
+  price: 13,9
+  count: { de: Stunden, en: hours }
+  short: { de: "Arbeit zum Mindestlohn (13,90 €)", en: work at minimum wage (€13.90) }
+  for: [school, student, work]
+
+- id: arbeitsjahre
+  icon: briefcase
+  name: { de: "Arbeitsjahre (Ø netto, Vollzeit)", en: "Working years (avg. net, full-time)" }
+  price: 34800
+  count: { de: Arbeitsjahre, en: working years }
+  short: { de: "Ø netto, Vollzeit", en: "avg. net, full-time" }
+  for: [work]
+
+- id: arbeitsleben
+  icon: hard-hat
+  name: { de: Arbeitsleben (Ø netto), en: Working lives (avg. net) }
+  price: 1,5 Mio.
+  count: { de: ganze Arbeitsleben, en: whole working lives }
+  short: { de: "Ø netto, rund 43 Berufsjahre", en: "avg. net, about 43 years of work" }
+  for: [work]
+
+- id: stunden-nettolohn
+  icon: timer
+  name: { de: Arbeitsstunden zum Ø-Nettolohn, en: Working hours at avg. net pay }
+  price: 16,76
+  count: { de: Stunden, en: hours }
+  short: { de: "Arbeit zum Ø-Nettolohn (16,76 €)", en: work at avg. net pay (€16.76) }
+  for: [work]
+
+- id: steuerjahre
+  icon: receipt
+  name: { de: Steuerjahre bei 50.000 € brutto (grob), en: Tax years at €50k gross (rough) }
+  price: 9250
+  count: { de: Steuerjahre, en: tax years }
+  short: { de: bei 50.000 € brutto (grob), en: at €50k gross (rough) }
+  for: [work]
+
+- id: einkauf-leben
+  icon: shopping-cart
+  name: { de: Ein Leben lang einkaufen (1 Person), en: A lifetime of groceries (1 person) }
+  price: grocery / persons * 12 * 81
+  count: { de: Leben, en: lifetimes }
+  short: { de: "Einkauf für 1 Person, 81 Jahre lang", en: groceries for 1 person for 81 years }
+  for: [alone]
+
+- id: medianvermoegen
+  icon: piggy-bank
+  name: { de: Medianvermögen eines Haushalts, en: Median household wealth }
+  price: 103200
+  count: { de: Haushalte, en: households }
+  short: { de: mit Medianvermögen (103.200 €), en: "with median wealth (€103,200)" }
+  for: [own, partner, kids]
+
+- id: sekunden-steuereinnahmen
+  icon: coins
+  name: { de: Sekunden Steuereinnahmen Deutschlands, en: Seconds of German tax revenue }
+  price: 991 Mrd. / 31,5576 Mio.
+  count: { de: Sekunden, en: seconds }
+
+- id: minuten-wirtschaftsleistung
+  icon: factory
+  name: { de: Minuten Wirtschaftsleistung Deutschlands, en: Minutes of German GDP }
+  price: 4,4 Bio. / 525960
+  count: { de: Minuten, en: minutes }
+
+- id: stunden-bundeshaushalt
+  icon: hourglass
+  name: { de: Stunden Bundeshaushalt, en: Hours of the federal budget }
+  price: 524,5 Mrd. / 8766
+  count: { de: Stunden, en: hours }
+
+- id: tage-bundeshaushalt
+  icon: calendar-days
+  name: { de: Tage Bundeshaushalt, en: Days of the federal budget }
+  price: 524,5 Mrd. / 365,25
+  count: { de: Tage, en: days }
+
+- id: wochen-wirtschaftsleistung
+  icon: factory
+  name: { de: Wochen Wirtschaftsleistung Deutschlands, en: Weeks of German GDP }
+  price: 4,4 Bio. / 52,18
+  count: { de: Wochen, en: weeks }
+
+- id: 1-euro-pro-kopf
+  icon: users
+  name: { de: 1 € für jede:n in Deutschland, en: €1 for everyone in Germany }
+  price: 83,6 Mio.
+
+- id: 100-euro-pro-kopf
+  icon: users
+  name: { de: 100 € für jede:n in Deutschland, en: €100 for everyone in Germany }
+  price: 83,6 Mio. * 100
+
+- id: steuereinnahmen-jahr
+  icon: coins
+  name: { de: Steuereinnahmen eines ganzen Jahres, en: A whole year of tax revenue }
+  price: 991 Mrd.

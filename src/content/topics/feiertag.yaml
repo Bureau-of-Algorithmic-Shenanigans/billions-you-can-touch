@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=../schemas/topic.schema.json
+icon: calendar-x
+kind: gain
+annual: true
+title: { de: Einen Feiertag streichen, en: Scrap one public holiday }
+short: { de: Ein Arbeitstag mehr im Jahr, en: One more working day a year }
+who:
+  de: Vorschlag u. a. des Instituts der deutschen Wirtschaft (IW)
+  en: Proposed by the German Economic Institute (IW), among others
+context:
+  de: 1995 wurde der Buß- und Bettag gestrichen, um die Pflegeversicherung zu finanzieren. Ein zusätzlicher Arbeitstag bringt mehr Wirtschaftsleistung und laut IW rund 1,5 Mrd. € zusätzliche Steuereinnahmen im Jahr.
+  en: In 1995 a public holiday was scrapped to fund long-term care insurance. One extra working day adds output and, according to IW, about €1.5 bn in tax revenue a year.
+caveat:
+  de: Gewerkschaften und Kirchen lehnen das ab. Ob ein Tag mehr Arbeit wirklich so viel mehr Wirtschaftsleistung bringt, ist unter Ökonomen umstritten.
+  en: Unions and churches oppose it. Economists disagree on whether one more working day really adds that much output.
+estimates:
+  mid:
+    amount: 1,5 Mrd.
+    note: { de: Schätzung des IW Köln., en: IW Cologne estimate. }
+for: [work]
+sources:
+  - title: "IW Köln: Ein zusätzlicher Arbeitstag"
+    url: https://www.iwkoeln.de/presse/iw-nachrichten/christoph-schroeder-ein-zusaetzlicher-arbeits

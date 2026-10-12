@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=../schemas/topic.schema.json
+icon: users
+kind: gain
+annual: true
+title: { de: Ehegattensplitting abschaffen, en: Abolish joint taxation of spouses }
+short: { de: Individualbesteuerung für alle, en: Individual taxation for everyone }
+who:
+  de: Vorschlag u. a. des DIW; diskutiert in SPD und Grünen
+  en: Proposed by DIW, among others; debated in the SPD and the Greens
+context:
+  de: Verheiratete Paare zahlen heute oft weniger Steuer, wenn eine Person deutlich mehr verdient als die andere. Mit vollständiger Individualbesteuerung rechnet das DIW mit rund 15,4 Mrd. € Mehreinnahmen pro Jahr.
+  en: Married couples often pay less tax when one partner earns much more than the other. With full individual taxation, DIW expects about €15.4 bn more revenue a year.
+caveat:
+  de: Befürworter des Splittings sehen die Ehe als Wirtschaftsgemeinschaft geschützt. Für bestehende Ehen wären Übergangsregeln nötig, sonst steigt ihre Steuerlast abrupt.
+  en: Supporters see marriage as an economic unit worth protecting. Existing marriages would need transition rules, or their tax bill would jump.
+estimates:
+  mid:
+    amount: 15,4 Mrd.
+    note: { de: "DIW, vollständige Individualbesteuerung.", en: "DIW, full individual taxation." }
+for: [partner, kids]

@@ -1,0 +1,31 @@
+# yaml-language-server: $schema=../schemas/topic.schema.json
+icon: banknote
+kind: loss
+title: { de: Cum-Ex-Steuerraub, en: Cum-Ex tax heist }
+short: { de: "Erstattung nie gezahlter Steuern, 2001–2012", en: "Refunds of tax never paid, 2001–2012" }
+who:
+  de: Banken, Fonds, Anwälte und Investoren; die Gesetzeslücke wurde erst 2012 geschlossen
+  en: Banks, funds, lawyers and investors; the loophole was only closed in 2012
+context:
+  de: Bei Cum-Ex-Geschäften wurden Aktien rund um den Dividendenstichtag hin- und hergeschoben, bis sich mehrere Beteiligte eine nur einmal gezahlte Kapitalertragsteuer erstatten ließen. Der Bundesgerichtshof stufte das 2021 als Steuerhinterziehung ein. Zurückgeholt hat der Staat bisher nur einen Teil, laut Berichten über 1,8 Mrd. €.
+  en: In Cum-Ex trades, shares were passed back and forth around the dividend date until several parties claimed refunds of a tax that had been paid only once. The Federal Court of Justice ruled it tax evasion in 2021. The state has recovered only part of it, reportedly over €1.8 bn.
+caveat:
+  de: Die Schätzungen liegen weit auseinander, je nachdem ob ähnliche Cum-Cum-Geschäfte mitgezählt werden. Politisch umstritten ist besonders der Umgang Hamburgs mit der Warburg-Bank.
+  en: Estimates vary widely depending on whether similar Cum-Cum trades are included. Hamburg's handling of the Warburg bank remains politically disputed.
+estimates:
+  low:
+    amount: 5,3 Mrd.
+    note: { de: Frühere Schätzung des Bundesfinanzministeriums., en: Earlier estimate by the Federal Finance Ministry. }
+  mid:
+    amount: 10 Mrd.
+    note:
+      de: Schätzung von Prof. Christoph Spengel (Uni Mannheim), nur Cum-Ex.
+      en: Estimate by Prof. Christoph Spengel (University of Mannheim), Cum-Ex only.
+  high:
+    amount: 31,8 Mrd.
+    note: { de: "Spengel inklusive Cum-Cum-Geschäften, 2001–2016.", en: "Spengel including Cum-Cum trades, 2001–2016." }
+sources:
+  - title: Schätzungen zum Cum-Ex-Schaden (Statista)
+    url: https://de.statista.com/infografik/26036/geschaetzter-steuerverlust-durch-cum-cum-und-cum-ex
+  - title: Cum-Ex-Untersuchungsausschuss, Prof. Spengel (Uni Mannheim)
+    url: https://www.bwl.uni-mannheim.de/news/untersuchungsausschuss-zum-cum-ex-finanzskandal/

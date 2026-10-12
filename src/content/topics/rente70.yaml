@@ -1,0 +1,25 @@
+# yaml-language-server: $schema=../schemas/topic.schema.json
+icon: armchair
+kind: gain
+annual: true
+title: { de: Rente mit 70, en: Retire at 70 }
+short: { de: Renteneintrittsalter von 67 auf 70, en: Retirement age from 67 to 70 }
+who:
+  de: Diskutiert u. a. von Ökonomen des ifo-Instituts und Teilen von CDU und FDP
+  en: Discussed by ifo economists and parts of the CDU and FDP
+context:
+  de: Wer erst mit 70 in Rente geht, zahlt länger ein und bezieht kürzer Rente. Das senkt den Bundeszuschuss zur Rentenversicherung nach ifo-Zahlen um rund 18 Mrd. € im Jahr.
+  en: Retiring at 70 means paying in longer and drawing a pension for less time. Based on ifo figures, that cuts the federal pension subsidy by about €18 bn a year.
+caveat:
+  de: Gewerkschaften und Sozialverbände sehen darin eine Rentenkürzung, besonders für Menschen in körperlich harten Berufen, die nicht bis 70 arbeiten können.
+  en: Unions and social groups call it a pension cut, especially for people in physically hard jobs who cannot work until 70.
+estimates:
+  mid:
+    amount: 18 Mrd.
+    note:
+      de: Ersparnis beim Bundeszuschuss auf ifo-Basis, hier als jährliche Entlastung gezählt.
+      en: Saving on the federal subsidy, ifo basis, counted here as annual relief.
+for: [work, retired]
+sources:
+  - title: "ifo: Bundeszuschuss zur Rentenversicherung"
+    url: https://www.ifo.de/en/press-release/2025-11-18/pension-insurance-subsidy-germany-will-swallow-third-tax-revenues

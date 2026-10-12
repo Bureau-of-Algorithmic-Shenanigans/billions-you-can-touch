@@ -1,0 +1,235 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "areas": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "pattern": "^[a-z0-9_]+$"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "de": {
+            "type": "string"
+          },
+          "en": {
+            "type": "string"
+          },
+          "icon": {
+            "type": "string",
+            "enum": [
+              "pencil",
+              "rotate-ccw",
+              "chevron-left",
+              "chevron-right",
+              "calendar-x",
+              "percent",
+              "trending-up",
+              "castle",
+              "chef-hat",
+              "flag",
+              "plane-landing",
+              "watch",
+              "wine",
+              "book-open",
+              "calendar-days",
+              "circle-parking",
+              "footprints",
+              "hourglass",
+              "laptop",
+              "map",
+              "radio",
+              "tv",
+              "wifi",
+              "wind",
+              "wrench",
+              "bus",
+              "coins",
+              "croissant",
+              "piggy-bank",
+              "receipt",
+              "shield-check",
+              "siren",
+              "timer",
+              "euro",
+              "flame",
+              "headphones",
+              "luggage",
+              "anchor",
+              "banknote",
+              "car-front",
+              "car-taxi-front",
+              "check",
+              "clock",
+              "factory",
+              "heart",
+              "plug-zap",
+              "plus",
+              "route",
+              "sailboat",
+              "search",
+              "utensils-crossed",
+              "x",
+              "zap",
+              "armchair",
+              "baby",
+              "bed-double",
+              "beer",
+              "bike",
+              "blocks",
+              "briefcase",
+              "building-2",
+              "building",
+              "calculator",
+              "calendar",
+              "car",
+              "clapperboard",
+              "coffee",
+              "construction",
+              "cup-soda",
+              "fuel",
+              "gem",
+              "globe",
+              "goal",
+              "graduation-cap",
+              "hammer",
+              "hard-hat",
+              "heart-handshake",
+              "heater",
+              "hospital",
+              "house",
+              "ice-cream-cone",
+              "landmark",
+              "map-pin",
+              "moon",
+              "music",
+              "plane-takeoff",
+              "plane",
+              "presentation",
+              "sandwich",
+              "school",
+              "scroll-text",
+              "shield-half",
+              "shield",
+              "ship",
+              "shopping-bag",
+              "shopping-cart",
+              "signpost",
+              "smartphone",
+              "stethoscope",
+              "sun",
+              "tent",
+              "ticket",
+              "train-front",
+              "train-track",
+              "tree-palm",
+              "trophy",
+              "user",
+              "users",
+              "utensils",
+              "waves",
+              "mask"
+            ],
+            "description": "Icon name (Lucide, see src/lib/icons.js)"
+          }
+        },
+        "required": [
+          "de",
+          "en",
+          "icon"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "proposals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "pattern": "^[A-Z0-9]+$",
+            "description": "Unique code in capitals, e.g. RENT48R"
+          },
+          "area": {
+            "type": "string",
+            "description": "Key of one of the areas above"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "revenue",
+              "tax-cut",
+              "saving",
+              "spending"
+            ]
+          },
+          "amount": {
+            "description": "Effect per year in euros, e.g. 0,5 Mrd.",
+            "anyOf": [
+              {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "title": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "de": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "en": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "de",
+                  "en"
+                ],
+                "additionalProperties": false,
+                "description": "Text in German (de) and English (en)"
+              }
+            ],
+            "description": "Title (German, or de/en)"
+          },
+          "buildsOn": {
+            "default": false,
+            "description": "true: builds on another proposal",
+            "type": "boolean"
+          },
+          "source": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "code",
+          "area",
+          "type",
+          "amount",
+          "title",
+          "source"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "areas",
+    "proposals"
+  ],
+  "additionalProperties": false
+}

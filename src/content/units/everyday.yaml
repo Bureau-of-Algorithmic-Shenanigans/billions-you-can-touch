@@ -1,0 +1,195 @@
+# yaml-language-server: $schema=../schemas/units.schema.json
+# Slide „Alltag: kleine Dinge des Alltags, vom Brötchen bis zur Runde Döner für alle in der EU.“
+# Each entry is one comparison tile; see CONTRIBUTING.md for the fields.
+
+- id: doener
+  icon: sandwich
+  name: { de: Döner, en: Döner kebab }
+  price: 8
+  for: [school, student, work, i1, i2, alone, big]
+  notFor: [i5]
+
+- id: mcdonalds-menue
+  icon: cup-soda
+  name: { de: McDonald's-Menü, en: McDonald's meal }
+  price: 10
+  for: [school, student, i1, i2, alone]
+  notFor: [i4, i5]
+
+- id: mensa-essen
+  icon: utensils
+  name: { de: Mensa-Essen, en: Uni canteen meal }
+  price: 4
+  for: [student, i1]
+  notFor: [i4, i5, retired]
+
+- id: bier-im-stadion
+  icon: beer
+  name: { de: Bier im Stadion, en: Stadium beer }
+  price: 5,5
+  for: [football]
+
+- id: kaffee-und-kuchen
+  icon: coffee
+  name: { de: Kaffee & Kuchen, en: Coffee and cake }
+  price: 8
+  for: [retired]
+
+- id: kugel-eis
+  icon: ice-cream-cone
+  name: { de: Kugel Eis, en: Scoop of ice cream }
+  price: 2
+  for: [kids]
+
+- id: kinoticket
+  icon: clapperboard
+  name: { de: Kinoticket, en: Cinema ticket }
+  price: 13
+  for: [school, student, partner]
+
+- id: essen-gehen-zu-zweit
+  icon: utensils-crossed
+  name: { de: Essen gehen zu zweit, en: Dinner out for two }
+  price: 80
+  for: [eatout, partner, i3, i4]
+
+- id: broetchen
+  icon: croissant
+  name: { de: Brötchen, en: Bread roll }
+  price: 0,45
+  for: [school, retired, i1, i2]
+
+- id: musik-streaming-abo
+  icon: headphones
+  name: { de: Musik-Streaming-Abo, en: Music streaming plan }
+  price: 11,99
+  count: { de: Abo-Monate, en: subscription months }
+  short: { de: Musik-Streaming, en: music streaming }
+  priceNote: { de: "11,99 € pro Monat", en: €11.99 per month }
+  for: [school, student, festival, alone]
+
+- id: doener-koeln
+  icon: sandwich
+  name: { de: Ein Döner für alle in Köln, en: A Döner for everyone in Cologne }
+  for: [big]
+  group:
+    size: 1,08 Mio.
+    of: doener
+    item: { de: Döner, en: Döner }
+    label: { de: eine Runde für alle in Köln, en: a round for everyone in Cologne }
+
+- id: mensa-alle-studierenden
+  icon: utensils
+  name: { de: Ein Mensa-Essen für alle Studierenden, en: A canteen meal for every student }
+  for: [student]
+  group:
+    size: 2,87 Mio.
+    of: mensa-essen
+    item: { de: Mensa-Essen, en: canteen meals }
+    label: { de: eine Runde für alle Studierenden, en: a round for every student }
+
+- id: eis-deutschland
+  icon: ice-cream-cone
+  name: { de: Eine Kugel Eis für ganz Deutschland, en: A scoop of ice cream for all of Germany }
+  group:
+    size: 83,6 Mio.
+    of: kugel-eis
+    item: { de: Kugeln Eis, en: scoops of ice cream }
+    label: { de: eine Runde für ganz Deutschland, en: a round for all of Germany }
+
+- id: kino-deutschland
+  icon: clapperboard
+  name: { de: Ein Kinoabend für ganz Deutschland, en: A cinema night for all of Germany }
+  group:
+    size: 83,6 Mio.
+    of: kinoticket
+    item: { de: Kinotickets, en: cinema tickets }
+    label: { de: ein Kinoabend für ganz Deutschland, en: a night at the movies for all of Germany }
+
+- id: doener-eu
+  icon: sandwich
+  name: { de: Ein Döner für alle in der EU, en: A Döner for everyone in the EU }
+  group:
+    size: 450 Mio.
+    of: doener
+    item: { de: Döner, en: Döner }
+    label: { de: eine Runde für alle in der EU, en: a round for everyone in the EU }
+
+- id: kaffee-kuchen-berlin-jahr
+  icon: coffee
+  name: { de: Ein Jahr täglich Kaffee & Kuchen für Berlin, en: "Coffee and cake daily for Berlin, one year" }
+  group:
+    size: 3,9 Mio. * 365
+    of: kaffee-und-kuchen
+    item: { de: Kaffee & Kuchen, en: coffee and cake }
+    label: { de: ein Jahr lang täglich für ganz Berlin, en: daily for all of Berlin for a year }
+
+- id: broetchen-deutschland-jahr
+  icon: croissant
+  name: { de: Ein Jahr täglich zwei Brötchen für ganz Deutschland, en: "Two rolls a day for all of Germany, one year" }
+  group:
+    size: 83,6 Mio. * 2 * 365
+    of: broetchen
+    item: { de: Brötchen, en: bread rolls }
+    label: { de: ein Jahr lang täglich zwei für ganz Deutschland, en: two a day for all of Germany for a year }
+
+- id: bier-welt
+  icon: beer
+  name: { de: Ein Bier für alle Menschen der Welt, en: A beer for everyone on Earth }
+  group:
+    size: 8,1 Mrd.
+    of: bier-im-stadion
+    item: { de: Bier, en: beers }
+    label: { de: eine Runde für die ganze Welt, en: a round for the whole world }
+
+- id: doener-deutschland-jahr
+  icon: sandwich
+  name: { de: Ein Jahr täglich Döner für ganz Deutschland, en: "A daily Döner for all of Germany, one year" }
+  group:
+    size: 83,6 Mio. * 365
+    of: doener
+    item: { de: Döner, en: Döner }
+    label: { de: ein Jahr lang täglich für ganz Deutschland, en: daily for all of Germany for a year }
+
+- id: kaffee-kuchen-dorf
+  icon: coffee
+  name:
+    de: Kaffee & Kuchen für ein ganzes Dorf (1.000 Leute)
+    en: Coffee and cake for a whole village (1,000 people)
+  group:
+    size: 1000
+    of: kaffee-und-kuchen
+    item: { de: Kaffee & Kuchen, en: coffee and cake }
+    label: { de: eine Runde für ein Dorf mit 1.000 Leuten, en: "a round for a village of 1,000" }
+
+- id: eis-freibad
+  icon: ice-cream-cone
+  name: { de: Eis für ein volles Freibad (5.000 Gäste), en: "Ice cream for a full open-air pool (5,000 guests)" }
+  group:
+    size: 5000
+    of: kugel-eis
+    item: { de: Kugeln Eis, en: scoops of ice cream }
+    label: { de: eine Runde für ein volles Freibad, en: a round for a full open-air pool }
+
+- id: doener-stadion
+  icon: sandwich
+  name: { de: Ein Döner für ein ausverkauftes Stadion (75.000), en: "A Döner for a sold-out stadium (75,000)" }
+  group:
+    size: 75000
+    of: doener
+    item: { de: Döner, en: Döner }
+    label: { de: eine Runde fürs ausverkaufte Stadion, en: a round for a sold-out stadium }
+
+- id: sternemenue
+  icon: chef-hat
+  name: { de: Menü im Sternerestaurant (pro Person), en: Tasting menu at a Michelin-star restaurant (per person) }
+  price: 250
+  for: [i4, i5, eatout]
+  notFor: [i1, i2]
+
+- id: flasche-champagner
+  icon: wine
+  name: { de: Flasche Champagner, en: Bottle of champagne }
+  price: 60
+  for: [i4, i5, partner]
+  notFor: [i1]

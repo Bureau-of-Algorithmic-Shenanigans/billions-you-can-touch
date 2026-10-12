@@ -565,19 +565,6 @@ input[type="number"] {
   font-size: 0.92rem;
   color: var(--muted);
 }
-.picto {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 3px;
-  color: var(--ink);
-}
-.picto {
-  color: var(--kc);
-}
-.picto :is(svg, .ico) {
-  width: 30px;
-  height: 30px;
-}
 
 .panels {
   --kc: var(--loss);
@@ -588,10 +575,7 @@ input[type="number"] {
 .trip {
   border-top-width: 4px !important;
 }
-.picto .pcell {
-  width: 30px;
-  height: 30px;
-}
+
 .legend {
   font: 0.74rem var(--f-mono);
   color: var(--muted);
@@ -763,19 +747,6 @@ svg text {
   color: var(--card);
 }
 
-.pcell {
-  display: block;
-  min-width: 0;
-}
-.pclip {
-  display: block;
-  overflow: hidden;
-}
-.pclip :is(svg, .ico) {
-  display: block;
-  max-width: none;
-}
-
 .pleg {
   font: 0.68rem var(--f-mono);
   color: var(--muted);
@@ -783,9 +754,7 @@ svg text {
 .tile.mega .pleg {
   color: var(--card);
 }
-.tile.few .reps .part {
-  opacity: 0.3;
-}
+
 .tile.few .c {
   font-size: 1.6rem;
 }
@@ -820,10 +789,6 @@ svg text {
 .tile.mega .ctx {
   border-top-color: currentColor;
   font-weight: 600;
-}
-.tier-hint {
-  font: 0.74rem var(--f-mono);
-  color: var(--muted);
 }
 
 /* Remove button on chart labels: shows on hover or focus; always visible on touch screens */
@@ -1214,26 +1179,7 @@ svg text {
 .illus:empty {
   display: none;
 }
-.ihead {
-  display: flex;
-  gap: 16px;
-  align-items: center;
-}
 
-.pflow {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px;
-  color: var(--kc);
-}
-.pflow :is(svg, .ico) {
-  width: 30px;
-  height: 30px;
-}
-.pflow .pcell {
-  width: 30px;
-  height: 30px;
-}
 .dn {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -1672,19 +1618,7 @@ summary {
   font-size: 1.3rem;
   text-transform: uppercase;
 }
-.assume {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 14px;
-  margin-top: 14px;
-}
-.assume .ctl input {
-  width: 100%;
-}
-.assume .hint {
-  font-size: 0.78rem;
-  color: var(--muted);
-}
+
 .sources {
   font-size: 0.9rem;
   display: flex;

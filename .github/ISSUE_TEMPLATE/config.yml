@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Wie man Daten beiträgt / How to contribute data
+    url: https://github.com/Bureau-of-Algorithmic-Shenanigans/billions-you-can-touch/blob/main/CONTRIBUTING.md
+    about: Themen, Kacheln und Quellen sind YAML-Dateien, die man direkt auf GitHub bearbeiten kann. / Topics, tiles and sources are YAML files you can edit on GitHub.

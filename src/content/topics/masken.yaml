@@ -1,0 +1,37 @@
+# yaml-language-server: $schema=../schemas/topic.schema.json
+icon: mask
+kind: loss
+title: { de: Spahns Masken-Deals, en: Spahn's mask deals }
+short: { de: Corona-Maskenbeschaffung 2020, en: "COVID mask procurement, 2020" }
+who:
+  de: Jens Spahn (CDU), Bundesgesundheitsminister 2018–2021
+  en: Jens Spahn (CDU), Federal Health Minister 2018–2021
+context:
+  de: Der Bund kaufte 5,8 Mrd. Schutzmasken für 5,9 Mrd. €. Nur 1,7 Mrd. wurden im Inland verteilt, mehr als die Hälfte wurde oder wird vernichtet. Der Bundesrechnungshof spricht von „massiver Überbeschaffung“. Aus dem Open-House-Verfahren (4,50 € je Maske) laufen rund 100 Klagen mit 2,3 Mrd. € Streitwert.
+  en: The federal government bought 5.8 bn masks for €5.9 bn. Only 1.7 bn were distributed in Germany; more than half have been or will be destroyed. The Federal Audit Office calls it “massive over-procurement”. About 100 lawsuits worth €2.3 bn are still pending from the open-house procedure (€4.50 per mask).
+caveat:
+  de: Ein Teil der Beschaffung war in der Notlage 2020 begründet. Wie viel davon „Schaden“ ist, ist politisch umstritten; die Klagen sind noch nicht entschieden.
+  en: Some of the purchasing was justified by the 2020 emergency. How much of it counts as “damage” is politically disputed, and the lawsuits are undecided.
+estimates:
+  low:
+    amount: 517 Mio.
+    note:
+      de: "Nur Folgekosten: Lagerung, Logistik, Vernichtung, Beratung (rund 517 Mio. €)."
+      en: "Follow-up costs only: storage, logistics, destruction, consultants (about €517 m)."
+  mid:
+    amount: 3,5 Mrd.
+    note:
+      de: Folgekosten plus Kaufpreis der nie genutzten Masken (gut die Hälfte von 5,9 Mrd. €).
+      en: Follow-up costs plus the purchase price of masks never used (just over half of €5.9 bn).
+  high:
+    amount: 5,8 Mrd.
+    note:
+      de: Wie „Mittel“, und der Bund verliert alle Open-House-Klagen (2,3 Mrd. € Streitwert, ohne Zinsen).
+      en: As “Middle”, plus the government loses every open-house lawsuit (€2.3 bn, before interest).
+sources:
+  - title: Bundesrechnungshof zu Spahns Masken (ZDFheute)
+    url: https://www.zdfheute.de/politik/deutschland/corona-masken-bericht-bundesrechnungshof-spahn-100.html
+  - title: 517 Mio. € Folgekosten wegen Maskenkäufen (Stuttgarter Zeitung)
+    url: https://www.stuttgarter-zeitung.de/politik/haelfte-der-masken-nicht-verwendet-517-millionen-euro-an-folgekosten-wegen-maskenkaeufen-79144186.html
+  - title: Folgekosten nach Maskenkäufen (Ärzteblatt)
+    url: https://www.aerzteblatt.de/themen/prozesse-skandale/weiter-folgekosten-in-millionenhohe-nach-maskenkaufen-876446cd-d5e3-4add-bb38-23fb583c0d3d

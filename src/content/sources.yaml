@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=./schemas/sources.schema.json
+# General sources: assumptions and comparison values. Sources of a topic go into its file.
+
+- title: "ADAC-Wochenschnitt Super E10: 2,267 € (23.09.2026, via ad-hoc-news)"
+  url: https://www.ad-hoc-news.de/wirtschaft/super-e10-wird-im-bundesweiten-wochenschnitt-guenstiger-waehrend-diesel/70165509
+- title: "BDEW-Strompreisanalyse 2026 (Haushalte: 37,0 ct/kWh)"
+  url: https://www.bdew.de/service/daten-und-grafiken/bdew-strompreisanalyse/
+- title: "BBSR: Angebotsmieten 2025 nach Kreistypen"
+  url: https://www.bbsr.bund.de/BBSR/DE/startseite/topmeldungen/entwicklung-wohnungsmieten-2025.html
+- title: WG-Zimmer-Preise (Moses Mendelssohn Institut, via Studis Online)
+  url: https://www.studis-online.de/studienkosten/wg-zimmer-mietspiegel.php
+- title: "BMF: Personalkostensätze 2025 (Polizei, Lehrkräfte)"
+  url: https://www.bundesfinanzministerium.de/Content/DE/Standardartikel/Themen/Oeffentliche_Finanzen/Bundeshaushalt/personalkosten-sachkosten.html
+- title: Bauarbeiter-Verdienst laut Destatis-Schätzmodell (bau.bi)
+  url: https://bau.bi/baumagazin/wirtschaft-politik/gehaelter-was-bau-fachkraefte-wirklich-verdienen-b21292
+- title: "SOKA-BAU: Beiträge der Bauwirtschaft"
+  url: https://api.soka-bau.de/fileadmin/Dokumente/aktiv-fuer-die-bauwirtschaft.pdf
+- title: "Mehrwertsteuer: Belastung nach Einkommen (DATEV Magazin)"
+  url: https://www.datev-magazin.de/nachrichten-steuern-recht/wirtschaft/mehrwertsteuererhoehung-belastet-aermere-familien-und-die-konjunktur-auch-bei-gleichzeitiger-reduzierung-fuer-grundbedarf-145994
+- title: "Berlin: Blickpunkt Schule 2024/25"
+  url: https://www.berlin.de/sen/bildung/schule/bildungsstatistik/blickpunkt-schule-2024_25.pdf
+- title: Schulzahlen Hamburg, Köln, Leipzig, Frankfurt (findeschule.de)
+  url: https://findeschule.de/werkzeuge/schulranking/
+- title: "BMF: Steuerschätzung Oktober 2025 (Steuereinnahmen 2025: rund 991 Mrd. €)"
+  url: https://www.bundesfinanzministerium.de/Monatsberichte/Ausgabe/2025/11/Inhalte/Kapitel-2-Analysen/2-1-steuerschaetzung-oktober-2025.html?nn=237786
+- title: "Deutsche Rentenversicherung: Finanzen 2025"
+  url: https://www.deutsche-rentenversicherung.de/DRV/DE/Ueber-uns-und-Presse/Presse/Pressemitteilungen/Pressemitteilungen-archiv/2025/2025-12-10-bvv-gunkel
+- title: "Bundestag hib 619/2026: Rentenzahlbeträge 2025"
+  url: https://www.bundestag.de/presse/hib/kurzmeldungen-1201366
+- title: "Bundesagentur für Arbeit: Bilanz der Familienkasse 2025 (Kindergeld 55,3 Mrd. €)"
+  url: https://www.arbeitsagentur.de/presse/2026-04-familien-im-blick-die-bilanz-der-familienkasse-2025
+- title: "Destatis: BAföG 2025"
+  url: https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/08/PD26_274_214.html
+- title: Bürgergeld-Zahlungen steigen auf 47 Mrd. € (Schwäbische)
+  url: https://www.schwaebische.de/politik/buergergeld-zahlungen-steigen-auf-47-milliarden-euro-3810611
+- title: "Bundesbank: Vermögensbefragung 2023 (Median 103.200 €)"
+  url: https://www.bundesbank.de/de/aufgaben/themen/bundesbank-studie-vermoegen-in-deutschland-steigen-nominal-gehen-aber-real-zurueck-ungleichheit-bleibt-unveraendert-954622
+- title: "Deutschlandticket: Nutzerzahlen laut VDV (Berliner Zeitung)"
+  url: https://www.berliner-zeitung.de/article/deutschlandticket-so-wirkt-sich-der-preisanstieg-auf-die-abonnentenzahl-an-2294356
+- title: ImmoScout24 WohnBarometer Q3 2025 (Mieten)
+  url: https://www.scout24.com/fileadmin/user_upload/ImmoScout24_WohnBarometer_Q3_2025_Miete.pdf
+- title: Lohnsteuer 2026, Steuerklasse I (nettocalc, 50.000 € brutto)
+  url: https://nettocalc.com/de/brutto-netto/jaehrlich/50000
+- title: "Statistik München: allgemeinbildende Schulen"
+  url: https://stadt.muenchen.de/infos/statistik-bildung.html
+- title: "Hessen: Personalkosten verbeamteter Lehrkräfte"
+  url: https://kleineanfragen.de/hessen/19/3120-personalkosten-fuer-verbeamtete-und-angestellte-lehrkraefte.pdf
+- title: Bundestag-Drucksache 17/2787 (Eurofighter-Betriebskosten)
+  url: https://dserver.bundestag.de/btd/17/027/1702787.pdf
+- title: Döner-Preise 2025 (Tageskarte)
+  url: https://www.tageskarte.io/gastronomie/detail/wo-es-die-guenstigsten-doener-gibt.html
+- title: "Finanzwende: Die zehn wichtigsten Steuerprivilegien"
+  url: https://www.finanzwende.de/themen/steuergerechtigkeit/die-zehn-wichtigsten-steuerprivilegien-und-die-80-milliarden-euro
+- title: "Deutschlandticket: Finanzierung 2026 (mobiflip)"
+  url: https://www.mobiflip.de/deutschlandticket-gesetzesentwurf-zur-finanzierung-2026/
+- title: Deutschlandticket wird 2026 teurer (Finanztip)
+  url: https://finanztip.de/daily/deutschlandticket-wird-2026-teurer-preis-steht-fest/

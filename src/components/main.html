@@ -16,8 +16,8 @@
     <div class="topbar">
       <span class="eyebrow" data-i="eyebrow"></span>
       <div class="lang" role="group" aria-label="Sprache / Language">
-        <button type="button" id="lang-de" aria-pressed="true">DE</button>
-        <button type="button" id="lang-en" aria-pressed="false">EN</button>
+        <button type="button" id="lang-de" data-action="lang" data-lang="de" aria-pressed="true">DE</button>
+        <button type="button" id="lang-en" data-action="lang" data-lang="en" aria-pressed="false">EN</button>
       </div>
     </div>
     <h1 data-i="title"></h1>
@@ -61,44 +61,42 @@
   </section>
 
   <section class="profile" id="profile" aria-labelledby="prof-h">
-    <div class="prof-top"><h2 id="prof-h" data-i="profH"></h2><button type="button" class="btn" id="prof-reset" data-i="profReset"></button></div>
+    <div class="prof-top"><h2 id="prof-h" data-i="profH"></h2><button type="button" class="btn" id="prof-reset" data-action="profile-reset" data-i="profReset"></button></div>
     <p class="prof-lede" id="prof-lede"></p>
-    <div class="prof-sum" id="prof-sum" hidden><span id="prof-sum-txt"></span><button type="button" class="btn" id="prof-edit" data-i="profEdit"></button></div>
+    <div class="prof-sum" id="prof-sum" hidden><span id="prof-sum-txt"></span><button type="button" class="btn" id="prof-edit" data-action="profile-edit" data-i="profEdit"></button></div>
     <div class="qs" id="qs"></div>
     <div class="prof-preview" id="prof-preview" aria-live="polite"></div>
-    <button type="button" class="btn" id="prof-done" data-i="profDone" hidden></button>
+    <button type="button" class="btn" id="prof-done" data-action="profile-done" data-i="profDone" hidden></button>
   </section>
 
   <section class="carousel" aria-roledescription="carousel">
   <div class="cnav">
     <div role="tablist" id="chips" style="display:flex;gap:8px;flex-wrap:wrap"></div>
-    <div class="arrows"><button type="button" class="arrow" id="prev" aria-label="‹"><span class="ico l-chevron-left" aria-hidden="true"></span></button><button type="button" class="arrow" id="next" aria-label="›"><span class="ico l-chevron-right" aria-hidden="true"></span></button></div>
+    <div class="arrows"><button type="button" class="arrow" id="prev" data-action="step" data-dir="-1" aria-label="‹"><span class="ico l-chevron-left" aria-hidden="true"></span></button><button type="button" class="arrow" id="next" data-action="step" data-dir="1" aria-label="›"><span class="ico l-chevron-right" aria-hidden="true"></span></button></div>
   </div>
   <div class="panels" id="panels">
     <article class="panel">
       <span class="eyebrow" data-i="everyE"></span>
       <h3 data-i="everyH"></h3>
-      <div class="illus" id="illus-every"></div>
-      <div class="tiles" id="tiles-every"></div>
+      <div class="illus" id="illus-everyday"></div>
+      <div class="tiles" id="tiles-everyday"></div>
     </article>
     <article class="panel">
       <span class="eyebrow" data-i="monthE"></span>
       <h3 data-i="monthH"></h3>
-      <div hidden><div id="gro-n"></div><p id="gro-sub"></p><div id="gro-picto"></div><span id="gro-legend"></span></div>
-      <div class="illus" id="illus-month"></div>
-      <div class="tiles" id="tiles-month"></div>
+      <div class="illus" id="illus-monthly"></div>
+      <div class="tiles" id="tiles-monthly"></div>
     </article>
     <article class="panel">
       <span class="eyebrow" data-i="buyE"></span>
       <h3 data-i="buyH"></h3>
-      <div class="illus" id="illus-buy"></div>
-      <div class="tiles" id="tiles-buy"></div>
+      <div class="illus" id="illus-purchases"></div>
+      <div class="tiles" id="tiles-purchases"></div>
     </article>
     <article class="panel wide">
       <span class="eyebrow" data-i="carEyebrow"></span>
       <h3 data-i="carH"></h3>
-      <div class="illus" id="illus-car"></div>
-      <div hidden><div id="car-n"></div><p id="car-sub"></p></div>
+      <div class="illus" id="illus-mobility"></div>
       <div class="trips">
         <div class="trip"><span class="ico ti l-globe" aria-hidden="true"></span><b id="t-earth"></b><span data-i="tEarth"></span></div>
         <div class="trip"><span class="ico ti l-moon" aria-hidden="true"></span><b id="t-moon"></b><span data-i="tMoon"></span></div>
@@ -106,27 +104,25 @@
       </div>
       <div class="scroll-x"><svg id="dist" viewBox="0 0 960 170" style="min-width:640px;width:100%" role="img"></svg></div>
       <span class="legend" data-i="distLegend"></span>
-      <div class="tiles" id="tiles-car"></div>
+      <div class="tiles" id="tiles-mobility"></div>
     </article>
     <article class="panel">
       <span class="eyebrow" data-i="pubE"></span>
       <h3 data-i="pubH"></h3>
-      <div hidden><div id="school-n"></div><p id="school-sub"></p><div id="school-picto"></div><span id="school-legend"></span></div>
-      <div class="illus" id="illus-pub"></div>
-      <div class="tiles" id="tiles-pub"></div>
+      <div class="illus" id="illus-public"></div>
+      <div class="tiles" id="tiles-public"></div>
     </article>
     <article class="panel">
       <span class="eyebrow" data-i="bigE"></span>
       <h3 data-i="bigH"></h3>
-      <div class="illus" id="illus-big"></div>
-      <div class="tiles" id="tiles-big"></div>
+      <div class="illus" id="illus-projects"></div>
+      <div class="tiles" id="tiles-projects"></div>
     </article>
     <article class="panel">
       <span class="eyebrow" data-i="headEyebrow"></span>
       <h3 data-i="headH"></h3>
-      <div hidden><div id="head-n"></div><p id="head-sub"></p><div id="head-picto"></div></div>
-      <div class="illus" id="illus-life"></div>
-      <div class="tiles" id="tiles-life"></div>
+      <div class="illus" id="illus-time"></div>
+      <div class="tiles" id="tiles-time"></div>
     </article>
   </div>
   </section>
@@ -134,8 +130,7 @@
   <section class="section-head kc" id="cmp-topics" style="gap:14px">
     <h2 data-i="topH"></h2>
     <p class="lede" id="top-lede"></p>
-    <div class="tiles" id="tiles-topics" hidden></div>
-    <div class="topgrp opp"><h3 id="top-a-h">Mit Mehreinnahmen oder Einsparungen</h3><p class="sub" id="top-a-sub"></p><div class="tiles" id="tiles-topics-a"></div><button type="button" class="btn" id="top-more" hidden>Alle anzeigen</button></div>
+    <div class="topgrp opp"><h3 id="top-a-h">Mit Mehreinnahmen oder Einsparungen</h3><p class="sub" id="top-a-sub"></p><div class="tiles" id="tiles-topics-a"></div><button type="button" class="btn" id="top-more" data-action="top-more" hidden>Alle anzeigen</button></div>
     <div class="topgrp same"><h3 id="top-b-h">Zum Vergleich: andere Kosten</h3><p class="sub" id="top-b-sub"></p><div class="tiles" id="tiles-topics-b"></div></div>
   </section>
 
@@ -146,7 +141,7 @@
     <div class="scroll-x" id="dots-wrap"><svg id="dots" style="min-width:640px;width:100%" role="img"></svg></div>
     <div class="sel-sep" id="sel-sep"><h3 data-i="selChipsH"></h3><span class="legend" data-i="selChipsSub"></span></div>
     <div class="selchips" id="sel-chips"></div>
-    <div class="selbar"><span class="legend" id="sel-count"></span><button type="button" class="btn" id="sel-all">Alle auswählen</button><button type="button" class="btn" id="sel-clear" data-i="selClear"></button></div>
+    <div class="selbar"><span class="legend" id="sel-count"></span><button type="button" class="btn" id="sel-all" data-action="select-all">Alle auswählen</button><button type="button" class="btn" id="sel-clear" data-action="select-none" data-i="selClear"></button></div>
   </section>
 
 
@@ -154,7 +149,7 @@
     <div class="own-vals">
       <h3 data-i="assumeH"></h3>
       <p class="sub" data-i="assumeNote"></p>
-      <div class="assume-reset"><button type="button" class="btn" id="a-reset" data-i="aReset"></button><button type="button" class="btn" id="p-reset" hidden>Kachelpreise zurücksetzen</button></div>
+      <div class="assume-reset"><button type="button" class="btn" id="a-reset" data-action="reset-assumptions" data-i="aReset"></button><button type="button" class="btn" id="p-reset" data-action="reset-prices" hidden>Kachelpreise zurücksetzen</button></div>
     </div>
   </section>
 

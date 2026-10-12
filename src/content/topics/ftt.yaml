@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=../schemas/topic.schema.json
+icon: trending-up
+kind: gain
+annual: true
+title: { de: Finanztransaktionssteuer, en: Financial transaction tax }
+short: { de: Steuer auf Börsengeschäfte inkl. Derivate, en: Tax on trades incl. derivatives }
+who: { de: "Gefordert u. a. von Finanzwende, SPD und Grünen", en: "Called for by Finanzwende, the SPD and the Greens" }
+context:
+  de: Auf jeden Kauf und Verkauf von Aktien, Anleihen und Derivaten würde ein kleiner Steuersatz fällig. Finanzwende schätzt die Einnahmen inklusive Derivaten auf rund 17 Mrd. € im Jahr.
+  en: A small tax would be due on every purchase and sale of shares, bonds and derivatives. Finanzwende estimates revenue including derivatives at about €17 bn a year.
+caveat:
+  de: Kritiker warnen, dass Handel ins Ausland abwandert und Kleinanleger mit Altersvorsorge mitbezahlen. Eine EU-weite Lösung scheitert seit Jahren.
+  en: Critics warn that trading moves abroad and that small savers pay too. An EU-wide solution has stalled for years.
+estimates:
+  mid:
+    amount: 17 Mrd.
+    note: { de: Schätzung von Finanzwende (inkl. Derivate)., en: Finanzwende estimate (incl. derivatives). }
+for: [i4, i5]

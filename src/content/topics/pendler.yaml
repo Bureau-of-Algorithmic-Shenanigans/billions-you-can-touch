@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=../schemas/topic.schema.json
+icon: route
+kind: gain
+annual: true
+title: { de: Pendlerpauschale abschaffen, en: Abolish the commuter allowance }
+short: { de: Keine Steuerentlastung mehr für den Arbeitsweg, en: No more tax relief for the commute }
+who:
+  de: Vorschlag u. a. von Umweltverbänden; in vielen Subventionsberichten gelistet
+  en: Proposed by environmental groups; listed in many subsidy reports
+context:
+  de: Wer zur Arbeit pendelt, kann heute 38 Cent pro Kilometer von der Steuer absetzen. Ohne diese Pauschale nähme der Staat laut Subventionsbericht rund 5,9 Mrd. € im Jahr mehr ein.
+  en: Commuters can currently deduct 38 cents per km from their taxable income. Without it, the state would collect about €5.9 bn more a year, according to the subsidy report.
+caveat:
+  de: Besonders Menschen auf dem Land ohne Bus und Bahn würden belastet. Das Bundesverfassungsgericht hat 2008 eine teilweise Streichung bereits gekippt.
+  en: People in the countryside without public transport would be hit hardest. The Constitutional Court struck down a partial cut in 2008.
+estimates:
+  mid:
+    amount: 5,9 Mrd.
+    note: { de: Subventionsbericht des Bundesfinanzministeriums., en: Federal subsidy report. }
+for: [car, work, rural]

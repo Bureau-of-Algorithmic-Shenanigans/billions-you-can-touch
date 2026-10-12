@@ -12,31 +12,38 @@ Requires Node 24 (see `.nvmrc`) and pnpm (via `corepack enable pnpm`).
 
 ```bash
 pnpm install
-pnpm dev        # http://localhost:4321/billions-you-can-touch/
+pnpm dev        # http://localhost:4321/billions-you-can-touch/ (e2e tests use port 4391)
 ```
 
-| Command | What it does |
-|---|---|
-| `pnpm build` | Static build into `dist/` |
-| `pnpm preview` | Serves the build locally |
-| `pnpm lint` | ESLint + Prettier check |
-| `pnpm test` | Unit tests (Vitest) |
-| `pnpm test:e2e` | Browser tests (Playwright: desktop light/dark, phone) — run `pnpm build` first |
-| `pnpm validate:html` | HTML validation of the build |
+| Command              | What it does                                                                          |
+| -------------------- | ------------------------------------------------------------------------------------- |
+| `pnpm build`         | Static build into `dist/`                                                             |
+| `pnpm preview`       | Serves the build locally                                                              |
+| `pnpm lint`          | ESLint + Prettier check                                                               |
+| `pnpm test`          | Unit tests (Vitest)                                                                   |
+| `pnpm test:e2e`      | Browser tests (Playwright: desktop light/dark, phone) — run `pnpm build` first        |
+| `pnpm validate:html` | HTML validation of the build                                                          |
+| `pnpm schemas`       | Regenerates the JSON Schemas for the data files (after changing `src/lib/content.js`) |
+
+## Contributing
+
+Topics, budget proposals, comparison tiles and sources are YAML files in `src/content`, checked against a schema at build
+time. They can be edited directly on GitHub; see [CONTRIBUTING.md](CONTRIBUTING.md) for the fields and examples.
 
 ## Structure
 
 ```
 src/
+  content/          the data: topics, proposals, comparison units per slide, sources (YAML + JSON Schemas)
   pages/            index (main page), impressum, datenschutz, en/imprint, en/privacy
   layouts/          Base (document shell, self-hosted fonts), Legal
-  components/       main.html (page markup, German texts filled in at build time), IconSprite
-  scripts/app.js    page behaviour (units, questionnaire, tiles, charts)
-  data/topics.js    topics with sources and estimates
-  lib/              i18n.js (all texts DE/EN), pure.js (tested helpers), icons.js (icon shapes → CSS mask icons and SVG symbols)
+  components/       main.html (page markup, German texts filled in at build time), MainPage (embeds the data), IconSprite
+  lib/              shared by build and page: data loading/validation, formulas, formatting, texts (DE/EN), questionnaire
+  scripts/          page script: main.js (start, input), state, units (prices, fit, selection), render/ (one module per part)
   styles/           app.css, base.css
+scripts/            content-schemas.mjs (pnpm schemas)
 tests/
-  unit/             Vitest
+  unit/             Vitest: data files, formulas, formatting, templates
   e2e/              Playwright
 ```
 
@@ -49,9 +56,7 @@ tests/
 
 ## Next steps
 
-- Split `src/scripts/app.js` into modules and move figures into `data/*.yaml` with a schema that requires a source and
-  an `asOf` date for every number.
-- Add a stale-figure report (figures older than 12 months) to the weekly job.
+- Add an `asOf` date to figures and a stale-figure report (figures older than 12 months) to the weekly job.
 
 ## Content
 

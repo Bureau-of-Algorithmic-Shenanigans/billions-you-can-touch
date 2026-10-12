@@ -1,0 +1,103 @@
+# yaml-language-server: $schema=../schemas/units.schema.json
+# Slide „Großprojekte: bekannte Bauten, Rüstung, Haushalte, auch in Stücken (ein Sitzplatz, ein Meter Tunnel).“
+# Each entry is one comparison tile; see CONTRIBUTING.md for the fields.
+
+- id: eurofighter
+  icon: plane
+  name: { de: Eurofighter, en: Eurofighter jet }
+  price: 120 Mio.
+
+- id: allianz-arena
+  icon: goal
+  name: { de: Allianz Arena (Bau), en: Allianz Arena (build) }
+  price: 340 Mio.
+  for: [football]
+
+- id: krankenhaus-neubau
+  icon: hospital
+  name: { de: Krankenhaus-Neubau, en: New hospital }
+  price: 400 Mio.
+  for: [retired, rural]
+
+- id: elbphilharmonie
+  icon: music
+  name: { de: Elbphilharmonie, en: Elbphilharmonie }
+  price: 866 Mio.
+  for: [festival, big]
+
+- id: flughafen-ber
+  icon: plane-takeoff
+  name: { de: Flughafen BER, en: BER airport }
+  price: 7 Mrd.
+  for: [travel]
+
+- id: stuttgart-21
+  icon: train-track
+  name: { de: Stuttgart 21, en: Stuttgart 21 }
+  price: 11,5 Mrd.
+  for: [transit]
+
+- id: leopard-2a8
+  icon: shield
+  name: { de: Kampfpanzer Leopard 2A8, en: Leopard 2A8 tank }
+  price: 29 Mio.
+
+- id: fregatte-f126
+  icon: anchor
+  name: { de: Fregatte F126, en: F126 frigate }
+  price: 1,5 Mrd.
+
+- id: sondervermoegen-bundeswehr
+  icon: shield-half
+  name: { de: Sondervermögen Bundeswehr, en: Bundeswehr special fund }
+  price: 100 Mrd.
+
+- id: deutschlandticket-zuschuss
+  icon: ticket
+  name: { de: Zuschuss Deutschlandticket (Bund + Länder), en: Deutschlandticket subsidy (federal + states) }
+  price: 3 Mrd.
+  period: year
+  count: { de: Jahre, en: years }
+  priceNote: { de: "1,5 Mrd. € Bund + 1,5 Mrd. € Länder pro Jahr", en: €1.5 bn federal + €1.5 bn states per year }
+  for: [transit]
+
+- id: windrad
+  icon: wind
+  name: { de: Windrad an Land (5 MW), en: Onshore wind turbine (5 MW) }
+  price: 7 Mio.
+  for: [rural]
+
+- id: sondervermoegen-infrastruktur
+  icon: construction
+  name: { de: Sondervermögen Infrastruktur, en: Infrastructure special fund }
+  price: 500 Mrd.
+
+- id: bundeshaushalt-2026
+  icon: landmark
+  name: { de: Bundeshaushalt 2026, en: Federal budget 2026 }
+  price: 524,5 Mrd.
+
+- id: allianz-arena-sitzplatz
+  icon: goal
+  name: { de: Ein Sitzplatz der Allianz Arena (340 Mio. € ÷ 75.000), en: "One Allianz Arena seat (€340 m ÷ 75,000)" }
+  price: 340 Mio. / 75000
+
+- id: elbphilharmonie-qm
+  icon: music
+  name: { de: Ein m² Elbphilharmonie (866 Mio. € ÷ 125.500 m²), en: "One m² of Elbphilharmonie (€866 m ÷ 125,500 m²)" }
+  price: 866 Mio. / 125500
+
+- id: eurofighter-flugstunde
+  icon: plane
+  name: { de: Eine Flugstunde Eurofighter (rund 74.000 €), en: "One Eurofighter flight hour (about €74,000)" }
+  price: 74000
+
+- id: stuttgart-21-tunnelmeter
+  icon: train-track
+  name: { de: Ein Meter Tunnel Stuttgart 21 (rund 59 km), en: One metre of Stuttgart 21 tunnel (about 59 km) }
+  price: 11,5 Mrd. / 59000
+
+- id: ber-bautag
+  icon: plane-takeoff
+  name: { de: Ein Tag Bauzeit BER (14 Jahre), en: One day of BER construction (14 years) }
+  price: 7 Mrd. / (14 * 365)

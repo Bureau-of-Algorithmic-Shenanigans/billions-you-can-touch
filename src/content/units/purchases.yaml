@@ -1,0 +1,167 @@
+# yaml-language-server: $schema=../schemas/units.schema.json
+# Slide „Anschaffungen: einmalige Käufe, vom Paar Sneaker bis zur Villa.“
+# Each entry is one comparison tile; see CONTRIBUTING.md for the fields.
+
+- id: iphone
+  icon: smartphone
+  name: { de: iPhone, en: iPhone }
+  price: 1000
+  for: [school, student, work]
+
+- id: festivalticket
+  icon: tent
+  name: { de: Festivalticket, en: Festival ticket }
+  price: 300
+  for: [festival, student]
+  notFor: [retired]
+
+- id: bundesliga-dauerkarte
+  icon: trophy
+  name: { de: Bundesliga-Dauerkarte, en: Bundesliga season ticket }
+  price: 300
+  for: [football]
+
+- id: kreuzfahrt
+  icon: ship
+  name: { de: Kreuzfahrt, en: Cruise }
+  price: 3000
+  for: [retired, travel, i3, i4, partner]
+
+- id: vw-golf
+  icon: car
+  name: { de: Neuer VW Golf, en: New VW Golf }
+  price: 32000
+  for: [car, rural, town]
+  notFor: [bike]
+
+- id: solaranlage
+  icon: sun
+  name: { de: Solaranlage aufs Dach, en: Rooftop solar }
+  price: 15000
+  for: [own, i3, i4, rural]
+  notFor: [rent]
+
+- id: reihenhaus
+  icon: house
+  name: { de: Reihenhaus, en: Terraced house }
+  price: 400000
+  for: [own, kids, partner, i3, i4, town, rural]
+  notFor: [wg]
+
+- id: semesterbeitrag
+  icon: graduation-cap
+  name: { de: Semesterbeitrag, en: Semester fee }
+  price: 330
+  for: [student]
+  notFor: [retired, work]
+
+- id: heizkosten-jahr
+  icon: flame
+  name: { de: Heizkosten für ein Jahr, en: Heating bill for a year }
+  price: 1300
+  for: [rent, own]
+
+- id: pauschalreise-mallorca
+  icon: luggage
+  name: { de: "Pauschalreise Mallorca, Familie", en: "Mallorca package holiday, family" }
+  price: 3500
+  for: [travel, kids]
+
+- id: paar-sneaker
+  icon: footprints
+  name: { de: Paar Sneaker, en: Pair of sneakers }
+  price: 100
+  for: [school, student, i1, i2]
+
+- id: fernseher
+  icon: tv
+  name: { de: Fernseher, en: TV set }
+  price: 600
+  for: [football, partner]
+
+- id: iphone-schueler
+  icon: smartphone
+  name: { de: Ein iPhone für alle Schüler:innen, en: An iPhone for every pupil }
+  for: [school]
+  group:
+    size: 8,4 Mio.
+    of: iphone
+    item: { de: iPhones, en: iPhones }
+    label: { de: eins für alle Schüler:innen, en: one for every pupil }
+
+- id: reihenhaeuser-goettingen
+  icon: house
+  name: { de: Reihenhäuser für ganz Göttingen, en: Terraced houses for all of Göttingen }
+  group:
+    size: 118000 / 2,5
+    of: reihenhaus
+    item: { de: Reihenhäuser, en: terraced houses }
+    label: { de: eine Siedlung für ganz Göttingen, en: an estate for all of Göttingen }
+
+- id: waermepumpen-1-mio
+  icon: heater
+  name: { de: Wärmepumpen für 1 Mio. Häuser, en: Heat pumps for 1 m homes }
+  price: 1 Mio. * 30000
+  group:
+    size: 1 Mio.
+    item: { de: Wärmepumpen, en: heat pumps }
+    label: { de: eine Million Häuser umrüsten, en: refit a million homes }
+
+- id: solar-alle-haeuser
+  icon: sun
+  name: { de: Solar aufs Dach aller 16 Mio. Einfamilienhäuser, en: Solar on all 16 m detached homes }
+  group:
+    size: 16 Mio.
+    of: solaranlage
+    item: { de: Solaranlagen, en: solar systems }
+    label: { de: auf alle Einfamilienhäuser, en: on every detached home }
+
+- id: rock-am-ring
+  icon: tent
+  name:
+    de: Festivaltickets für alle Fans von Rock am Ring (90.000)
+    en: Festival tickets for every Rock am Ring fan (90,000)
+  group:
+    size: 90000
+    of: festivalticket
+    item: { de: Festivaltickets, en: festival tickets }
+    label: { de: einmal Rock am Ring ausverkauft, en: Rock am Ring sold out }
+
+- id: neubausiedlung
+  icon: house
+  name: { de: Neubausiedlung mit 100 Reihenhäusern, en: New estate of 100 terraced houses }
+  group:
+    size: 100
+    of: reihenhaus
+    item: { de: Reihenhäuser, en: terraced houses }
+    label: { de: Neubausiedlungen (je 100 Stück), en: new estates (100 each) }
+
+- id: fernseher-koeln
+  icon: tv
+  name: { de: Ein Fernseher für jeden Haushalt in Köln, en: A TV for every household in Cologne }
+  group:
+    size: 550000
+    of: fernseher
+    item: { de: Fernseher, en: TV sets }
+    label: { de: einer für jeden Haushalt in Köln, en: one for every household in Cologne }
+
+- id: rolex-submariner
+  icon: watch
+  name: { de: Rolex Submariner, en: Rolex Submariner }
+  price: 10500
+  for: [i5]
+  notFor: [i1, i2, i3, student, school]
+
+- id: business-class-new-york
+  icon: plane-landing
+  name: { de: Business Class nach New York und zurück, en: Business class to New York and back }
+  price: 4500
+  for: [i4, i5, travel]
+  notFor: [i1, i2]
+
+- id: villa-am-starnberger-see
+  icon: castle
+  name: { de: Villa am Starnberger See, en: Villa on Lake Starnberg }
+  price: 6 Mio.
+  for: [i5, own]
+  notFor: [i1, i2, i3]

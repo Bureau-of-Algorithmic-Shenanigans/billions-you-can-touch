@@ -1,0 +1,3 @@
+{
+  "recommendations": ["redhat.vscode-yaml", "astro-build.astro-vscode", "esbenp.prettier-vscode"]
+}

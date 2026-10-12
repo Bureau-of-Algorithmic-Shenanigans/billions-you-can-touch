@@ -1,0 +1,26 @@
+# yaml-language-server: $schema=../schemas/topic.schema.json
+icon: sailboat
+kind: loss
+title: { de: Gorch-Fock-Sanierung, en: Gorch Fock refit }
+short: { de: "Segelschulschiff der Marine, ab 2016", en: "Navy sail training ship, from 2016" }
+who:
+  de: Bundesverteidigungsministerium (Ministerin Ursula von der Leyen, 2013–2019)
+  en: Federal Defence Ministry (minister Ursula von der Leyen, 2013–2019)
+context:
+  de: Die Überholung des 1958 gebauten Dreimasters sollte rund 10 Mio. € kosten und endete bei rund 135 Mio. €. Der Zustand des Schiffs war schlecht dokumentiert, die beauftragte Elsflether Werft ging 2019 in die Insolvenz, und es gab über 100 Ermittlungsverfahren wegen Korruption und Untreue.
+  en: The overhaul of the 1958 three-master was meant to cost about €10 m and ended at about €135 m. The ship's condition was poorly documented, the contracted Elsfleth shipyard went insolvent in 2019, and over 100 corruption and fraud investigations followed.
+caveat:
+  de: Ein Teil der Arbeiten wäre bei ehrlicher Planung ohnehin fällig gewesen. Als Schaden zählt hier vor allem die Differenz zwischen Plan und Ergebnis.
+  en: Some of the work would have been due anyway with honest planning. The damage here is mainly the gap between plan and result.
+estimates:
+  low:
+    amount: 125 Mio.
+    note:
+      de: Mehrkosten gegenüber dem ursprünglichen Plan (135 statt 10 Mio. €).
+      en: Overrun against the original plan (€135 m instead of €10 m).
+  mid:
+    amount: 135 Mio.
+    note: { de: Gesamtkosten der Sanierung., en: Total cost of the refit. }
+sources:
+  - title: Streit um Gorch-Fock-Kosten (LTO)
+    url: https://www.lto.de/recht/nachrichten/n/lg-bremen-streit-kosten-gorch-fock-vergleich-vorschlag-bund-werft

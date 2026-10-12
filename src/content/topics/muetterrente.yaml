@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=../schemas/topic.schema.json
+icon: heart
+kind: loss
+annual: true
+title: { de: Mütterrente III, en: Mothers' pension III }
+short: { de: Geplant ab 2027, en: Planned from 2027 }
+who: { de: "Kernforderung der CSU, im Koalitionsvertrag 2025", en: "Core CSU demand, in the 2025 coalition agreement" }
+context:
+  de: Für vor 1992 geborene Kinder sollen Eltern genauso viele Rentenpunkte bekommen wie für später geborene. Laut Bundesregierung kostet das rund 5 Mrd. € pro Jahr. Wegen der technischen Umstellung soll das Geld erst 2028 fließen.
+  en: Parents of children born before 1992 are to get the same pension credits as for children born later. The government puts the cost at about €5 bn a year. Because of the IT changes, payments are expected to start only in 2028.
+caveat:
+  de: Befürworter sehen darin Gerechtigkeit für ältere Mütter. Kritiker bemängeln, dass das Geld nicht gezielt gegen Altersarmut wirkt.
+  en: Supporters see it as fairness for older mothers. Critics say the money is not targeted at poverty in old age.
+estimates:
+  mid:
+    amount: 5 Mrd.
+    note: { de: Rund 5 Mrd. € pro Jahr laut Bundesregierung., en: About €5 bn a year according to the government. }
+for: [kids, retired]
+sources:
+  - title: 5 Mrd. € jährlich für die Mütterrente III (familie.de)
+    url: https://www.familie.de/familienleben/5-milliarden-jaehrlich-fuer-die-neue-muetterrente-teures-steuergeschenk-oder-laengst-ueberfaellig--01JPAR8SZ286T60FTEX182491H

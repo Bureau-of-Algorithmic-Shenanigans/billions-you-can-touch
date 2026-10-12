@@ -1,0 +1,193 @@
+# yaml-language-server: $schema=../schemas/units.schema.json
+# Slide „Pro Jahr: laufende Kosten pro Monat oder Jahr (Miete, Tickets, Renten, Gehälter).“
+# Each entry is one comparison tile; see CONTRIBUTING.md for the fields.
+
+- id: deutschlandticket
+  icon: ticket
+  name: { de: Deutschlandticket, en: Deutschlandticket }
+  price: 63
+  period: month
+  count: { de: Personen ein Jahr lang, en: people for a year }
+  priceNote: { de: "63 €/Monat Fahrgastpreis, ohne Zuschuss", en: "€63/month fare, without subsidy" }
+  for: [transit, student, school, i1, i2, big]
+
+- id: deutschlandticket-mit-zuschuss
+  icon: ticket
+  name: { de: Deutschlandticket inkl. Zuschuss, en: Deutschlandticket incl. subsidy }
+  price: 63 + 2 * 1,5 Mrd. / 12 / 14,6 Mio.
+  period: month
+  count: { de: Personen ein Jahr lang, en: people for a year }
+  priceNote:
+    de: 80,12 €/Monat = 63 € Fahrgast + 8,56 € Bund + 8,56 € Länder
+    en: €80.12/month = €63 passenger + €8.56 federal + €8.56 states
+  for: [transit, student, school, big]
+
+- id: wg-zimmer
+  icon: bed-double
+  name: { de: WG-Zimmer, en: Shared-flat room }
+  price: wgRoom
+  period: month
+  count: { de: Studierende ein Jahr lang, en: students for a year }
+  for: [student, wg, big]
+  notFor: [retired, kids, own]
+
+- id: miete
+  icon: building
+  name: { de: "Miete, 70 m²", en: "Rent, 70 m²" }
+  price: rent
+  period: month
+  count: { de: Haushalte ein Jahr lang, en: households for a year }
+  for: [rent, alone, partner, big]
+
+- id: bafoeg-hoechstsatz
+  icon: graduation-cap
+  name: { de: BAföG-Höchstsatz, en: Max. student grant (BAföG) }
+  price: 992
+  period: month
+  count: { de: Studierende ein Jahr lang, en: students for a year }
+  for: [student]
+  notFor: [retired, work]
+
+- id: kindergeld
+  icon: baby
+  name: { de: Kindergeld, en: Child benefit }
+  price: 255
+  period: month
+  count: { de: Kinder ein Jahr lang Kindergeld, en: children get child benefit for a year }
+  short: { de: 255 € im Monat pro Kind, en: €255 a month per child }
+  for: [kids]
+  notFor: [retired]
+
+- id: altersrente
+  icon: armchair
+  name: { de: Ø Altersrente (1.250 €/Monat), en: "Average pension (€1,250/month)" }
+  price: 1250
+  period: month
+  count: { de: Renten 1 Jahr auszahlen, en: pensions paid for 1 year }
+  short: { de: Ø 1.250 € im Monat, en: "avg. €1,250 a month" }
+  for: [retired]
+  notFor: [school, student]
+
+- id: eigenanteil-pflegeheim
+  icon: heart-handshake
+  name: { de: Eigenanteil Pflegeheim, en: Care-home own share }
+  price: 3000
+  period: month
+  count: { de: Bewohner:innen ein Jahr lang, en: residents for a year }
+  for: [retired]
+  notFor: [school, student]
+
+- id: nettogehalt
+  icon: briefcase
+  name: { de: Ø Nettogehalt Vollzeit, en: Avg. full-time net pay }
+  price: 2900
+  period: month
+  count: { de: Beschäftigte ein Jahr lang, en: workers for a year }
+  for: [work]
+
+- id: kita-beitrag
+  icon: baby
+  name: { de: Kita-Beitrag (200 €/Monat), en: Daycare fee (€200/month) }
+  price: 200
+  period: month
+  count: { de: Kita-Beiträge für ein Jahr, en: daycare fees for a year }
+  short: { de: Ø 200 € im Monat, en: avg. €200 a month }
+  for: [kids]
+  notFor: [school, retired]
+
+- id: rundfunkbeitrag
+  icon: radio
+  name: { de: Rundfunkbeitrag, en: TV licence fee }
+  price: 18,36
+  period: month
+  count: { de: Haushalte ein Jahr lang, en: households for a year }
+  for: [alone, partner, kids, rent, own]
+
+- id: handyvertrag
+  icon: smartphone
+  name: { de: Handyvertrag, en: Mobile contract }
+  price: 20
+  period: month
+  count: { de: Personen ein Jahr lang, en: people for a year }
+  for: [school, student, work, i1, i2]
+
+- id: mieten-berlin-monat
+  icon: building
+  name: { de: "Miete aller Berliner Haushalte, 1 Monat", en: "Rent of all Berlin households, 1 month" }
+  price: 2 Mio. * 800
+  group:
+    size: 2 Mio.
+    of: miete
+    item: { de: Mieten, en: rents }
+    label: { de: "alle Berliner Haushalte, einen Monat", en: "every Berlin household, one month" }
+
+- id: bafoeg-gesamt
+  icon: graduation-cap
+  name: { de: BAföG insgesamt (rund 3 Mrd. €/Jahr), en: All BAföG (about €3 bn/yr) }
+  price: 3 Mrd.
+  period: year
+  count: { de: Jahre, en: years }
+
+- id: deutschlandticket-schueler
+  icon: ticket
+  name: { de: Deutschlandticket für alle Schüler:innen, en: Deutschlandticket for every pupil }
+  period: year
+  count: { de: Jahre, en: years }
+  for: [school, transit, kids]
+  group:
+    size: 8,4 Mio. * 12
+    of: deutschlandticket
+    item: { de: Monats-Deutschlandtickets, en: monthly Deutschlandtickets }
+    label: { de: ein Jahr für alle Schüler:innen, en: a year for every pupil }
+
+- id: buergergeld-gesamt
+  icon: users
+  name: { de: Bürgergeld insgesamt (rund 47 Mrd. €/Jahr), en: All Bürgergeld (about €47 bn/yr) }
+  price: 47 Mrd.
+  period: year
+  count: { de: Jahre, en: years }
+
+- id: kindergeld-gesamt
+  icon: baby
+  name: { de: Kindergeld für alle Kinder (rund 55 Mrd. €/Jahr), en: Child benefit for all children (about €55 bn/yr) }
+  price: 55,3 Mrd.
+  period: year
+  count: { de: Jahre, en: years }
+  for: [kids]
+
+- id: renten-gesamt
+  icon: armchair
+  name: { de: Alle gesetzlichen Renten (rund 420 Mrd. €/Jahr), en: All statutory pensions (about €420 bn/yr) }
+  price: 420 Mrd.
+  period: year
+  count: { de: Jahre, en: years }
+  for: [retired, work]
+
+- id: deutschlandticket-goettingen
+  icon: ticket
+  name: { de: "Deutschlandticket für ganz Göttingen, 1 Jahr", en: "Deutschlandticket for all of Göttingen, 1 year" }
+  group:
+    size: 118000 * 12
+    of: deutschlandticket
+    item: { de: Monats-Deutschlandtickets, en: monthly Deutschlandtickets }
+    label: { de: ein Jahr für ganz Göttingen, en: a year for all of Göttingen }
+
+- id: mieten-freiburg-jahr
+  icon: building
+  name: { de: "Miete aller Haushalte in Freiburg, 1 Jahr", en: "Rent of all households in Freiburg, 1 year" }
+  price: 125000 * 800 * 12
+  group:
+    size: 125000 * 12
+    of: miete
+    item: { de: Monatsmieten, en: monthly rents }
+    label: { de: "alle Haushalte in Freiburg, ein Jahr", en: "every household in Freiburg, one year" }
+
+- id: golfclub-mitgliedschaft
+  icon: flag
+  name: { de: Golfclub-Mitgliedschaft, en: Golf club membership }
+  price: 250
+  period: month
+  count: { de: Mitglieder ein Jahr lang, en: members for a year }
+  short: { de: im Golfclub, en: of a golf club }
+  for: [i5, retired]
+  notFor: [i1, i2, student, school]

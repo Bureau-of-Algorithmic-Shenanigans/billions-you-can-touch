@@ -1,0 +1,113 @@
+# yaml-language-server: $schema=../schemas/units.schema.json
+# Slide „Tanken & Weltall: Mobilität, Sprit, Strom, Verkehrsprojekte.“
+# Each entry is one comparison tile; see CONTRIBUTING.md for the fields.
+
+- id: liter-super-e10
+  icon: fuel
+  name: { de: Liter Super E10, en: Litre of petrol }
+  price: price
+  for: [car, rural]
+  notFor: [bike]
+
+- id: e-auto-laden
+  icon: zap
+  name: { de: "E-Auto volladen (60 kWh, zu Hause)", en: "Full EV charge (60 kWh, at home)" }
+  price: 60 * power
+  for: [car, own]
+
+- id: taxifahrt-10-km
+  icon: car-taxi-front
+  name: { de: "Taxifahrt, 10 km", en: "Taxi ride, 10 km" }
+  price: 30
+  for: [eatout, big, alone]
+
+- id: ice-berlin-muenchen
+  icon: train-front
+  name: { de: ICE Berlin–München (Flexpreis), en: ICE Berlin–Munich (flex fare) }
+  price: 150
+  for: [transit, work]
+
+- id: flug-mallorca
+  icon: plane
+  name: { de: Flug nach Mallorca und zurück, en: Return flight to Mallorca }
+  price: 200
+  for: [travel, partner, alone]
+
+- id: neues-fahrrad
+  icon: bike
+  name: { de: Neues Fahrrad, en: New bicycle }
+  price: 900
+  for: [bike]
+
+- id: schnellladesaeule
+  icon: plug-zap
+  name: { de: Schnellladesäule, en: Fast-charging station }
+  price: 100000
+  for: [car, rural]
+
+- id: autobahn-km
+  icon: route
+  name: { de: Kilometer Autobahn (Neubau), en: Km of new motorway }
+  price: 20 Mio.
+  for: [car, rural]
+
+- id: kfz-versicherung
+  icon: shield-check
+  name: { de: Kfz-Versicherung für ein Jahr, en: Car insurance for a year }
+  price: 700
+  period: year
+  for: [car]
+
+- id: elektrobus
+  icon: bus
+  name: { de: Elektrobus, en: Electric bus }
+  price: 600000
+  for: [transit, big]
+
+- id: parkschein
+  icon: circle-parking
+  name: { de: "Parkschein, 1 Stunde", en: "Parking ticket, 1 hour" }
+  price: 2,5
+  for: [car, big]
+
+- id: e-busse-berlin
+  icon: bus
+  name: { de: E-Bus-Flotte für Berlin (1.500 Busse), en: "E-bus fleet for Berlin (1,500 buses)" }
+  for: [transit, big]
+  group:
+    size: 1500
+    of: elektrobus
+    item: { de: E-Busse, en: electric buses }
+    label: { de: die ganze Berliner Flotte, en: Berlin's whole fleet }
+
+- id: e-busse-stadt
+  icon: bus
+  name: { de: E-Bus-Flotte für eine Stadt (100 Busse), en: E-bus fleet for a city (100 buses) }
+  group:
+    size: 100
+    of: elektrobus
+    item: { de: E-Busse, en: electric buses }
+    label: { de: Stadtflotten (je 100 Stück), en: city fleets (100 each) }
+
+- id: tanken-alle-pkw
+  icon: fuel
+  name: { de: "Einmal volltanken, alle 49 Mio. Pkw", en: One full tank for all 49 m cars }
+  price: 49 Mio. * tank * price
+  for: [car]
+  group:
+    size: 49 Mio.
+    item: { de: Tankfüllungen, en: full tanks }
+    label: { de: einmal für alle Pkw in Deutschland, en: once for every car in Germany }
+
+- id: sprit-alle-pkw-jahr
+  icon: fuel
+  name: { de: Ein Jahr Sprit für alle Pkw in Deutschland, en: A year of fuel for all cars in Germany }
+  price: 49 Mio. * 12000 * cons / 100 * price
+  for: [car]
+
+- id: porsche-911
+  icon: car
+  name: { de: Porsche 911, en: Porsche 911 }
+  price: 130000
+  for: [i5, car]
+  notFor: [i1, i2, bike, transit]

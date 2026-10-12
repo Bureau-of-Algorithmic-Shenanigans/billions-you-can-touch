@@ -1,0 +1,748 @@
+# yaml-language-server: $schema=./schemas/proposals.schema.json
+# Budget proposals for the 2027 federal budget. Each becomes a yearly topic in the picker.
+
+areas:
+  soziales:
+    de: Soziales & Rente
+    en: Social & pensions
+    icon: armchair
+  verteidigung:
+    de: Verteidigung
+    en: Defence
+    icon: shield-half
+  finanzverwaltung:
+    de: Allgemeine Finanzverwaltung
+    en: General finance
+    icon: banknote
+  zinsen:
+    de: Zinsen & Schulden
+    en: Interest & debt
+    icon: coins
+  verkehr:
+    de: Verkehr & Infrastruktur
+    en: Transport & infrastructure
+    icon: train-front
+  gesundheit:
+    de: Gesundheit
+    en: Health
+    icon: stethoscope
+  bildung:
+    de: Bildung, Forschung & Familie
+    en: Education, research & family
+    icon: graduation-cap
+  inneres:
+    de: Inneres & Sicherheit
+    en: Interior & security
+    icon: shield
+  entwicklung:
+    de: Entwicklungshilfe & Diplomatie
+    en: Development & diplomacy
+    icon: globe
+  wohnen:
+    de: Wohnen & Landwirtschaft
+    en: Housing & agriculture
+    icon: house
+  verwaltung:
+    de: Allgemeine Verwaltung
+    en: Public administration
+    icon: landmark
+  sonstige_ressorts:
+    de: Wirtschaft & Umwelt
+    en: Economy & environment
+    icon: factory
+  sv_ktf:
+    de: Klima- & Transformationsfonds
+    en: Climate & transformation fund
+    icon: wind
+  einnahmen:
+    de: Steuern & Einnahmen
+    en: Taxes & revenue
+    icon: receipt
+
+proposals:
+  - code: RENT48R
+    area: soziales
+    type: saving
+    amount: 500 Mio.
+    title: Rentenniveau-Festschreibung 48% zurücknehmen (Nachhaltigkeitsfaktor reaktivieren)
+    source: https://www.tagesschau.de/inland/fratzscher-reformpaket-bundesregierung-100.html
+  - code: MTRABS9
+    area: soziales
+    type: saving
+    amount: 13,5 Mrd.
+    title: Mütterrente ganz abschaffen (auch Mütterrente I/II)
+    source: https://www.zeit.de/politik/deutschland/2026-02/muetterrente-schwarz-rote-koalition-kosten
+  - code: DPBHSAH
+    area: soziales
+    type: saving
+    amount: 86 Mio.
+    title: Bürgergeld radikal kürzen
+    source: https://www.tagesschau.de/inland/innenpolitik/buergergeld-gesetzentwurf-100.html
+  - code: MINDSCH
+    area: soziales
+    type: spending
+    amount: 16399999999,999998
+    title: Armutsfeste Mindestsicherung (Paritätischer Wohlfahrtsverband)
+    source: https://www.der-paritaetische.de/alle-meldungen/debatte-um-buergergeld-paritaetischer-legt-aktuelle-berechnungen-fuer-armutsfesten-regelsatz-vor/
+  - code: XTHV3A3
+    area: soziales
+    type: spending
+    amount: 5 Mrd.
+    title: Kindergrundsicherung einführen
+    source: https://www.bundestag.de/dokumente/textarchiv/2023/kw45-pa-pet-kindergrundsicherung-974196
+  - code: ZMF8MDD
+    area: soziales
+    type: saving
+    amount: 900 Mio.
+    title: "Elterngeld: Einkommensgrenze absenken (175k → 100k)"
+    source: https://taz.de/Debatten-um-Bundeshaushalt/!6181914/
+  - code: 4V30T9N
+    area: soziales
+    type: saving
+    amount: 1,1 Mrd.
+    title: "Elterngeld: Bezugsdauer kürzen (14 → 12 Monate)"
+    source: https://taz.de/Debatten-um-Bundeshaushalt/!6181914/
+  - code: 791G0OL
+    area: soziales
+    type: spending
+    amount: 400 Mio.
+    title: Kostenlose Periodenprodukte in öffentlichen Einrichtungen (Schottland-Modell)
+    source: https://www.plan.de/magazin/artikel/aktuelles/sprechen-wir-ueber-periodenarmut.html?sc=IDQ27200
+  - code: EIPOQCM
+    area: soziales
+    type: spending
+    amount: 800 Mio.
+    title: "Periodenprodukte: Ausweitung auf breite Versorgung Bedürftiger"
+    source: https://www.ndr.de/nachrichten/hamburg/initiative-kaempft-fuer-kostenlose-menstruationsprodukte,period-102.html
+  - code: ALG18MT
+    area: soziales
+    type: saving
+    amount: 1,4 Mrd.
+    title: Arbeitslosengeld für Ältere auf 18 Monate begrenzen
+    source: https://www.handelsblatt.com/politik/deutschland/arbeitsmarkt-kuerzeres-arbeitslosengeld-fuer-aeltere-koenntemilliarden-sparen-01/100254612.html
+  - code: ALG12MT
+    area: soziales
+    type: saving
+    amount: 1 Mrd.
+    title: "Weiter verschärfen: Arbeitslosengeld für alle einheitlich 12 Monate"
+    source: https://www.handelsblatt.com/politik/deutschland/arbeitsmarkt-kuerzeres-arbeitslosengeld-fuer-aeltere-koenntemilliarden-sparen-01/100254612.html
+  - code: NNHJ7XV
+    area: verteidigung
+    type: spending
+    amount: 4 Mrd.
+    title: Allgemeine Wehrpflicht wieder einführen
+    source: https://www.ifo.de/pressemitteilung/2024-07-10/wiedereinfuehrung-der-wehrpflicht
+  - code: T3W5UZB
+    area: verteidigung
+    type: spending
+    amount: 25 Mrd.
+    title: NATO-Ziel auf 3% BIP steigern
+    source: https://www.spiegel.de/wirtschaft/soziales/haushalt-2027-lars-klingbeil-legt-entwurf-mit-555-milliarden-euro-ausgaben-vor-a-0e70bc5a-2da0-4778-a438-f55124b596a7
+  - code: IKCIDKW
+    area: verteidigung
+    type: saving
+    amount: 42 Mrd.
+    title: Verteidigung auf 1,5% BIP reduzieren
+    source: https://www.destatis.de
+  - code: UKRSTR7
+    area: finanzverwaltung
+    type: saving
+    amount: 11,6 Mrd.
+    title: Ukraine-Hilfe streichen
+    source: https://dserver.bundestag.de/btd/21/073/2107300.pdf
+  - code: UKRVDP7
+    area: finanzverwaltung
+    type: spending
+    amount: 11,6 Mrd.
+    title: Ukraine-Hilfe verdoppeln (auf 23,2 Mrd. €)
+    source: https://dserver.bundestag.de/btd/21/073/2107300.pdf
+  - code: KOMUST7
+    area: finanzverwaltung
+    type: spending
+    amount: 33 Mrd.
+    title: Gemeindeanteil an der Umsatzsteuer um 10 Prozentpunkte erhöhen (Deutscher Städtetag)
+    source: https://www.staedtetag.de/files/dst/docs/Presse/2026/dresdner-impulse-2026.pdf
+  - code: G0FN9XU
+    area: zinsen
+    type: spending
+    amount: 10 Mrd.
+    title: Tilgungsprogramm starten (aktiver Schuldenabbau)
+    source: https://www.iwkoeln.de/studien/martin-beznoska-tobias-hentze-ein-tilgungsplan-fuer-deutschlands-staatsschulden-zur-begrenzung-der-zinslast.html
+  - code: H75LXO6
+    area: verkehr
+    type: saving
+    amount: 5 Mrd.
+    title: Neubau von Autobahnen stoppen
+    source: https://www.bundesfinanzministerium.de/Content/DE/Pressemitteilungen/Finanzpolitik/2025/07/2025-07-31-sanierung-autobahninfrastruktur.html
+  - code: BSTRUW1
+    area: verkehr
+    type: saving
+    amount: 1,5 Mrd.
+    title: Autobahn-Neubaustopp — auch unwirtschaftliche Bundesstraßen-Neubauprojekte streichen
+    source: https://foes.de/publikationen/2026/2026-06_FOES-Autobahnneubau.pdf
+  - code: QJIUJV6
+    area: verkehr
+    type: spending
+    amount: 12 Mrd.
+    title: Bahn-Investitionen verdoppeln
+    source: https://www.spiegel.de/wirtschaft/unternehmen/deutsche-bahn-plant-2026-mit-mehr-als-23-milliarden-euro-fuer-das-schienennetz-a-c8d7dac9-2b53-40a2-8161-262e630e09ef
+  - code: FVG7B2H
+    area: verkehr
+    type: spending
+    amount: 200 Mio.
+    title: Fernverkehrsgarantie in der Fläche (Bund bestellt SPFV)
+    source: https://www.gruene-bundestag.de/unsere-politik/was-unsere-politik-fuer-dich-bedeutet/fernverkehr-unser-gesetz-bringt-den-intercity-zurueck-in-deinen-bahnhof/
+  - code: OH9SDBD
+    area: verkehr
+    type: saving
+    amount: 1,5 Mrd.
+    title: Deutschlandticket abschaffen
+    source: https://www.bundestag.de/dokumente/textarchiv/2025/kw45-de-regionalisierungsgesetz-1118560
+  - code: 9EURTKT
+    area: verkehr
+    type: spending
+    amount: 8,5 Mrd.
+    title: 9-Euro-Ticket wiedereinführen (statt Deutschlandticket 63 €/Monat)
+    source: https://www.zdfheute.de/politik/deutschland/9-euro-ticket-verkehr-auto-zug-verspaetungen-ifo-100.html
+  - code: 66FXLO0
+    area: gesundheit
+    type: spending
+    amount: 500 Mio.
+    title: Bundeszuschuss zur GKV regelgebunden dynamisieren (statt fixer Betrag)
+    source: https://www.bundesgesundheitsministerium.de/fileadmin/Dateien/3_Downloads/F/FinanzKommission_Gesundheit/FinanzKommissionGesundheit_Erster_Bericht_20260330.pdf
+  - code: W2PCN9T
+    area: gesundheit
+    type: spending
+    amount: 5 Mrd.
+    title: Bundeszuschuss an GKV diskretionär um 5 Mrd. aufstocken
+    buildsOn: true
+    source: https://www.bundesgesundheitsministerium.de/ministerium/meldungen/finanzentwicklung-gkv-2025
+  - code: 84AZYTJ
+    area: gesundheit
+    type: spending
+    amount: 3 Mrd.
+    title: "Pflegereform: Eigenanteil deckeln"
+    source: https://www.pkv.de/verband/presse/meldungen/eigenanteile-in-der-pflege-so-teuer-waere-der-kostendeckel/
+  - code: 08MGHLS
+    area: gesundheit
+    type: spending
+    amount: 12 Mrd.
+    title: Kostendeckende GKV-Beiträge für Bürgergeldbeziehende
+    source: https://www.bundesgesundheitsministerium.de/fileadmin/Dateien/3_Downloads/F/FinanzKommission_Gesundheit/FinanzKommissionGesundheit_Erster_Bericht_20260330.pdf
+  - code: XEPQ85J
+    area: gesundheit
+    type: saving
+    amount: 5 Mrd.
+    title: GKV-Beitrag erhöhen statt Bundeszuschuss
+    source: https://www.bundesgesundheitsministerium.de/presse/pressemitteilungen/krankenkassen-erhoehen-die-beitraege
+  - code: WARKEN7
+    area: gesundheit
+    type: spending
+    amount: 7 Mrd.
+    title: Warken-Sparpaket im Gesundheitsetat zurücknehmen
+    source: https://www.spiegel.de/wirtschaft/soziales/haushalt-2027-lars-klingbeil-legt-entwurf-mit-555-milliarden-euro-ausgaben-vor-a-0e70bc5a-2da0-4778-a438-f55124b596a7
+  - code: BVBEAM7
+    area: gesundheit
+    type: saving
+    amount: 3,2 Mrd.
+    title: "Bürgerversicherung: Beamte in die GKV integrieren (PKV/Beihilfe auslaufen lassen)"
+    source: https://www.iges.com/ergebnisse/projekte/2017/beamte-und-krankenversicherung/index_ger.html
+  - code: SG65KXV
+    area: bildung
+    type: saving
+    amount: 4 Mrd.
+    title: Studiengebühren bundesweit einführen (1.500 €/Semester)
+    source: https://www.bpb.de/themen/bildung/dossier-bildung/200978/studiengebuehren-oder-studium-aus-oeffentlichen-mitteln/
+  - code: F1T2TAL
+    area: bildung
+    type: spending
+    amount: 3 Mrd.
+    title: BAföG auf 1.500 €/Monat erhöhen
+    source: https://www.stuttgarter-zeitung.de/inhalt.bafoeg-koalitionsvertrag-neuerungen-2026-mhsd.5a89464a-d13e-4e78-9f6d-d5f1c31f7d04.html
+  - code: A753LC5
+    area: bildung
+    type: saving
+    amount: 5 Mrd.
+    title: Forschungsetat um 25% kürzen
+    source: https://www.bundestag.de/presse/hib/kurzmeldungen-1127266
+  - code: ZKVTRAG
+    area: bildung
+    type: spending
+    amount: 500 Mio.
+    title: Zukunftsvertrag Studium und Lehre erhöhen
+    source: https://www.gwk-bonn.de/themen/foerderung-von-hochschulen/hochschulpakt-zukunftsvertrag/zukunftsvertrag
+  - code: EXZLNZS
+    area: bildung
+    type: spending
+    amount: 700 Mio.
+    title: Exzellenzstrategie ausweiten (mehr Universitäten fördern)
+    source: https://www.dfg.de/de/foerderung/foerderinitiativen/exzellenzstrategie
+  - code: DIG2PK1
+    area: bildung
+    type: spending
+    amount: 1 Mrd.
+    title: Digitalpakt Schulen 2.0 finanzieren
+    source: https://www.bmftr.bund.de/DE/Bildung/DigitalPakt-Schule/digitalpakt-schule_node.html
+  - code: 0IEM8UO
+    area: bildung
+    type: spending
+    amount: 12 Mrd.
+    title: Kostenloses Mittagessen an staatlichen Kitas und Schulen
+    source: https://www.bundestag.de/webarchiv/Ausschuesse/ausschuesse20/weitere_gremien/buergerraete/buergerrat_th1/kostenloses-essen-schule-kitas-991914
+  - code: MSTRBFG
+    area: bildung
+    type: spending
+    amount: 1,5 Mrd.
+    title: Meister-BAföG (AFBG) deutlich ausbauen
+    source: https://www.bmftr.bund.de/DE/Bildung/BeruflicheBildung/Aufstiegsfoerderung/Aufstiegsbafoeg/aufstiegsbafoeg_node.html
+  - code: KIFORMD
+    area: bildung
+    type: spending
+    amount: 2,5 Mrd.
+    title: KI-Forschungsoffensive verdoppeln
+    source: https://www.bmftr.bund.de/DE/Forschung/Schluessel-und-Zukunftstechnologien/KuenstlicheIntelligenz/kuenstlicheintelligenz_node.html
+  - code: 8DRC11E
+    area: inneres
+    type: spending
+    amount: 3 Mrd.
+    title: Grenzschutz massiv ausbauen
+    source: https://www.bundesfinanzministerium.de/Content/DE/Pressemitteilungen/Finanzpolitik/2025/07/2025-07-30-regierungsentwurf-bundeshaushalt-2026.html
+  - code: RTJ5PHT
+    area: inneres
+    type: spending
+    amount: 1,8 Mrd.
+    title: Bundespolizei aufstocken (+10.000 Stellen)
+    source: https://www.spiegel.de/wirtschaft/bundeshaushalt-2026-ministerien-fordern-ueber-30-milliarden-euro-zusaetzlich-a-64cddce4-981b-4655-ac6d-b3cdaa107cc9
+  - code: INETRZ7
+    area: inneres
+    type: saving
+    amount: 950 Mio.
+    title: Erhöhung des Innenetats zurücknehmen
+    source: https://www.tagesschau.de/inland/innenpolitik/haushalt-bundestag-dobrindt-100.html
+  - code: EHVDP10
+    area: entwicklung
+    type: spending
+    amount: 10 Mrd.
+    title: Entwicklungshilfe verdoppeln (auf ~20 Mrd. EUR/Jahr)
+    source: https://www.mitmischen.de/parlament/geld/haushalt-2026-wofuer-ist-wie-viel-geld-eingeplant
+  - code: 0HL9XPS
+    area: entwicklung
+    type: spending
+    amount: 12 Mrd.
+    title: Entwicklungshilfe weiter aufstocken auf UN-Ziel 0,7 % BIP (~31,5 Mrd. EUR/Jahr)
+    source: https://www.destatis.de
+  - code: EIMVIHC
+    area: entwicklung
+    type: saving
+    amount: 5 Mrd.
+    title: Entwicklungshilfe halbieren
+    source: https://www.mitmischen.de/parlament/geld/haushalt-2026-wofuer-ist-wie-viel-geld-eingeplant
+  - code: AFDBMZ7
+    area: entwicklung
+    type: saving
+    amount: 2,5 Mrd.
+    title: "Weiter kürzen: Entwicklungshilfe um 80 % senken und BMZ auflösen (AfD-Antrag)"
+    source: https://dserver.bundestag.de/btd/21/069/2106906.pdf
+  - code: BMZHSC1
+    area: entwicklung
+    type: spending
+    amount: 30 Mio.
+    title: BMZ-Hochschulprogramme erhalten (EPOS + DAAD-Partnerschaften)
+    source: https://www.tagesspiegel.de/wissen/wenig-sparen-viel-verlieren-die-bundesregierung-zerstort-geopolitisch-bedeutsame-netzwerke-15744856.html
+  - code: WI64CIY
+    area: wohnen
+    type: spending
+    amount: 3 Mrd.
+    title: Sozialen Wohnungsbau verdoppeln
+    source: https://www.bundestag.de/dokumente/textarchiv/2025/kw48-de-wohnen-1126090
+  - code: HE7UR23
+    area: wohnen
+    type: spending
+    amount: 900 Mio.
+    title: Agrardiesel-Förderung wiederherstellen
+    source: https://www.wirtschaftsdienst.eu/inhalt/jahr/2024/heft/4/beitrag/die-abschaffung-der-steuerlichen-beguenstigung-von-agrardiesel-ist-ueberfaellig.html
+  - code: GDPPQ0Y
+    area: wohnen
+    type: spending
+    amount: 1 Mrd.
+    title: "Ökolandbau-Förderung ausbauen (Ziel: 30% bis 2030)"
+    source: https://www.bmel.de/DE/themen/landwirtschaft/oekologischer-landbau/oekolandbau_node.html
+  - code: 9DOM5IG
+    area: wohnen
+    type: spending
+    amount: 2 Mrd.
+    title: Wohngeld weiter ausbauen (mehr Haushalte berechtigen, über Vor-Reform-Niveau hinaus)
+    source: https://www.bmwsb.bund.de/SharedDocs/pressemitteilungen/DE/2025/11/haushalt.html
+  - code: WGRUE27
+    area: wohnen
+    type: spending
+    amount: 2 Mrd.
+    title: Rücknahme Wohngeld-Kürzung 2027 (Kabinettsbeschluss)
+    source: https://www.spiegel.de/wirtschaft/soziales/wohngeld-die-regierung-kuerzt-drastisch-und-trifft-damit-vor-allem-kinder
+  - code: QPKI7P5
+    area: verwaltung
+    type: spending
+    amount: 2 Mrd.
+    title: Verwaltungsdigitalisierung beschleunigen (OZG vollenden)
+    source: https://www.insm.de/aktuelles/publikationen/digitale-transformation-deutschland-scheitert-beim-e-government
+  - code: TB94874
+    area: verwaltung
+    type: saving
+    amount: 1 Mrd.
+    title: Bundesbehörden konsolidieren (Doppelstrukturen abbauen)
+    source: https://www.bundestag.de/dokumente/textarchiv/2025/kw46-pa-haushalt-bereinigung-1126856
+  - code: FRHOCN9
+    area: verwaltung
+    type: saving
+    amount: 200 Mio.
+    title: Bundestag verkleinern (von 630 auf 400 Sitze)
+    source: https://www.bundestag.de/dokumente/textarchiv/2025/kw46-pa-haushalt-bereinigung-1126856
+  - code: ALIMB27
+    area: verwaltung
+    type: spending
+    amount: 3,5 Mrd.
+    title: Bundesalimentationsgesetz umsetzen (verfassungskonforme Beamtenbesoldung, BMI 2026)
+    source: https://www.dbwv.de/aktuelle-themen/verband-aktuell/beitrag/stellungnahme-des-dbwv-zum-bundesalimentationsgesetz
+  - code: BUEROB7
+    area: verwaltung
+    type: saving
+    amount: 500 Mio.
+    title: Bürokratieabbau nach 2. Entlastungskabinett (BMDS 2026)
+    source: https://bmds.bund.de/themen/staatsmodernisierung/buerokratierueckbau/2-entlastungskabinett
+  - code: ATOMREK
+    area: sonstige_ressorts
+    type: spending
+    amount: 1 Mrd.
+    title: Atomkraft-Wiedereinstieg Szenario A — Reaktivierung Isar 2, Emsland, Neckarwestheim 2
+    source: https://www.base.bund.de/de/nukleare-sicherheit/atomausstieg/abgeschaltete-akw/2022/die-drei-letzten-akw_inhalt.html
+  - code: ATOMNEU
+    area: sonstige_ressorts
+    type: spending
+    amount: 5 Mrd.
+    title: Atomkraft-Wiedereinstieg Szenario B — Neubau von 2-3 EPR-Reaktoren (analog Hinkley Point C)
+    source: https://www.nzz.ch/international/kernkraft-comeback-in-deutschland-so-viel-kostet-der-wiedereinstieg-ld.1860950
+  - code: QJXCUYV
+    area: sv_ktf
+    type: saving
+    amount: 750 Mio.
+    title: E-Auto-Förderung streichen (bis 2029)
+    source: https://www.t-online.de/finanzen/aktuelles/wirtschaft/id_101090442/e-auto-praemie-experten-und-umweltverbaende-ueben-scharfe-kritik.html
+  - code: 7M4NLS4
+    area: sv_ktf
+    type: spending
+    amount: 2,5 Mrd.
+    title: Bundesförderung effiziente Gebäude (BEG) um 2,5 Mrd. €/Jahr aufstocken
+    source: https://ariadneprojekt.de/publikation/analyse-energieberatung-als-hebel-fur-die-klimawende/
+  - code: Z6WKZW5
+    area: sv_ktf
+    type: spending
+    amount: 1,1 Mrd.
+    title: Bundesförderung effiziente Wärmenetze (BEW) auf 3 Mrd. €/Jahr dauerhaft aufstocken
+    source: https://www.zfk.de/energie/waermewende/waermenetz-foerderung-bew-2027-spuerbar-aufstocken
+  - code: KLMGLD7
+    area: sv_ktf
+    type: spending
+    amount: 14 Mrd.
+    title: Klimageld einführen (CO2-Preis-Einnahmen pro Kopf zurückzahlen)
+    source: https://www.diw.de/de/diw_01.c.874267.de/co2-bepreisung__klimageld_wuerde_insbesondere_einkommensschwachen_haushalten_helfen.html
+  - code: INDSTR7
+    area: sv_ktf
+    type: saving
+    amount: 1,5 Mrd.
+    title: Industriestrompreis / Brückenstrompreis streichen (5 ct/kWh-Deckel für energieintensive Industrie)
+    source: https://www.produktion.de/wirtschaft/industriestrompreis-soll-wettbewerbsfaehigkeit-sichern/2121401
+  - code: DIWERB7
+    area: einnahmen
+    type: revenue
+    amount: 2,3 Mrd.
+    title: Erbschaftsteuer nach DIW-Modell reformieren (Vergünstigungen abbauen, höhere Lebensfreibeträge, 4 Tarifstufen)
+    source: https://www.diw.de/de/diw_01.c.996032.de/publikationen/wochenberichte/2026_04_1/erbschaftsteuerreform__verguenstigungen_abbauen__freibetraege_erhoehen__steuertarifstufen_reduzieren.html
+  - code: ZFK8UT0
+    area: einnahmen
+    type: revenue
+    amount: 2 Mrd.
+    title: CumEx/CumCum-Steuerraub konsequent bekämpfen und zurückfordern
+    source: https://www.finanzwende.de/themen/steuergerechtigkeit/die-zehn-wichtigsten-steuerprivilegien-und-die-80-milliarden-euro
+  - code: CVS4F8C
+    area: einnahmen
+    type: revenue
+    amount: 6 Mrd.
+    title: Immobiliengewinne besteuern (Spekulationssteuer abschaffen)
+    source: https://www.finanzwende.de/themen/steuergerechtigkeit/die-zehn-wichtigsten-steuerprivilegien-und-die-80-milliarden-euro
+  - code: GVYIE6I
+    area: einnahmen
+    type: revenue
+    amount: 17 Mrd.
+    title: Unternehmensgewinne aus Steueroasen besteuern
+    source: https://www.finanzwende.de/themen/steuergerechtigkeit/die-zehn-wichtigsten-steuerprivilegien-und-die-80-milliarden-euro
+  - code: VWPVS7H
+    area: einnahmen
+    type: revenue
+    amount: 6 Mrd.
+    title: Gewinne in Familienholdings besteuern
+    source: https://www.finanzwende.de/themen/steuergerechtigkeit/die-zehn-wichtigsten-steuerprivilegien-und-die-80-milliarden-euro
+  - code: BS1XQGS
+    area: einnahmen
+    type: revenue
+    amount: 500 Mio.
+    title: Anzahl der gesetzlichen Feiertage bundesweit vereinheitlichen (auf niedrigstes Ländermaß)
+    source: https://www.iwkoeln.de/presse/iw-nachrichten/christoph-schroeder-ein-zusaetzlicher-arbeitstag-bringt-bis-zu-86-milliarden-euro.html
+  - code: 1HIE341
+    area: einnahmen
+    type: revenue
+    amount: 33 Mrd.
+    title: Fahrleistungsabhängige PKW-Maut einführen (Agora-Modell, zusätzlich zu bestehenden Steuern)
+    source: https://www.agora-verkehrswende.de/veroeffentlichungen/pkw-maut-fuer-die-mobilitaetswende/
+  - code: EUMZ7BI
+    area: einnahmen
+    type: revenue
+    amount: 2,5 Mrd.
+    title: Stromsteuerbegünstigung für produzierendes Gewerbe und Land-/Forstwirtschaft aufheben (§ 9b StromStG)
+    source: https://www.bundesfinanzministerium.de/Content/DE/Downloads/Broschueren_Bestellservice/30-subventionsbericht.pdf
+  - code: P3ID2QN
+    area: einnahmen
+    type: revenue
+    amount: 451 Mio.
+    title: Tonnagebesteuerung für Handelsschiffe abschaffen (§ 5a EStG)
+    source: https://www.bundesfinanzministerium.de/Content/DE/Downloads/Broschueren_Bestellservice/30-subventionsbericht.pdf
+  - code: 1IVMAT9
+    area: einnahmen
+    type: revenue
+    amount: 1,381 Mrd.
+    title: Steuerbefreiung für Sonntags-, Feiertags- und Nachtarbeitszuschläge streichen (§ 3b EStG)
+    source: https://www.bundesfinanzministerium.de/Content/DE/Downloads/Broschueren_Bestellservice/30-subventionsbericht.pdf
+  - code: 126DAKE
+    area: einnahmen
+    type: revenue
+    amount: 430 Mio.
+    title: "Agrardiesel-Steuerbegünstigung: verbliebene Rest-Entlastung nach § 57 EnergieStG vollständig streichen"
+    source: https://www.bundesfinanzministerium.de/Content/DE/Downloads/Broschueren_Bestellservice/30-subventionsbericht.pdf
+  - code: N1543AJ
+    area: einnahmen
+    type: revenue
+    amount: 490 Mio.
+    title: Kfz-Steuerbefreiung für Land- und Forstwirtschaft abschaffen (§ 3 Nr. 7 KraftStG)
+    source: https://www.bundesfinanzministerium.de/Content/DE/Downloads/Broschueren_Bestellservice/30-subventionsbericht.pdf
+  - code: JRFD10P
+    area: einnahmen
+    type: revenue
+    amount: 432 Mio.
+    title: Kerosinsteuer auf inländischen Flugverkehr einführen (§ 27 Abs. 2 EnergieStG streichen)
+    source: https://www.bundesfinanzministerium.de/Content/DE/Downloads/Broschueren_Bestellservice/30-subventionsbericht.pdf
+  - code: VERFRBS
+    area: einnahmen
+    type: revenue
+    amount: 345 Mio.
+    title: Vereinsfreibetrag senken + Veräußerungsfreibeträge streichen (BMF-Referentenentwurf 2027)
+    source: https://www.mdr.de/nachrichten/deutschland/politik/vereine-steuern-lars-klingbeil-steuerfreibetrag,steuererhoehung-100.html
+  - code: GKVMITV
+    area: einnahmen
+    type: revenue
+    amount: 3,5 Mrd.
+    title: "GKV: Beitragsfreie Mitversicherung Ehepartner abschaffen"
+    source: https://www.versicherungsjournal.de/markt-und-politik/laender-wollen-wegfall-der-gkv-familienversicherung-abfedern-156029
+  - code: 755NF4Z
+    area: einnahmen
+    type: revenue
+    amount: 1,5 Mrd.
+    title: "Mieteinnahmen: Gewerbesteuer-Ausnahme streichen"
+    source: https://www.finanzwende.de/themen/steuergerechtigkeit/die-zehn-wichtigsten-steuerprivilegien-und-die-80-milliarden-euro
+  - code: W9XA3KX
+    area: einnahmen
+    type: revenue
+    amount: 5 Mrd.
+    title: Abgeltungsteuer abschaffen (Kapitalerträge normal besteuern)
+    source: https://www.netzwerk-steuergerechtigkeit.de/jahrbuch/
+  - code: DPJA1WJ
+    area: einnahmen
+    type: revenue
+    amount: 1 Mrd.
+    title: "Reichensteuer weiter anheben: 47% ab 280.000 € → 48%"
+    source: https://www.bundestag.de/presse/hib/kurzmeldungen-1050526
+  - code: ZKRST27
+    area: einnahmen
+    type: revenue
+    amount: 950 Mio.
+    title: Zuckersteuer nach Klingbeil-Entwurf einführen (ab 01.07.2027, 26-38 ct/L; vom Kanzleramt vorerst gestoppt)
+    source: https://www.t-online.de/nachrichten/deutschland/innenpolitik/id_101461236/-nicht-mehrheitsfaehig-kanzleramt-stoppt-klingbeils-zuckersteuer-entwurf.html
+  - code: NSTZFI7
+    area: einnahmen
+    type: revenue
+    amount: 3,05 Mrd.
+    title: Zuckersteuer auf Finnland-Niveau ausweiten (0,59 €/L auf alle zuckerhaltigen Getränke)
+    source: https://www.netzwerk-steuergerechtigkeit.de/jahrbuch/
+  - code: ZKAUSW8
+    area: einnahmen
+    type: revenue
+    amount: 200 Mio.
+    title: Zuckersteuer auf Light-/Zero-Getränke, Nektar, Smoothies und Haferdrinks ausweiten
+    source: https://www.tagesschau.de/inland/innenpolitik/bundesregierung-zuckersteuer-ausweitung-100.html
+  - code: T4UFEL6
+    area: einnahmen
+    type: revenue
+    amount: 36 Mrd.
+    title: Schuldenbremse weiter lockern für Investitionen (+36 Mrd. Kreditspielraum)
+    source: https://de.finance.yahoo.com/nachrichten/reform-schuldenbremse-expertenkommission-hat-laut-065540856.html
+  - code: 246HID2
+    area: einnahmen
+    type: revenue
+    amount: 300 Mio.
+    title: Flugticketsteuer-Senkung rückgängig machen
+    source: https://taz.de/Debatten-um-Bundeshaushalt/!6181914/
+  - code: TBKST26
+    area: einnahmen
+    type: tax-cut
+    amount: 800 Mio.
+    title: Rücknahme Klingbeil-Tabaksteuer-Stufenerhöhung 2027-2030
+    source: https://www.t-online.de/finanzen/aktuelles/wirtschaft/id_101328070/tabaksteuer-wirtschaft-nennt-klingbeils-milliarden-plan-blindflug-.html
+  - code: TBKNSC7
+    area: einnahmen
+    type: revenue
+    amount: 800 Mio.
+    title: Nachschärfung Tabaksteuer 2027-2030 (BMF-Papier 08.07.2026, noch nicht beschlossen)
+    source: https://www.spiegel.de/wirtschaft/neue-plaene-der-regierung-12-euro-fuer-eine-packung-zigaretten-tabaksteuer-soll-noch-staerker-erhoeht-werden-a-ce013cce-c4c3-46f6-8c83-85e000dcd57e
+  - code: VGU7RN7
+    area: einnahmen
+    type: revenue
+    amount: 125 Mio.
+    title: Strafsteuer auf Privatjet-Flüge (1.000 € pro Start)
+    source: https://taz.de/Fluege-mit-Privatjets-im-Jahr-2024/!6078574/
+  - code: VR0SR0T
+    area: einnahmen
+    type: revenue
+    amount: 1,4 Mrd.
+    title: EU-Plastikabgabe an Produzenten von Plastikverpackungen weiterberechnen
+    source: https://plasticseurope.org/de/nachhaltigkeit/kreislaufwirtschaft/abfallmanagement-und-abfallvermeidung/plastiksteuer/
+  - code: R92NX4V
+    area: einnahmen
+    type: revenue
+    amount: 1,4 Mrd.
+    title: Alkoholsteuer erhöhen (+10 Cent pro Bier)
+    source: https://taz.de/Sollte-Alkohol-hoeher-besteuert-werden/!6127737/
+  - code: BOJ1NHK
+    area: einnahmen
+    type: tax-cut
+    amount: 1,6 Mrd.
+    title: Energiesteuer-Senkung (Tankrabatt) wie 2026 wiederholen
+    source: https://www.bundestag.de/dokumente/textarchiv/2026/kw17-de-energiesteuersenkung-1165890
+  - code: 5OWF759
+    area: einnahmen
+    type: tax-cut
+    amount: 9 Mrd.
+    title: Unternehmenssteuer von 15% auf 10% senken
+    source: https://www.bundesregierung.de/breg-de/aktuelles/wachstumsbooster-2351752
+  - code: KOAEST7
+    area: einnahmen
+    type: revenue
+    amount: 5 Mrd.
+    title: "Rücknahme Koa-Reform: Einkommensteuer-Entlastung streichen (nur diskretionäre Teile)"
+    source: https://table.media/berlin/talk-of-the-town/koalitionsausschuss-fuer-welche-einkommensgruppen-die-steuerplaene-entlastung-bringen
+  - code: KOARST7
+    area: einnahmen
+    type: tax-cut
+    amount: 3 Mrd.
+    title: "Rücknahme Koa-Reform: Reichensteuer-Verschärfung streichen"
+    source: https://table.media/berlin/talk-of-the-town/koalitionsausschuss-fuer-welche-einkommensgruppen-die-steuerplaene-entlastung-bringen
+  - code: KOAMJB7
+    area: einnahmen
+    type: tax-cut
+    amount: 1 Mrd.
+    title: "Rücknahme Koa-Reform: Minijob-Pauschale bei 2% belassen"
+    source: https://www.beck-aktuell.de/heute-im-recht/rechtspolitik-gesetzgebung/koalitionsausschuss-reformbeschluesse-steuern-kindergeld-kinderfreibetrag-minijobs-2026-07-02
+  - code: KOAHWB7
+    area: einnahmen
+    type: tax-cut
+    amount: 700 Mio.
+    title: "Rücknahme Koa-Reform: Handwerkerbonus bei 20% belassen"
+    source: https://www.haufe.de/steuern/gesetzgebung-politik/koalition-einigt-sich-auf-steuerentlastungen_168_690706.html
+  - code: KOAAKR7
+    area: einnahmen
+    type: revenue
+    amount: 900 Mio.
+    title: "Rücknahme Koa-Reform: Aktivrente (2.000 € steuerfrei) abschaffen"
+    source: https://amp.infranken.de/ratgeber/karriere-geld/rente-aktivrente-verlust-reform-milliarden-euro-gesetz-januar-2026-steuern-selbststaendige-art-6265212
+  - code: KTFRUE7
+    area: einnahmen
+    type: tax-cut
+    amount: 2,7 Mrd.
+    title: "Rücknahme KTF-Plünderung: Emissionshandels-Erlöse wieder in KTF statt in Kernhaushalt"
+    source: https://www.zdfheute.de/politik/deutschland/haushalt-finanzplan-regierungsentwurf-kabinett-100.html
+  - code: CO2STP7
+    area: einnahmen
+    type: tax-cut
+    amount: 4 Mrd.
+    title: CO2-Preis-Stopp 2027 durchsetzen (BEHG-Änderung Ende Juli, noch nicht beschlossen)
+    source: https://www.t-online.de/finanzen/energie/id_101342610/erhoehung-der-co2-steuer-2027-gestoppt-milliarden-gehen-regierung-verloren.html
+  - code: NSTDGT7
+    area: einnahmen
+    type: revenue
+    amount: 6 Mrd.
+    title: Digitalsteuer 10% auf US-Digitalkonzerne (Frankreich-Vorbild)
+    source: https://www.netzwerk-steuergerechtigkeit.de/jahrbuch/
+  - code: NSTUGW7
+    area: einnahmen
+    type: revenue
+    amount: 19 Mrd.
+    title: Digitalsteuer erweitern — Übergewinnsteuer 50% auf 200 profitabelste Konzerne (Netzwerk Steuergerechtigkeit)
+    source: https://www.netzwerk-steuergerechtigkeit.de/jahrbuch/
+  - code: NSTKRY7
+    area: einnahmen
+    type: revenue
+    amount: 7 Mrd.
+    title: Kryptowährungen an die Besteuerung von Aktien angleichen (Ein-Jahres-Haltefrist abschaffen)
+    source: https://www.netzwerk-steuergerechtigkeit.de/jahrbuch/
+  - code: NSTSUV7
+    area: einnahmen
+    type: revenue
+    amount: 11 Mrd.
+    title: SUV/Luxus-Kfz-Erwerbsteuer nach dänischem Vorbild (~40.000 € einmalig)
+    source: https://www.netzwerk-steuergerechtigkeit.de/jahrbuch/
+  - code: NSTMFS7
+    area: einnahmen
+    type: revenue
+    amount: 7 Mrd.
+    title: Ermäßigten MwSt-Satz (7%) für Fleisch und Süßigkeiten streichen (Netzwerk Steuergerechtigkeit)
+    source: https://www.netzwerk-steuergerechtigkeit.de/jahrbuch/
+  - code: FUESTMW
+    area: einnahmen
+    type: revenue
+    amount: 36 Mrd.
+    title: Ermäßigten MwSt-Satz komplett abschaffen — 19% auf alles (Fuest/ifo, inkl. Sozialgutscheine)
+    source: https://www.zeit.de/politik/ausland/2026-08/mehrwertsteuer-lebensmittel-clemens-fuest-ifo-institut-gxe
+  - code: 9TZQ889
+    area: einnahmen
+    type: tax-cut
+    amount: 700 Mio.
+    title: MwSt für pflanzliche Alternativprodukte auf 7% reduzieren (Hafer-/Sojadrinks, vegane Fleischersatzprodukte)
+    source: https://www.foodwatch.org/de/pressemitteilungen/2023/hafermilch-teurer-als-kuhmilch-foodwatch-fordert-abschaffung-der-diskriminierenden-mehrwertsteuer-auf-pflanzliche-produkte
+  - code: H775TQO
+    area: einnahmen
+    type: tax-cut
+    amount: 9,3 Mrd.
+    title: MwSt auf alle pflanzlichen Grundnahrungsmittel auf 0 % (statt 7 %)
+    buildsOn: true
+    source: https://www.bund.net/service/publikationen/detail/publication/plaedoyer-fuer-eine-tierwohl-und-umweltvertraegliche-agrarwende/
+  - code: SOLIABG
+    area: einnahmen
+    type: tax-cut
+    amount: 13 Mrd.
+    title: Solidaritätszuschlag vollständig abschaffen (AfD-Antrag 21/5763)
+    source: https://dserver.bundestag.de/btd/21/057/2105763.pdf
+  - code: MWSTGB7
+    area: einnahmen
+    type: tax-cut
+    amount: 16 Mrd.
+    title: MwSt auf Grundnahrungsmittel, Hygieneprodukte, Bus & Bahn auf 0% (Die Linke)
+    source: https://dserver.bundestag.de/btd/21/001/2100135.pdf
+  - code: STROMEU
+    area: einnahmen
+    type: tax-cut
+    amount: 4 Mrd.
+    title: Stromsteuer für alle Verbraucher auf EU-Mindestmaß absenken (statt nur produzierendes Gewerbe)
+    source: https://www.bundestag.de/dokumente/textarchiv/2025/kw41-de-energiesteuergesetz-1111808
+  - code: CANNAB7
+    area: einnahmen
+    type: revenue
+    amount: 1,5 Mrd.
+    title: "Cannabis-Vollegalisierung: staatlich regulierter Einzelhandel (2. Säule des CanG)"
+    source: https://www.wirtschaftsdienst.eu/inhalt/jahr/2024/heft/2/beitrag/die-legalisierung-von-cannabis-in-deutschland.html

@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=../schemas/topic.schema.json
+icon: receipt
+kind: gain
+annual: true
+title: { de: Mehrwertsteuer auf 21 %, en: VAT up to 21% }
+short: { de: Regelsatz von 19 auf 21 %, en: Standard rate from 19% to 21% }
+who:
+  de: Diskutiert von Ökonomen als Gegenfinanzierung für Entlastungen
+  en: Discussed by economists to fund tax cuts elsewhere
+context:
+  de: Zwei Prozentpunkte mehr Mehrwertsteuer auf alles, was heute mit 19 % besteuert wird, brächten rund 32 Mrd. € im Jahr.
+  en: Two percentage points more VAT on everything currently taxed at 19% would bring about €32 bn a year.
+caveat:
+  de: Die Mehrwertsteuer trifft Menschen mit kleinem Einkommen anteilig stärker, weil sie mehr von ihrem Geld ausgeben. Höhere Preise können die Inflation antreiben.
+  en: VAT hits low incomes harder, because they spend a larger share of their money. Higher prices can push up inflation.
+estimates:
+  mid:
+    amount: 32 Mrd.
+    note:
+      de: Grobe Schätzung für zwei Prozentpunkte mehr Mehrwertsteuer.
+      en: Rough estimate for two more percentage points of VAT.

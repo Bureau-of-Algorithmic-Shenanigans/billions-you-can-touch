@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=../schemas/topic.schema.json
+icon: percent
+kind: gain
+annual: true
+title: { de: Spitzensteuersatz auf 53 %, en: Top tax rate up to 53% }
+short: { de: Reichensteuer wie bis 1999, en: Wealth-earners' rate as before 1999 }
+who: { de: Gefordert u. a. von Finanzwende und Die Linke, en: Called for by Finanzwende and Die Linke }
+context:
+  de: Bis 1999 lag der Spitzensteuersatz bei 53 %. Ihn für sehr hohe Einkommen wieder darauf anzuheben, brächte laut Finanzwende rund 11,5 Mrd. € im Jahr.
+  en: Until 1999 the top rate was 53%. Raising it back for very high incomes would bring about €11.5 bn a year, according to Finanzwende.
+caveat:
+  de: Wirtschaftsverbände warnen vor Nachteilen für Personengesellschaften und vor Abwanderung von Fachkräften und Unternehmern.
+  en: Business groups warn about harm to partnerships and about skilled workers and entrepreneurs leaving.
+estimates:
+  mid:
+    amount: 11,5 Mrd.
+    note: { de: Schätzung von Finanzwende., en: Finanzwende estimate. }
+for: [i5]

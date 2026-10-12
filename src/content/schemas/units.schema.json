@@ -1,0 +1,394 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+        "description": "Unique id, lowercase with dashes; do not change it later (saved selections use it)"
+      },
+      "icon": {
+        "type": "string",
+        "enum": [
+          "pencil",
+          "rotate-ccw",
+          "chevron-left",
+          "chevron-right",
+          "calendar-x",
+          "percent",
+          "trending-up",
+          "castle",
+          "chef-hat",
+          "flag",
+          "plane-landing",
+          "watch",
+          "wine",
+          "book-open",
+          "calendar-days",
+          "circle-parking",
+          "footprints",
+          "hourglass",
+          "laptop",
+          "map",
+          "radio",
+          "tv",
+          "wifi",
+          "wind",
+          "wrench",
+          "bus",
+          "coins",
+          "croissant",
+          "piggy-bank",
+          "receipt",
+          "shield-check",
+          "siren",
+          "timer",
+          "euro",
+          "flame",
+          "headphones",
+          "luggage",
+          "anchor",
+          "banknote",
+          "car-front",
+          "car-taxi-front",
+          "check",
+          "clock",
+          "factory",
+          "heart",
+          "plug-zap",
+          "plus",
+          "route",
+          "sailboat",
+          "search",
+          "utensils-crossed",
+          "x",
+          "zap",
+          "armchair",
+          "baby",
+          "bed-double",
+          "beer",
+          "bike",
+          "blocks",
+          "briefcase",
+          "building-2",
+          "building",
+          "calculator",
+          "calendar",
+          "car",
+          "clapperboard",
+          "coffee",
+          "construction",
+          "cup-soda",
+          "fuel",
+          "gem",
+          "globe",
+          "goal",
+          "graduation-cap",
+          "hammer",
+          "hard-hat",
+          "heart-handshake",
+          "heater",
+          "hospital",
+          "house",
+          "ice-cream-cone",
+          "landmark",
+          "map-pin",
+          "moon",
+          "music",
+          "plane-takeoff",
+          "plane",
+          "presentation",
+          "sandwich",
+          "school",
+          "scroll-text",
+          "shield-half",
+          "shield",
+          "ship",
+          "shopping-bag",
+          "shopping-cart",
+          "signpost",
+          "smartphone",
+          "stethoscope",
+          "sun",
+          "tent",
+          "ticket",
+          "train-front",
+          "train-track",
+          "tree-palm",
+          "trophy",
+          "user",
+          "users",
+          "utensils",
+          "waves",
+          "mask"
+        ],
+        "description": "Icon name (Lucide, see src/lib/icons.js)"
+      },
+      "name": {
+        "type": "object",
+        "properties": {
+          "de": {
+            "type": "string",
+            "minLength": 1
+          },
+          "en": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "de",
+          "en"
+        ],
+        "additionalProperties": false,
+        "description": "Name of the thing, singular: Döner, Lehrkraft, Flughafen BER"
+      },
+      "price": {
+        "anyOf": [
+          {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          {
+            "type": "string"
+          }
+        ],
+        "description": "Euros, or a formula with the assumptions schoolBuild, staff, staffCost, tank, cons, price, power, grocery, rent, wgRoom, persons, e.g. 60 * power"
+      },
+      "period": {
+        "description": "The price is per month (counted for a whole year) or per year",
+        "type": "string",
+        "enum": [
+          "month",
+          "year"
+        ]
+      },
+      "count": {
+        "description": "Word after the number, e.g. Stellen ein Jahr lang",
+        "type": "object",
+        "properties": {
+          "de": {
+            "type": "string",
+            "minLength": 1
+          },
+          "en": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "de",
+          "en"
+        ],
+        "additionalProperties": false
+      },
+      "short": {
+        "description": "Shorter name for when the count word already says part of it",
+        "type": "object",
+        "properties": {
+          "de": {
+            "type": "string",
+            "minLength": 1
+          },
+          "en": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "de",
+          "en"
+        ],
+        "additionalProperties": false
+      },
+      "priceNote": {
+        "description": "Replaces the price line, e.g. how the price is made up",
+        "type": "object",
+        "properties": {
+          "de": {
+            "type": "string",
+            "minLength": 1
+          },
+          "en": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "de",
+          "en"
+        ],
+        "additionalProperties": false
+      },
+      "group": {
+        "description": "A round of something for many people",
+        "type": "object",
+        "properties": {
+          "size": {
+            "description": "How many items the group has",
+            "anyOf": [
+              {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "of": {
+            "description": "Unit id of the single item; its price × size is the group price",
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+          },
+          "item": {
+            "type": "object",
+            "properties": {
+              "de": {
+                "type": "string",
+                "minLength": 1
+              },
+              "en": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "de",
+              "en"
+            ],
+            "additionalProperties": false,
+            "description": "The items, plural: Döner, Kugeln Eis"
+          },
+          "label": {
+            "type": "object",
+            "properties": {
+              "de": {
+                "type": "string",
+                "minLength": 1
+              },
+              "en": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "de",
+              "en"
+            ],
+            "additionalProperties": false,
+            "description": "The group, e.g. eine Runde für alle in Köln"
+          }
+        },
+        "required": [
+          "size",
+          "item",
+          "label"
+        ],
+        "additionalProperties": false
+      },
+      "for": {
+        "default": [],
+        "description": "Fits people with these answers",
+        "type": "array",
+        "items": {
+          "type": "string",
+          "enum": [
+            "school",
+            "student",
+            "work",
+            "retired",
+            "alone",
+            "wg",
+            "partner",
+            "kids",
+            "big",
+            "town",
+            "rural",
+            "car",
+            "transit",
+            "bike",
+            "rent",
+            "own",
+            "i1",
+            "i2",
+            "i3",
+            "i4",
+            "i5",
+            "football",
+            "festival",
+            "travel",
+            "eatout"
+          ]
+        }
+      },
+      "notFor": {
+        "default": [],
+        "description": "Clearly does not fit people with these answers",
+        "type": "array",
+        "items": {
+          "type": "string",
+          "enum": [
+            "school",
+            "student",
+            "work",
+            "retired",
+            "alone",
+            "wg",
+            "partner",
+            "kids",
+            "big",
+            "town",
+            "rural",
+            "car",
+            "transit",
+            "bike",
+            "rent",
+            "own",
+            "i1",
+            "i2",
+            "i3",
+            "i4",
+            "i5",
+            "football",
+            "festival",
+            "travel",
+            "eatout"
+          ]
+        }
+      },
+      "sources": {
+        "default": [],
+        "description": "Where the figures come from",
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Publisher and title"
+            },
+            "url": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "required": [
+            "title",
+            "url"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    "required": [
+      "id",
+      "icon",
+      "name"
+    ],
+    "additionalProperties": false
+  }
+}

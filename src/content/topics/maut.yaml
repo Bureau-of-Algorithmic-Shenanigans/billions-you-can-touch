@@ -1,0 +1,36 @@
+# yaml-language-server: $schema=../schemas/topic.schema.json
+icon: signpost
+kind: loss
+title: { de: Scheuers Pkw-Maut, en: Scheuer's car toll }
+short: { de: "Vom EuGH gestoppt, 2019", en: "Struck down by the ECJ, 2019" }
+who:
+  de: Andreas Scheuer (CSU), Bundesverkehrsminister 2018–2021
+  en: Andreas Scheuer (CSU), Federal Transport Minister 2018–2021
+context:
+  de: Scheuer unterschrieb die Betreiberverträge, bevor der Europäische Gerichtshof entschieden hatte. Im Juni 2019 erklärte der EuGH die Maut für rechtswidrig, weil sie ausländische Fahrer benachteiligte. Der Bund zahlte den Betreibern Kapsch und CTS Eventim 243 Mio. € Schadensersatz, 2025 kamen weitere rund 27 Mio. € hinzu.
+  en: Scheuer signed the operator contracts before the European Court of Justice had ruled. In June 2019 the ECJ declared the toll unlawful because it discriminated against foreign drivers. The government paid the operators Kapsch and CTS Eventim €243 m in damages, with about €27 m more added in 2025.
+caveat:
+  de: Das Ministerium verzichtete 2024 auf eine Regressklage gegen Scheuer persönlich.
+  en: In 2024 the ministry decided not to sue Scheuer personally for recovery.
+estimates:
+  low:
+    amount: 243 Mio.
+    note:
+      de: Nur der Vergleich mit den Betreibern von 2023 (243 Mio. €).
+      en: Only the 2023 settlement with the operators (€243 m).
+  mid:
+    amount: 270 Mio.
+    note:
+      de: Alle Zahlungen an die Betreiber, inklusive der 27 Mio. € im Haushalt 2025.
+      en: All payments to the operators, including the €27 m in the 2025 budget.
+  high:
+    amount: 330 Mio.
+    note:
+      de: "Zusätzlich Berater-, Anwalts- und Vorbereitungskosten (Medienberichte: rund 330 Mio. € gesamt)."
+      en: "Plus consultants, lawyers and preparation (press reports: about €330 m in total)."
+for: [car]
+sources:
+  - title: Gescheiterte Pkw-Maut kostet weitere Millionen (beck-aktuell, 2025)
+    url: https://www.beck-aktuell.de/heute-im-recht/rechtspolitik-gesetzgebung/gescheiterte-pkw-maut-kosten-steuerzahler-millionen-2025-09-04
+  - title: Keine Klage gegen Scheuer (t-online)
+    url: https://www.t-online.de/nachrichten/deutschland/id_100310228/pkw-maut-bund-klagt-nicht-gegen-ex-verkehrsminister-scheuer.html
