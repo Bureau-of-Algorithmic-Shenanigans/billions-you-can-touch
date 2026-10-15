@@ -22,7 +22,7 @@ export function wrapLabel(str, maxChars) {
   // prefer a natural break: before " · " (note) or " (" (detail), if both halves fit
   for (const sep of [" · ", " ("]) {
     const i = str.indexOf(sep);
-    if (i > 0 && i <= maxChars && str.length - i - 1 <= maxChars) return [str.slice(0, i), str.slice(i + 1).replace(/^· /, "· ")];
+    if (i > 0 && i <= maxChars && str.length - i - 1 <= maxChars) return [str.slice(0, i), str.slice(i + 1)];
   }
   const words = str.split(" ");
   let a = "";
