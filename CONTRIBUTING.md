@@ -7,6 +7,9 @@ GitHub (pencil icon → "Propose changes"). The checks on the pull request tell 
 Not sure about a figure, or don't want to edit files? [Open an issue](https://github.com/Bureau-of-Algorithmic-Shenanigans/billions-you-can-touch/issues/new/choose) with the topic and your
 sources; someone will turn it into data.
 
+By contributing you agree that your contribution is licensed like the project: code under [MIT](LICENSE), data and
+texts in `src/content` under [CC BY 4.0](src/content/LICENSE). Please also follow the [code of conduct](CODE_OF_CONDUCT.md).
+
 **Ground rules for content**
 
 - Every figure needs a public source. Prefer official statistics, audit offices, parliamentary documents and research

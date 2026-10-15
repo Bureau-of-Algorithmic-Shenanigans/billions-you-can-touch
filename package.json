@@ -3,6 +3,8 @@
   "private": true,
   "type": "module",
   "description": "Milliarden zum Anfassen – German political costs and revenues as everyday comparisons",
+  "license": "MIT",
+  "repository": "github:Bureau-of-Algorithmic-Shenanigans/billions-you-can-touch",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",

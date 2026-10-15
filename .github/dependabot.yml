@@ -4,10 +4,20 @@ updates:
     directory: /
     schedule:
       interval: weekly
+    # pnpm refuses releases younger than a day (minimumReleaseAge); wait a little longer so update PRs install cleanly
+    cooldown:
+      default-days: 3
     groups:
       dev-dependencies:
         dependency-type: development
+    labels: [dependencies]
   - package-ecosystem: github-actions
     directory: /
     schedule:
       interval: monthly
+    cooldown:
+      default-days: 3
+    groups:
+      actions:
+        patterns: ["*"]
+    labels: [dependencies]

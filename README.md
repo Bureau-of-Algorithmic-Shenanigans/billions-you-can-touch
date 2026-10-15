@@ -62,3 +62,8 @@ tests/
 
 Figures come from public sources listed on the page under "Quellen und Methode"; estimates are marked as such.
 Icons: [Lucide](https://lucide.dev) (ISC). Fonts: Barlow, Barlow Condensed, JetBrains Mono (SIL OFL), self-hosted via Fontsource.
+
+## License
+
+Code: [MIT](LICENSE). Data and texts in `src/content`: [CC BY 4.0](src/content/LICENSE), so they can be reused with
+attribution. Fonts (SIL OFL) and icons (Lucide, ISC) keep their own licenses.
