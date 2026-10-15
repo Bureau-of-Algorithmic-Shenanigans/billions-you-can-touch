@@ -712,16 +712,16 @@ proposals:
   - code: 9TZQ889
     area: einnahmen
     type: tax-cut
-    amount: 700 Mio.
-    title: MwSt für pflanzliche Alternativprodukte auf 7% reduzieren (Hafer-/Sojadrinks, vegane Fleischersatzprodukte)
-    source: https://www.foodwatch.org/de/pressemitteilungen/2023/hafermilch-teurer-als-kuhmilch-foodwatch-fordert-abschaffung-der-diskriminierenden-mehrwertsteuer-auf-pflanzliche-produkte
+    amount: 40 Mio.
+    title: MwSt für Pflanzendrinks auf 7 % senken (Hafer-, Soja-, Mandeldrinks wie Kuhmilch)
+    source: https://gfieurope.org/de/wp-content/uploads/sites/2/2023/08/GFI-Europe-Fakten-zur-Mehrwertsteuer-auf-Pflanzenmilch.pdf
   - code: H775TQO
     area: einnahmen
     type: tax-cut
-    amount: 9,3 Mrd.
-    title: MwSt auf alle pflanzlichen Grundnahrungsmittel auf 0 % (statt 7 %)
+    amount: 4 Mrd.
+    title: MwSt auf pflanzliche Grundnahrungsmittel auf 0 % (statt 7 %)
     buildsOn: true
-    source: https://www.bund.net/service/publikationen/detail/publication/plaedoyer-fuer-eine-tierwohl-und-umweltvertraegliche-agrarwende/
+    source: https://www.umweltbundesamt.de/uba-empfiehlt-0-mwst-auf-pflanzliche
   - code: SOLIABG
     area: einnahmen
     type: tax-cut
