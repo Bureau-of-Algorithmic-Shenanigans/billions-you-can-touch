@@ -203,7 +203,7 @@ proposals:
     type: spending
     amount: 8,5 Mrd.
     title: 9-Euro-Ticket wiedereinführen (statt Deutschlandticket 63 €/Monat)
-    source: https://www.zdfheute.de/politik/deutschland/9-euro-ticket-verkehr-auto-zug-verspaetungen-ifo-100.html
+    source: https://web.archive.org/web/20260828005053/https://www.zdfheute.de/politik/deutschland/9-euro-ticket-verkehr-auto-zug-verspaetungen-ifo-100.html
   - code: 66FXLO0
     area: gesundheit
     type: spending
@@ -282,7 +282,7 @@ proposals:
     type: spending
     amount: 1 Mrd.
     title: Digitalpakt Schulen 2.0 finanzieren
-    source: https://www.bmftr.bund.de/DE/Bildung/DigitalPakt-Schule/digitalpakt-schule_node.html
+    source: https://www.bmbfsfj.bund.de/bmbfsfj/aktuelles/pressemitteilungen/digitalisierung-von-schulen-bund-und-laender-einig-ueber-den-digitalpakt-2-0-278566
   - code: 0IEM8UO
     area: bildung
     type: spending
@@ -294,13 +294,13 @@ proposals:
     type: spending
     amount: 1,5 Mrd.
     title: Meister-BAföG (AFBG) deutlich ausbauen
-    source: https://www.bmftr.bund.de/DE/Bildung/BeruflicheBildung/Aufstiegsfoerderung/Aufstiegsbafoeg/aufstiegsbafoeg_node.html
+    source: https://www.aufstiegs-bafoeg.de/aufstiegsbafoeg/de/home/home_node.html
   - code: KIFORMD
     area: bildung
     type: spending
     amount: 2,5 Mrd.
     title: KI-Forschungsoffensive verdoppeln
-    source: https://www.bmftr.bund.de/DE/Forschung/Schluessel-und-Zukunftstechnologien/KuenstlicheIntelligenz/kuenstlicheintelligenz_node.html
+    source: https://www.forschung-und-lehre.de/politik/hightech-agenda-passiert-bundeskabinett-7224
   - code: 8DRC11E
     area: inneres
     type: spending
@@ -366,7 +366,7 @@ proposals:
     type: spending
     amount: 1 Mrd.
     title: "Ökolandbau-Förderung ausbauen (Ziel: 30% bis 2030)"
-    source: https://www.bmel.de/DE/themen/landwirtschaft/oekologischer-landbau/oekolandbau_node.html
+    source: https://www.umweltbundesamt.de/daten/land-forstwirtschaft/oekologischer-landbau
   - code: 9DOM5IG
     area: wohnen
     type: spending
@@ -378,7 +378,7 @@ proposals:
     type: spending
     amount: 2 Mrd.
     title: Rücknahme Wohngeld-Kürzung 2027 (Kabinettsbeschluss)
-    source: https://www.spiegel.de/wirtschaft/soziales/wohngeld-die-regierung-kuerzt-drastisch-und-trifft-damit-vor-allem-kinder
+    source: https://www.evangelisch.de/inhalte/256991/06-07-2026/kabinett-bringt-deutliche-kuerzung-des-wohngeldes-auf-den-weg
   - code: QPKI7P5
     area: verwaltung
     type: spending
@@ -582,7 +582,7 @@ proposals:
     type: revenue
     amount: 36 Mrd.
     title: Schuldenbremse weiter lockern für Investitionen (+36 Mrd. Kreditspielraum)
-    source: https://de.finance.yahoo.com/nachrichten/reform-schuldenbremse-expertenkommission-hat-laut-065540856.html
+    source: https://www.t-online.de/finanzen/aktuelles/wirtschaft/id_100332564/schuldenbremse-wirtschaftsweise-fordern-reform-fuer-mehr-flexibilitaet.html
   - code: 246HID2
     area: einnahmen
     type: revenue
@@ -660,7 +660,7 @@ proposals:
     type: revenue
     amount: 900 Mio.
     title: "Rücknahme Koa-Reform: Aktivrente (2.000 € steuerfrei) abschaffen"
-    source: https://amp.infranken.de/ratgeber/karriere-geld/rente-aktivrente-verlust-reform-milliarden-euro-gesetz-januar-2026-steuern-selbststaendige-art-6265212
+    source: https://web.archive.org/web/20251106154028/https://amp.infranken.de/ratgeber/karriere-geld/rente-aktivrente-verlust-reform-milliarden-euro-gesetz-januar-2026-steuern-selbststaendige-art-6265212
   - code: KTFRUE7
     area: einnahmen
     type: tax-cut
@@ -712,16 +712,16 @@ proposals:
   - code: 9TZQ889
     area: einnahmen
     type: tax-cut
-    amount: 700 Mio.
-    title: MwSt für pflanzliche Alternativprodukte auf 7% reduzieren (Hafer-/Sojadrinks, vegane Fleischersatzprodukte)
-    source: https://www.foodwatch.org/de/pressemitteilungen/2023/hafermilch-teurer-als-kuhmilch-foodwatch-fordert-abschaffung-der-diskriminierenden-mehrwertsteuer-auf-pflanzliche-produkte
+    amount: 40 Mio.
+    title: MwSt für Pflanzendrinks auf 7 % senken (Hafer-, Soja-, Mandeldrinks wie Kuhmilch)
+    source: https://gfieurope.org/de/wp-content/uploads/sites/2/2023/08/GFI-Europe-Fakten-zur-Mehrwertsteuer-auf-Pflanzenmilch.pdf
   - code: H775TQO
     area: einnahmen
     type: tax-cut
-    amount: 9,3 Mrd.
-    title: MwSt auf alle pflanzlichen Grundnahrungsmittel auf 0 % (statt 7 %)
+    amount: 4 Mrd.
+    title: MwSt auf pflanzliche Grundnahrungsmittel auf 0 % (statt 7 %)
     buildsOn: true
-    source: https://www.bund.net/service/publikationen/detail/publication/plaedoyer-fuer-eine-tierwohl-und-umweltvertraegliche-agrarwende/
+    source: https://www.umweltbundesamt.de/uba-empfiehlt-0-mwst-auf-pflanzliche
   - code: SOLIABG
     area: einnahmen
     type: tax-cut
